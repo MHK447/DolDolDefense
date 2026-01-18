@@ -44,11 +44,6 @@ public class CastleHpProgress : InGameFloatingUI
         HpSlider.value = DelayHealthBar.value = 1f;
 
         disposables.Clear();
-
-        GameRoot.Instance.UserData.InGamePlayerData.CurShiledProperty.Subscribe(x =>
-        {
-            SetShiled(x);
-        }).AddTo(disposables);
     }
 
     public void SetHpText(double curhp, double maxhp)

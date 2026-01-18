@@ -13,7 +13,6 @@ public class EnemyUnit : MonoBehaviour
         Dead,
         Move,
         Sturn,
-        Rush
     }
 
     protected InGameHpProgress InGameHpProgress;
@@ -60,7 +59,7 @@ public class EnemyUnit : MonoBehaviour
         this.transform.DOScale(UnityEngine.Vector3.one, 0.3f).SetEase(Ease.OutBack);
 
         UnitImg.DisableHitEffect();
-        
+
 
         PlayerUnit = BaseStage.PlayerUnit;
     }
@@ -108,7 +107,7 @@ public class EnemyUnit : MonoBehaviour
         EnemyInfoData.CurHp -= damage;
         InGameHpProgress?.SetHpText((int)EnemyInfoData.CurHp, EnemyInfoData.StartHp);
 
-       DamageColorEffect();
+        DamageColorEffect();
 
         if (EnemyInfoData.CurHp <= 0)
         {
@@ -146,14 +145,18 @@ public class EnemyUnit : MonoBehaviour
         if (CurState != EnemyState.Move) return;
 
         // 플레이어와의 y축 거리 체크
-        if (!IsRushing && BaseStage.PlayerUnit != null)
+        if (BaseStage.PlayerUnit != null)
         {
             float yDistance = Mathf.Abs(transform.position.y - BaseStage.PlayerUnit.transform.position.y);
-            
-            if (yDistance <= 0.3f)
+
+            if (yDistance <= 0.1f)
             {
-                // 돌진 시작
-                RushToPlayer();
+                if (EnemyInfoData.CurHp > 0)
+                {
+                    BaseStage.PlayerUnit.Damage((int)EnemyInfoData.CurHp);
+                }
+
+                Dead();
                 return;
             }
         }
@@ -166,29 +169,7 @@ public class EnemyUnit : MonoBehaviour
         }
     }
 
-    private void RushToPlayer()
-    {
-        IsRushing = true;
-        SetState(EnemyState.Rush);
-
-        // 플레이어 위치로 돌진
-        this.transform.DOKill();
-        this.transform.DOMove(BaseStage.PlayerUnit.transform.position, 0.2f).SetEase(Ease.InQuad).OnComplete(() =>
-        {
-            // 나머지 HP를 플레이어에게 데미지로 줌
-            if (EnemyInfoData.CurHp > 0)
-            {
-                BaseStage.PlayerUnit.Damage((int)EnemyInfoData.CurHp);
-            }
-            
-            // 자신은 사라짐
-            Dead();
-        });
-    }
-
-
     private bool IsDamageDirect = false;
-    private bool IsRushing = false;
 
     public virtual void DamageColorEffect()
     {
@@ -213,10 +194,5 @@ public class EnemyUnit : MonoBehaviour
             });
         }
     }
-
-
-
-
-
 }
 

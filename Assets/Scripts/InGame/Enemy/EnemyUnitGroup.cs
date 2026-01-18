@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using BanpoFri;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,7 +53,12 @@ public class EnemyUnitGroup : MonoBehaviour
 
     public EnemyUnit FindEnemyTarget(Vector3 position, float range)
     {
-        var findenemytarget = ActiveUnits.FirstOrDefault(x => x.transform.position.x >= position.x - range && x.transform.position.x <= position.x + range && x.transform.position.y >= position.y - range && x.transform.position.y <= position.y + range);
+        var findenemytarget = ActiveUnits
+            .Where(x => !x.IsDead) // 살아있는 적만
+            .Where(x => Vector3.Distance(x.transform.position, position) <= range) // range 내에 있는 적만
+            .OrderBy(x => Vector3.Distance(x.transform.position, position)) // 가까운 순으로 정렬
+            .FirstOrDefault(); // 가장 가까운 적 선택
+        
         return findenemytarget;
     }
 

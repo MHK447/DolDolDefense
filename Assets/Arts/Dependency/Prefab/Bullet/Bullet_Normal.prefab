@@ -82,7 +82,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6837763811971400682, guid: 0d88476a6ed744a5498736352ba6fe70, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6837763811971400682, guid: 0d88476a6ed744a5498736352ba6fe70, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
@@ -142,7 +142,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9184753415598114530, guid: 0d88476a6ed744a5498736352ba6fe70, type: 3}
       propertyPath: m_BodyType
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9184753415598114530, guid: 0d88476a6ed744a5498736352ba6fe70, type: 3}
       propertyPath: m_GravityScale
@@ -216,4 +216,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ColAction: {fileID: 8591008546634727535}
-  TrailComponent: {fileID: 1991564565667346266}
+  MoveSpeed: 10
