@@ -265,13 +265,15 @@ public partial class InGameBaseStage : MonoBehaviour
 
         var tdlists = Tables.Instance.GetTable<WaveInfo>().DataList.FindAll(x => x.stage == stageidx && x.wave == Waveidx);
 
+        EnemyUnitGroup.SpawnOrder = StartWaveOrder;
+
         foreach(var td in tdlists)
         {
             while(StartWaveOrder <= td.order)
             {
                 for(int i = 0; i < td.unit_idx.Count; ++i)
                 {
-                    EnemyUnitGroup.AddEnemyUnit(td.unit_idx[i], i, td.unit_hp[i]);
+                    EnemyUnitGroup.AddEnemyUnit(td.unit_idx[i] , td.unit_hp[i]);
                 }
 
                 StartWaveOrder++;

@@ -21,8 +21,8 @@ public class ShooterPathGroup : MonoBehaviour
     [SerializeField]
     private Transform FireTr;
 
-    [SerializeField]
-    private PlayerUnitWeapon CurrentWeapon;
+    // [SerializeField]
+    // private PlayerUnitWeapon CurrentWeapon;
 
     public void Clear()
     {
@@ -49,14 +49,12 @@ public class ShooterPathGroup : MonoBehaviour
 
     private Vector2 GetShootVelocity()
     {
-        if (CurrentWeapon == null) return Vector2.zero;
         return direction.normalized * 15;
     }
 
 
     private void UpdateFuturePath()
     {
-        if (CurrentWeapon == null) return;
         if (futurePathItems == null || futurePathItems.Length == 0) return;
 
         var fireTr = FireTr;
@@ -72,7 +70,7 @@ public class ShooterPathGroup : MonoBehaviour
         // 디버그: 무기 rotation과 velocity 방향 확인 (필요시 주석 해제)
         // Debug.Log($"무기 rotation: {fireTr.rotation.eulerAngles.z}, velocity: {vel}");
 
-        CurrentWeapon.GetFuturePath(futurePath, vel);
+        //PlayerUnitWeapon.GetFuturePath(futurePath, vel);
 
  
         // 경로 점들을 시각화
@@ -103,7 +101,6 @@ public class ShooterPathGroup : MonoBehaviour
 
     void Update()
     {
-        if (CurrentWeapon == null) return;
 
         // 마우스 버튼이나 터치를 누르고 있는지 확인
         bool isPressed = Input.GetMouseButton(0) || (Input.touchCount > 0);

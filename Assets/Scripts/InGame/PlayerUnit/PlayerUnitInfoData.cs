@@ -15,10 +15,6 @@ public class PlayerUnitInfoData
 
 
 
-    public ReactiveProperty<int> InBaseBallCount = new ReactiveProperty<int>(0);
-
-
-
 
 
 }

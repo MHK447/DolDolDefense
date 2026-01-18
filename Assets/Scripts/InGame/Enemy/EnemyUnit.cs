@@ -31,16 +31,15 @@ public class EnemyUnit : MonoBehaviour
     private EnemyState CurState = EnemyState.Move;
 
     protected InGameBaseStage BaseStage;
-
-    protected int Order = 0;
-
     public bool IsDead { get { return CurState == EnemyState.Dead; } }
 
 
+    private PlayerUnit PlayerUnit;
 
 
 
-    public void Set(int enemyidx, int order, int hp)
+
+    public void Set(int enemyidx, int hp)
     {
         EnemyIdx = enemyidx;
 
@@ -50,7 +49,6 @@ public class EnemyUnit : MonoBehaviour
 
         BaseStage = GameRoot.Instance.InGameSystem.GetInGame<InGameBase>().Stage;
 
-        Order = order;
 
         SetState(EnemyState.Move);
 
@@ -62,6 +60,9 @@ public class EnemyUnit : MonoBehaviour
         this.transform.DOScale(UnityEngine.Vector3.one, 0.3f).SetEase(Ease.OutBack);
 
         UnitImg.DisableHitEffect();
+        
+
+        PlayerUnit = BaseStage.PlayerUnit;
     }
 
 
@@ -157,7 +158,12 @@ public class EnemyUnit : MonoBehaviour
             }
         }
 
-        transform.position -= new UnityEngine.Vector3(0, EnemyInfoData.MoveSpped * Time.deltaTime, 0);
+        // PlayerUnit 방향으로 이동
+        if (PlayerUnit != null)
+        {
+            UnityEngine.Vector3 direction = (PlayerUnit.transform.position - transform.position).normalized;
+            transform.position += direction * EnemyInfoData.MoveSpped * Time.deltaTime;
+        }
     }
 
     private void RushToPlayer()

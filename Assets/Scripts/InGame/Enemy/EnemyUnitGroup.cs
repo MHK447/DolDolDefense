@@ -14,11 +14,19 @@ public class EnemyUnitGroup : MonoBehaviour
     public HashSet<EnemyUnit> ActiveUnits = new HashSet<EnemyUnit>();
     public HashSet<EnemyUnit> DeadUnits = new HashSet<EnemyUnit>();
 
-    public void AddEnemyUnit(int enemyidx, int order, int hp)
+    [HideInInspector]
+    public int SpawnOrder = 0;
+
+    public void AddEnemyUnit(int enemyidx, int hp)
     {
+        SpawnOrder++;
+
         var find = DeadUnits.FirstOrDefault();
 
         EnemyUnit instance;
+
+        // EnemySpawnTrList 카운트 순서대로 순환
+        int spawnIndex = SpawnOrder % EnemySpawnTrList.Count;
 
         if (find != null)
         {
@@ -33,10 +41,12 @@ public class EnemyUnitGroup : MonoBehaviour
             var handle = Addressables.InstantiateAsync("EnemyUnit_Base", transform);
             var result = handle.WaitForCompletion();
             instance = result.GetComponent<EnemyUnit>();
-            instance.transform.position = EnemySpawnTrList[order].position;
-            instance.Set(enemyidx, order, hp);
             ActiveUnits.Add(instance);
         }
+
+        // 위치 설정 및 초기화
+        instance.transform.position = EnemySpawnTrList[spawnIndex].position;
+        instance.Set(enemyidx , hp);
 
     }
 

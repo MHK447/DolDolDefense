@@ -20,8 +20,6 @@ public class PlayerUnit : MonoBehaviour
     [SerializeField]
     private SpriteRenderer PlayerWeaponImg;
 
-    [SerializeField]
-    private PlayerUnitWeapon UnitWeapon;
 
     private PlayerUnitState UnitState = PlayerUnitState.Idle;
 
@@ -44,12 +42,9 @@ public class PlayerUnit : MonoBehaviour
         {
             PlayerUnitInfoData.StartHp = 1000;
             PlayerUnitInfoData.CurHp = 1000;
-            PlayerUnitInfoData.InBaseBallCount.Value = 5;
             PlayerUnitInfoData.AttackRange = 15f;
 
             UnitState = PlayerUnitState.Idle;
-
-            UnitWeapon.Set(PlayerUnitIdx);
 
             SetHpProgress(PlayerUnitInfoData.CurHp);
         }

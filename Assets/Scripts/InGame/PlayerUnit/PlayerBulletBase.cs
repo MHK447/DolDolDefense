@@ -206,7 +206,6 @@ public class PlayerBulletBase : MonoBehaviour
 
     public void DeleteBullet()
     {
-        PlayerUnit.PlayerUnitInfoData.InBaseBallCount.Value += 1;
         ProjectUtility.SetActiveCheck(this.gameObject, false);
         DeleteAction?.Invoke(this);
     }
