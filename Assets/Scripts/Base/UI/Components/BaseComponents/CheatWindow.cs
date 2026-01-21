@@ -163,9 +163,9 @@ public class CheatWindow : MonoBehaviour
         GameRoot.Instance.TutorialSystem.StartTutorial(convert.ToString());
     }
 
-    public void StartChoiceLevelUpReward()
+    public void StartSkillChoiceLevelUpReward()
     {
-        GameRoot.Instance.UISystem.OpenUI<PopupLevelUpReward>(popup => popup.Init(true));
+        GameRoot.Instance.UISystem.OpenUI<PopupLevelUpReward>(popup => popup.Init(PopupLevelUpRewardType.SkillType, true));
     }
 
     public void OnClick_Hide()
@@ -220,7 +220,7 @@ public class CheatWindow : MonoBehaviour
 
     public void ThreeInGameUpgradeOpen()
     {
-        GameRoot.Instance.UISystem.OpenUI<PopupLevelUpReward>(popup => popup.Init());
+        GameRoot.Instance.UISystem.OpenUI<PopupLevelUpReward>(popup => popup.Init(PopupLevelUpRewardType.StatType, true));
     }
 
 
@@ -231,7 +231,7 @@ public class CheatWindow : MonoBehaviour
 
     public void ShowSelectChoice()
     {
-        GameRoot.Instance.UISystem.OpenUI<PopupLevelUpReward>(popup => popup.Init(true));
+        GameRoot.Instance.UISystem.OpenUI<PopupLevelUpReward>(popup => popup.Init(PopupLevelUpRewardType.StatType, true));
     }
 
 

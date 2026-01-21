@@ -6,7 +6,7 @@ SpriteAtlas:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Atlas_UI_InGame
+  m_Name: Atlas_UI_LevelUp
   m_EditorData:
     serializedVersion: 2
     textureSettings:
@@ -23,7 +23,7 @@ SpriteAtlas:
     platformSettings:
     - serializedVersion: 4
       m_BuildTarget: iOS
-      m_MaxTextureSize: 2048
+      m_MaxTextureSize: 1024
       m_ResizeAlgorithm: 0
       m_TextureFormat: 50
       m_TextureCompression: 1
@@ -36,7 +36,7 @@ SpriteAtlas:
       m_ForceMaximumCompressionQuality_BC6H_BC7: 0
     - serializedVersion: 4
       m_BuildTarget: Android
-      m_MaxTextureSize: 2048
+      m_MaxTextureSize: 1024
       m_ResizeAlgorithm: 0
       m_TextureFormat: 51
       m_TextureCompression: 1
@@ -49,7 +49,7 @@ SpriteAtlas:
       m_ForceMaximumCompressionQuality_BC6H_BC7: 0
     - serializedVersion: 4
       m_BuildTarget: DefaultTexturePlatform
-      m_MaxTextureSize: 2048
+      m_MaxTextureSize: 1024
       m_ResizeAlgorithm: 0
       m_TextureFormat: 4
       m_TextureCompression: 2
@@ -71,23 +71,32 @@ SpriteAtlas:
     secondaryTextureSettings: {}
     variantMultiplier: 0.5
     packables:
-    - {fileID: 102900000, guid: 3be033f165e1b4724903bedff331ad53, type: 3}
+    - {fileID: 102900000, guid: 4474b6ef25db64b44a885c522af5655a, type: 3}
     bindAsDefault: 0
     isAtlasV2: 0
     cachedData: {fileID: 0}
     packedSpriteRenderDataKeys:
-    - 62cf1d023d6b34530aec51c417ba821c: 21300000
-    - 3dc30bd2327ad49f099344eb6dfe05cf: 21300000
-    - 6dc4ce737ba7f420ea1c8dfa531b5f51: 21300000
+    - be357290dc52f4ca6af7534c3c25c2cd: 21300000
+    - 94d2c854a33de3946b9096cf5c41d520: 21300000
+    - b9aa238904169824baca056a9b2b14d7: 21300000
+    - b0f7d5899b4274d7b86e65bb3844a575: 21300000
+    - e9a1958a92f964d5b8a979b6e840718c: 21300000
+    - b232af3e75833ad47a7865f8947ccbb4: 21300000
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: 21300000, guid: 62cf1d023d6b34530aec51c417ba821c, type: 3}
-  - {fileID: 21300000, guid: 3dc30bd2327ad49f099344eb6dfe05cf, type: 3}
-  - {fileID: 21300000, guid: 6dc4ce737ba7f420ea1c8dfa531b5f51, type: 3}
+  - {fileID: 21300000, guid: be357290dc52f4ca6af7534c3c25c2cd, type: 3}
+  - {fileID: 21300000, guid: 94d2c854a33de3946b9096cf5c41d520, type: 3}
+  - {fileID: 21300000, guid: b9aa238904169824baca056a9b2b14d7, type: 3}
+  - {fileID: 21300000, guid: b0f7d5899b4274d7b86e65bb3844a575, type: 3}
+  - {fileID: 21300000, guid: e9a1958a92f964d5b8a979b6e840718c, type: 3}
+  - {fileID: 21300000, guid: b232af3e75833ad47a7865f8947ccbb4, type: 3}
   m_PackedSpriteNamesToIndex:
-  - Ingame_Fx_Circle_Simple
-  - Ingame_Fx_Circle_Slice
-  - Ingame_Fx_Circle_Glow
+  - Common_Frame_Choice
+  - Common_Frame_Levelup_UniqueMaxFx
+  - Common_Frame_Levelup_2
+  - Common_Frame_Levelup_4
+  - Common_Frame_Levelup_3
+  - Common_Frame_Levelup_1
   m_RenderDataMap: {}
-  m_Tag: Atlas_UI_InGame
+  m_Tag: Atlas_UI_LevelUp
   m_IsVariant: 0

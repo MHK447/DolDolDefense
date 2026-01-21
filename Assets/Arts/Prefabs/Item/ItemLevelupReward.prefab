@@ -15318,6 +15318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ChoiceDesc: {fileID: 4865161392041383680}
   UpgradeNameText: {fileID: 8860426983455833985}
+  BgImg: {fileID: 6101687093109655158}
   BackImg: {fileID: 1390531188823356672}
   FrontImg: {fileID: 4790132144497529988}
   ChoiceBtn: {fileID: 1702985231277113451}

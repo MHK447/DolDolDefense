@@ -23,11 +23,14 @@ public class PlayerBulletBase : MonoBehaviour
     private Vector3 TargetPosition;
     private Vector3 Direction;
 
+    private bool IsDamageOn = false;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         var enemy = collision.gameObject.GetComponent<EnemyUnit>();
-        if (enemy != null)
+        if (enemy != null && !IsDamageOn)
         {
+            IsDamageOn = true;
             enemy.Damage(BulletIdx);
             DeleteAction?.Invoke(this);
         }
@@ -35,6 +38,7 @@ public class PlayerBulletBase : MonoBehaviour
 
     public void Set(int bulletidx, PlayerUnit unit, Vector3 targetposition , System.Action<PlayerBulletBase> deleteaction)
     {
+        IsDamageOn = false;
         BulletIdx = bulletidx;
         PlayerUnit = unit;
         TargetPosition = targetposition;

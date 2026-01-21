@@ -18,7 +18,7 @@ namespace BanpoFri
 		private List<List<string>> cachedDataList = new List<List<string>>();
 		private List<int> cachedSkipColIndex = new List<int>();
 
-		private static readonly string ScriptUrl = "https://script.google.com/macros/s/AKfycbxnvPhoUk1XmeEnl9NHC3PLk0x8APDIRYzN5Us_6L8broI-syzBHlfHoA8Xhhgd2H98/exec"; // Google Apps Script 배포 URL
+		private static readonly string ScriptUrl = "https://script.google.com/macros/s/AKfycbzOb4iSX5GKiX1ZYOXE80ih8-wIY10JSYOxlL0TIX1_Ux5o_gKJWpA2sUGJEQbn2LyIxg/exec"; // Google Apps Script 배포 URL
 		private static readonly string password = "banpofri";
 		void OnGUI()
 		{

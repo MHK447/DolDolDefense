@@ -390,6 +390,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c64230666711c4237916d3318685dc8b
+    m_Address: Atlas_UI_LevelUp
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ca539427454194cf3b741dd3baf027a0
     m_Address: Effect/RewardThrowEffect
     m_ReadOnly: 0

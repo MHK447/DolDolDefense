@@ -230,6 +230,7 @@ public enum Atlas
     Atlas_UI_CommonWeapon,
         Atlas_Stage,
         Atlas_UI_Map,
+        Atlas_UI_LevelUp,
     // @ add here
 
 }

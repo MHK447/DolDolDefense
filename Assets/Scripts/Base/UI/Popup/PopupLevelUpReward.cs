@@ -5,6 +5,12 @@ using TMPro;
 using System.Collections.Generic;
 using DG.Tweening;
 
+public enum PopupLevelUpRewardType
+{
+    StatType = 1,
+    SkillType = 2,
+}
+
 
 [UIPath("UI/Popup/PopupLevelUpReward")]
 public class PopupLevelUpReward : UIBase
@@ -18,6 +24,8 @@ public class PopupLevelUpReward : UIBase
 
     [SerializeField]
     private TextMeshProUGUI RerollText;
+
+    private PopupLevelUpRewardType Type;
 
 
     private UpgradeTier CurrentUpgradeTier;
@@ -40,9 +48,9 @@ public class PopupLevelUpReward : UIBase
     }
 
 
-    public void Init(bool isfirst = false)
+    public void Init(PopupLevelUpRewardType type , bool isfirst = false)
     {
-        //SoundPlayer.Instance.PlaySound("popuplevelupshow");
+        Type = type;
 
         UpgradeLock = false;
 
@@ -114,7 +122,7 @@ public class PopupLevelUpReward : UIBase
     private void OnClickReroll()
     {
         IsReroll = true;
-        Init();
+        Init(Type);
     }
 
     public void OnClickEyes()

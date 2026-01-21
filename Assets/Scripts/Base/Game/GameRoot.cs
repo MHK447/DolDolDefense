@@ -76,6 +76,9 @@ public class GameRoot : Singleton<GameRoot>
 
 	public CardSystem CardSystem { get; private set; } = new CardSystem();
 
+	public PlayerSkillSystem PlayerSkillSystem { get; private set; } = new PlayerSkillSystem();
+
+	public PlayerStatSystem PlayerStatSystem { get; private set; } = new PlayerStatSystem();
 
 	public UnityMainThreadDispatcher MainThreadDispatcher;
 
@@ -296,6 +299,7 @@ public class GameRoot : Singleton<GameRoot>
 		ShopSystem.Create();
 		LobbyBoxSystem.Create();
 		CardSystem.Create();
+		PlayerStatSystem.Create();
 		GameRoot.instance.InAppPurchaseManager.InitializePurchasing();
 
 		InitRequestAtlas();

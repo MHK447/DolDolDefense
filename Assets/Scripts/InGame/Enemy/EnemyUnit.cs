@@ -124,6 +124,13 @@ public class EnemyUnit : MonoBehaviour
         this.transform.DOKill();
 
         this.transform.localScale = UnityEngine.Vector3.one;
+
+        GameRoot.Instance.EffectSystem.MultiPlay<TextEffectMoney>(transform.position, (x) =>
+        {
+            GameRoot.Instance.UserData.InGamePlayerData.InGameMoneyProperty.Value += 1;
+            x.SetText(1);
+        });
+
         this.transform.DOScale(UnityEngine.Vector3.zero, 0.3f).SetEase(Ease.InBack).OnComplete(() =>
         {
             BaseStage.EnemyUnitGroup.DeadUnits.Add(this);
@@ -144,28 +151,22 @@ public class EnemyUnit : MonoBehaviour
     {
         if (CurState != EnemyState.Move) return;
 
-        // 플레이어와의 y축 거리 체크
-        if (BaseStage.PlayerUnit != null)
-        {
-            float yDistance = Mathf.Abs(transform.position.y - BaseStage.PlayerUnit.transform.position.y);
-
-            if (yDistance <= 0.1f)
-            {
-                if (EnemyInfoData.CurHp > 0)
-                {
-                    BaseStage.PlayerUnit.Damage((int)EnemyInfoData.CurHp);
-                }
-
-                Dead();
-                return;
-            }
-        }
 
         // PlayerUnit 방향으로 이동
         if (PlayerUnit != null)
         {
             UnityEngine.Vector3 direction = (PlayerUnit.transform.position - transform.position).normalized;
             transform.position += direction * EnemyInfoData.MoveSpped * Time.deltaTime;
+        }
+    }
+
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            BaseStage.PlayerUnit.Damage((int)EnemyInfoData.CurHp);
+            Dead();
         }
     }
 

@@ -624,7 +624,8 @@ MonoBehaviour:
   PauseBtn: {fileID: 1759891420895438877}
   WaveText: {fileID: 5724461816514107803}
   TimeText: {fileID: 6219307284125673913}
-  SilverCoinRoot: {fileID: 0}
+  SilverCoinText: {fileID: 5180563005918572465}
+  SilverCoinRoot: {fileID: 2696508680076541868}
 --- !u!1 &7652129800882255944
 GameObject:
   m_ObjectHideFlags: 0
@@ -1384,3 +1385,19 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6095774778379880462, guid: cec365a9f4e7e4c5c97fbad2e43cbf47, type: 3}
   m_PrefabInstance: {fileID: 4616395397439290667}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &2696508680076541868 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7312534610702090887, guid: cec365a9f4e7e4c5c97fbad2e43cbf47, type: 3}
+  m_PrefabInstance: {fileID: 4616395397439290667}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5180563005918572465 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 573564349156922010, guid: cec365a9f4e7e4c5c97fbad2e43cbf47, type: 3}
+  m_PrefabInstance: {fileID: 4616395397439290667}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -15,6 +15,9 @@ public class LevelupRewardComponent : MonoBehaviour
     private TextMeshProUGUI UpgradeNameText;
 
     [SerializeField]
+    private Image BgImg;
+
+    [SerializeField]
     private Image BackImg;
 
     [SerializeField]
@@ -69,7 +72,7 @@ public class LevelupRewardComponent : MonoBehaviour
 
         ProjectUtility.SetActiveCheck(RecommendLabel, recommended);
 
-
+        BgImg.sprite = AtlasManager.Instance.GetSprite(Atlas.Atlas_UI_LevelUp, $"Common_Frame_Levelup_{upgrade.UpgradeChoiceData.category}");
 
         UpgradeNameText.text = Tables.Instance.GetTable<Localize>().GetString(upgrade.UpgradeChoiceData.choice_name);
         ChoiceDesc.text = upgrade.GetDesc();

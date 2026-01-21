@@ -23,6 +23,9 @@ public class PopupInGame : CommonUIBase
     [SerializeField]
     private TextMeshProUGUI TimeText;
 
+    [SerializeField]
+    private TextMeshProUGUI SilverCoinText;
+
     public Transform SilverCoinRoot;
 
     private CompositeDisposable disposables = new CompositeDisposable();
@@ -42,7 +45,7 @@ public class PopupInGame : CommonUIBase
 
         GameRoot.Instance.UserData.InGamePlayerData.WaveTimePorperty.Subscribe(x =>
         {
-            var value  = 20 - x;
+            var value = 20 - x;
             TimeText.text = $"00:{value}";
         }).AddTo(disposables);
 
@@ -51,7 +54,13 @@ public class PopupInGame : CommonUIBase
             WaveText.text = $"Wave {x}";
         }).AddTo(disposables);
 
-        
+
+        GameRoot.Instance.UserData.InGamePlayerData.InGameMoneyProperty.Subscribe(x =>
+        {
+            SilverCoinText.text = x.ToString();
+        }).AddTo(disposables);
+
+
     }
 
     public void OnClickPause()

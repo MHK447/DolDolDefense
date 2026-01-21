@@ -16,7 +16,7 @@ public class PlayerUnit : MonoBehaviour
     }
 
 
-    [SerializeField]
+    [SerializeField]    
     private SpriteRenderer PlayerUnitImg;
 
     [SerializeField]
@@ -68,8 +68,6 @@ public class PlayerUnit : MonoBehaviour
 
             CreateCircle();
         }
-
-
     }
 
     public void SetHpProgress(int hp)
