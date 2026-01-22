@@ -56,11 +56,11 @@ namespace BanpoFri
 			set { _weight = value;}
 		}
 		[SerializeField]
-		private int _upgrade_count;
-		public int upgrade_count
+		private List<int> _skill_level_stat_type;
+		public List<int> skill_level_stat_type
 		{
-			get { return _upgrade_count;}
-			set { _upgrade_count = value;}
+			get { return _skill_level_stat_type;}
+			set { _skill_level_stat_type = value;}
 		}
 		[SerializeField]
 		private List<int> _upgrade_value_1;

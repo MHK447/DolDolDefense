@@ -5,10 +5,8 @@ using UnityEngine;
 
 public enum InGameUpgradeCategory
 {
-    AddBlock = 1,
-    AddSkill = 2,
-    Other = 3,
-    UpgradeBlock = 4,
+    AddSKill = 1,
+    AddStat = 2,
 }
 
 public class InGameUpgradeSystem
@@ -128,18 +126,18 @@ public class InGameUpgradeSystem
                 }
             }
             
-            AddUpgradeId(new InGameUpgrade_ElectricShock());
-            AddUpgradeId(new InGameUpgrade_SnailSlime());
-            AddUpgradeId(new InGameUpgrade_GoblinBag());
-            AddUpgradeId(new InGameUpgrade_SilverBar());
-            AddUpgradeId(new InGameUpgrade_LightningStatue());
-            AddUpgradeId(new InGameUpgrade_IronHornSpear());
-            AddUpgradeId(new InGameUpgrade_SpeedBullet());
-            AddUpgradeId(new InGameUpgrade_KnockBackGun());
-            // InGameUpgrade_RubberBullet은 GetAllUpgrades()에서 주석 처리되어 있어서 제외
-            AddUpgradeId(new InGameUpgrade_DoubleShot());
-            AddUpgradeId(new InGameUpgrade_BerserkerDoll());
-            AddUpgradeId(new InGameUpgrade_SlimeClone());
+            // AddUpgradeId(new InGameUpgrade_ElectricShock());
+            // AddUpgradeId(new InGameUpgrade_SnailSlime());
+            // AddUpgradeId(new InGameUpgrade_GoblinBag());
+            // AddUpgradeId(new InGameUpgrade_SilverBar());
+            // AddUpgradeId(new InGameUpgrade_LightningStatue());
+            // AddUpgradeId(new InGameUpgrade_IronHornSpear());
+            // AddUpgradeId(new InGameUpgrade_SpeedBullet());
+            // AddUpgradeId(new InGameUpgrade_KnockBackGun());
+            // // InGameUpgrade_RubberBullet은 GetAllUpgrades()에서 주석 처리되어 있어서 제외
+            // AddUpgradeId(new InGameUpgrade_DoubleShot());
+            // AddUpgradeId(new InGameUpgrade_BerserkerDoll());
+            // AddUpgradeId(new InGameUpgrade_SlimeClone());
             
             int[] defaultUpgradeIds = defaultUpgradeIdsList.ToArray();
 
@@ -173,40 +171,40 @@ public class InGameUpgradeSystem
 
     private void SelectNormalUpgrades(List<InGameUpgrade> upgrades, List<InGameUpgrade> outResult)
     {
-        //첫번째 선택지 블럭만 뜨게
-        if (UpgradeCount == 0)
-        {
-            //block
-            InGameUpgrade tempUpgrade = upgrades.Where(x => x.UpgradeChoiceData.category == (int)InGameUpgradeCategory.AddBlock 
-                && !outResult.Any(r => r != null && r.UpgradeChoiceData != null && r.UpgradeChoiceData.idx == x.UpgradeChoiceData.idx)).ToList().GetRandom();
-            if (tempUpgrade != null)
-            {
-                outResult.Add(tempUpgrade);
-                upgrades.Remove(tempUpgrade);
-            }
-        }
+        // //첫번째 선택지 블럭만 뜨게
+        // if (UpgradeCount == 0)
+        // {
+        //     //block
+        //     InGameUpgrade tempUpgrade = upgrades.Where(x => x.UpgradeChoiceData.category == (int)InGameUpgradeCategory.AddBlock 
+        //         && !outResult.Any(r => r != null && r.UpgradeChoiceData != null && r.UpgradeChoiceData.idx == x.UpgradeChoiceData.idx)).ToList().GetRandom();
+        //     if (tempUpgrade != null)
+        //     {
+        //         outResult.Add(tempUpgrade);
+        //         upgrades.Remove(tempUpgrade);
+        //     }
+        // }
 
-        //두번째 선택지 무조건 블럭/스킬 하나 뜸
-        if (UpgradeCount == 1)
-        {
-            //block
-            InGameUpgrade tempUpgrade = upgrades.Where(x => x.UpgradeChoiceData.category == (int)InGameUpgradeCategory.AddBlock 
-                && !outResult.Any(r => r != null && r.UpgradeChoiceData != null && r.UpgradeChoiceData.idx == x.UpgradeChoiceData.idx)).ToList().GetRandom();
-            if (tempUpgrade != null)
-            {
-                outResult.Add(tempUpgrade);
-                upgrades.Remove(tempUpgrade);
-            }
+        // //두번째 선택지 무조건 블럭/스킬 하나 뜸
+        // if (UpgradeCount == 1)
+        // {
+        //     //block
+        //     InGameUpgrade tempUpgrade = upgrades.Where(x => x.UpgradeChoiceData.category == (int)InGameUpgradeCategory.AddBlock 
+        //         && !outResult.Any(r => r != null && r.UpgradeChoiceData != null && r.UpgradeChoiceData.idx == x.UpgradeChoiceData.idx)).ToList().GetRandom();
+        //     if (tempUpgrade != null)
+        //     {
+        //         outResult.Add(tempUpgrade);
+        //         upgrades.Remove(tempUpgrade);
+        //     }
 
-            //skill
-            tempUpgrade = upgrades.Where(x => x.UpgradeChoiceData.category == (int)InGameUpgradeCategory.AddSkill 
-                && !outResult.Any(r => r != null && r.UpgradeChoiceData != null && r.UpgradeChoiceData.idx == x.UpgradeChoiceData.idx)).ToList().GetRandom();
-            if (tempUpgrade != null)
-            {
-                outResult.Add(tempUpgrade);
-                upgrades.Remove(tempUpgrade);
-            }
-        }
+        //     //skill
+        //     tempUpgrade = upgrades.Where(x => x.UpgradeChoiceData.category == (int)InGameUpgradeCategory.AddSkill 
+        //         && !outResult.Any(r => r != null && r.UpgradeChoiceData != null && r.UpgradeChoiceData.idx == x.UpgradeChoiceData.idx)).ToList().GetRandom();
+        //     if (tempUpgrade != null)
+        //     {
+        //         outResult.Add(tempUpgrade);
+        //         upgrades.Remove(tempUpgrade);
+        //     }
+        // }
 
         //웨이트 채집 (이미 선택된 idx 제외)
         List<int> weights = new();
@@ -264,20 +262,20 @@ public class InGameUpgradeSystem
             //모든 강화 항목 여기에 추가
 
 
-            new InGameUpgrade_ElectricShock(),
-            new InGameUpgrade_SnailSlime(),
-            new InGameUpgrade_GoblinBag(),
-            new InGameUpgrade_SilverBar(),
-            new InGameUpgrade_LightningStatue(),
-            new InGameUpgrade_IronHornSpear(),
-            new InGameUpgrade_SpeedBullet(),
-            new InGameUpgrade_KnockBackGun(),
-            //new InGameUpgrade_RubberBullet(), // CanSpawn()이 항상 false를 반환하므로 제외
-            new InGameUpgrade_DoubleShot(),
-            new InGameUpgrade_BerserkerDoll(),
-            new InGameUpgrade_SlimeClone(),
-            new InGameUpgrade_FrezeeBullet(),
-            new InGameUpgrade_PoisonBullet(),
+            // new InGameUpgrade_ElectricShock(),
+            // new InGameUpgrade_SnailSlime(),
+            // new InGameUpgrade_GoblinBag(),
+            // new InGameUpgrade_SilverBar(),
+            // new InGameUpgrade_LightningStatue(),
+            // new InGameUpgrade_IronHornSpear(),
+            // new InGameUpgrade_SpeedBullet(),
+            // new InGameUpgrade_KnockBackGun(),
+            // //new InGameUpgrade_RubberBullet(), // CanSpawn()이 항상 false를 반환하므로 제외
+            // new InGameUpgrade_DoubleShot(),
+            // new InGameUpgrade_BerserkerDoll(),
+            // new InGameUpgrade_SlimeClone(),
+            // new InGameUpgrade_FrezeeBullet(),
+            // new InGameUpgrade_PoisonBullet(),
         };
 
         return all;
@@ -285,17 +283,19 @@ public class InGameUpgradeSystem
 
     private List<InGameUpgrade> FilterUpgrades(List<InGameUpgrade> allUpgrades, UpgradeTier tier)
     {
-        return allUpgrades.Where(x =>
-        {
-            // null 체크
-            if (x == null || x.UpgradeChoiceData == null) return false;
+        // return allUpgrades.Where(x =>
+        // {
+        //     // null 체크
+        //     if (x == null || x.UpgradeChoiceData == null) return false;
 
-            // AddBlock 카테고리는 무조건 tier 1 (Rare)로 설정
-            UpgradeTier tierToApply = (x.UpgradeChoiceData.category == (int)InGameUpgradeCategory.AddBlock)
-                ? UpgradeTier.Rare
-                : tier;
-            return x.SetTierAndCheckSpawn(tierToApply);
-        }).ToList();
+        //     // AddBlock 카테고리는 무조건 tier 1 (Rare)로 설정
+        //     UpgradeTier tierToApply = (x.UpgradeChoiceData.category == (int)InGameUpgradeCategory.AddBlock)
+        //         ? UpgradeTier.Rare
+        //         : tier;
+        //     return x.SetTierAndCheckSpawn(tierToApply);
+        // }).ToList();
+
+        return allUpgrades;
     }
 
 

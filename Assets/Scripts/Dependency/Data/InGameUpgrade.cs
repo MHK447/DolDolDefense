@@ -52,7 +52,8 @@ public class InGameUpgrade
     {
         int upgradelevel = GameRoot.Instance.InGameUpgradeSystem.GetUpgradeLevel(upgradeChoiceIndex);
 
-        return UpgradeChoiceData.upgrade_count > upgradelevel;
+        //return UpgradeChoiceData.upgrade_count > upgradelevel;
+        return true;
     }
 
     public void CallApply(bool isLuckyChoice = false)

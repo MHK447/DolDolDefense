@@ -105,10 +105,11 @@ public class LevelupRewardComponent : MonoBehaviour
         int blockLevel = GameRoot.Instance.InGameUpgradeSystem.GetUpgradeLevel(Upgrade.UpgradeChoiceData.idx);
 
 
-        for (int i = 0; i < BlockRootLevelImages.Length; ++i)
-        {
-            ProjectUtility.SetActiveCheck(BlockRootLevelImages[i].gameObject, Upgrade.UpgradeChoiceData.upgrade_count > i);
-        }
+        // for (int i = 0; i < BlockRootLevelImages.Length; ++i)
+        // {
+        //    //ProjectUtility.SetActiveCheck(BlockRootLevelImages[i].gameObject, Upgrade.UpgradeChoiceData.upgrade_count > i);
+        //    //ProjectUtility.SetActiveCheck(BlockRootLevelImages[i].gameObject, true);
+        // }
 
         for (int i = 0; i < 3; i++)
         {
