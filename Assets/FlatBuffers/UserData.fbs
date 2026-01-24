@@ -51,6 +51,8 @@ table UserData {
   newtrainingdatabuyorder:int = 0; //@ReactiveProperty
   carddatas:[CardData];
   ingamesilvercoin:int = 0; // @ReactiveProperty
+
+  skillcarddatas:[SkillCardData];
 }
 
 table OptionData {
@@ -128,6 +130,14 @@ table CardData
    cardidx:int = 0;
    cardlevel:int = 0;  // @ReactiveProperty
    cardcount:int = 0; // @ReactiveProperty
+}
+
+table SkillCardData
+{
+   skillidx:int = 0;
+   skillevel:int = 0;
+   skillcount:int = 0;
+
 }
 
 

@@ -1,81 +1,151 @@
 using UnityEngine;
 using BanpoFri;
+using System.Linq;
 
 
-public enum UpgradeTier
+
+public enum SkillLevelStatTypeEnum
 {
-    Rare = 1,
-    Epic = 2,
-    Legendary = 3,
+    SKillAdd = 1,
+    SKillCountAdd = 2,
+    SkillUpScale = 3,
+    SKillAttackUp = 4,
+    SkillDurationIncrease = 5,
+    StatAttackIncrease = 101,
+    StatHpIncrease = 102,
+    StatCoolTimeIncrease = 103,
+    StatCriticalDamageIncrease = 104,
 }
 
 
 public class InGameUpgrade
 {
-    public InGameUpgradeChoiceData UpgradeChoiceData;
-    public UpgradeTier Tier;
-    public int TierValue;
+    public int UpgradeIdx = 0;
+    public UpgradeTier Tier = UpgradeTier.Rare;
+    public int Level = 0;
+    public InGameUpgradeChoiceData UpgradeChoiceData = null;
+
     public bool IsRecommend = false;
 
-    protected int upgradeChoiceIndex = 0;
+    public int SkillLevelStatType = 0;
 
-    public InGameUpgrade()
+    public int UpgradeValue1 = 0;
+
+    public int UpgradeValue2 = 0;
+
+
+
+    public InGameUpgrade(int upgradeidx, UpgradeTier tier, int level, InGameUpgradeChoiceData choiceData, bool isrecommend = false)
     {
-        PreInitalize();
+        UpgradeIdx = upgradeidx;
+        Tier = tier;
+        Level = level;
+        UpgradeChoiceData = choiceData;
+        IsRecommend = isrecommend;
 
-        var upgrade = Tables.Instance.GetTable<InGameUpgradeChoice>().GetData(upgradeChoiceIndex);
+        var findskilldata = GameRoot.Instance.InGameUpgradeSystem.ChoiceInGameUpgrades.Find(x => x.UpgradeIdx == upgradeidx);
 
-        if (upgrade != null)
+
+        if (findskilldata == null)
         {
-            UpgradeChoiceData = upgrade;
+            SkillLevelStatType = (int)SkillLevelStatTypeEnum.SKillAdd;
+
+            UpgradeValue1 = 0;
+            UpgradeValue2 = 0;
+        }
+        else
+        {
+            if(choiceData.category == 1)
+            {
+                RandSelectType();
+            }
+            else
+            {
+                SkillLevelStatType = (int)choiceData.skill_level_stat_type.First();
+                UpgradeValue1 = choiceData.upgrade_value_1.First();
+                UpgradeValue2 = choiceData.upgrade_value_2.First();
+            }
         }
     }
 
-    protected virtual void PreInitalize()
+    public void RandSelectType()
     {
+        var findskilldata = GameRoot.Instance.InGameUpgradeSystem.ChoiceInGameUpgrades.Find(x => x.UpgradeIdx == UpgradeIdx);
 
+
+        if (findskilldata == null)
+        {
+            SkillLevelStatType = (int)SkillLevelStatTypeEnum.SKillAdd;
+
+            UpgradeValue1 = 0;
+            UpgradeValue2 = 0;
+        }
+        else
+        {
+            var randvalue = Random.Range(0, UpgradeChoiceData.skill_level_stat_type.Count);
+
+            SkillLevelStatType = UpgradeChoiceData.skill_level_stat_type[randvalue];
+
+            int findindex = UpgradeChoiceData.skill_level_stat_type.FindIndex(x => x == randvalue);
+
+            UpgradeValue1 = UpgradeChoiceData.upgrade_value_1[findindex] * (int)Tier;
+
+            UpgradeValue2 = Tier > UpgradeTier.Epic ? 0 : UpgradeChoiceData.upgrade_value_2[findindex];
+        }
     }
 
-    public void SetRecommend(bool isRecommend)
-    {
-        IsRecommend = isRecommend;
-    }
 
-    public bool SetTierAndCheckSpawn(UpgradeTier tier)
+    public virtual void CallApply()
     {
-        IsRecommend = false;
-        //SetTier(tier);
-        return CanSpawn();
-    }
-
-    public virtual bool CanSpawn()
-    {
-        int upgradelevel = GameRoot.Instance.InGameUpgradeSystem.GetUpgradeLevel(upgradeChoiceIndex);
-
-        //return UpgradeChoiceData.upgrade_count > upgradelevel;
-        return true;
-    }
-
-    public void CallApply(bool isLuckyChoice = false)
-    {
-        //GameRoot.Instance.InGameSystem.GetInGame<InGameBase>().Stage.Battle.PlayerBlockGroup.ShowStatUpgradeParticle();
-        Apply();
         GameRoot.Instance.InGameUpgradeSystem.UpgradeCount++;
-        GameRoot.Instance.InGameUpgradeSystem.ChoiceUpgradeTiers.Add(Tier);
-        GameRoot.Instance.InGameUpgradeSystem.ChoiceUpgrades.Add(this);
+
+        switch (SkillLevelStatType)
+        {
+            case (int)SkillLevelStatTypeEnum.SKillAdd:
+                {
+                    GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_BlackBall());
+                }
+                break;
+            case (int)SkillLevelStatTypeEnum.SKillCountAdd:
+                {
+                }
+                break;
+            case (int)SkillLevelStatTypeEnum.SkillUpScale:
+                {
+
+                }
+                break;
+            case (int)SkillLevelStatTypeEnum.SKillAttackUp:
+                {
+
+                }
+                break;
+            case (int)SkillLevelStatTypeEnum.SkillDurationIncrease:
+                {
+
+                }
+                break;
+            case (int)SkillLevelStatTypeEnum.StatAttackIncrease:
+                {
+
+                }
+                break;
+            case (int)SkillLevelStatTypeEnum.StatHpIncrease:
+                {
+
+                }
+                break;
+            case (int)SkillLevelStatTypeEnum.StatCoolTimeIncrease:
+                {
+
+                }
+                break;
+            case (int)SkillLevelStatTypeEnum.StatCriticalDamageIncrease:
+                {
+
+                }
+                break;
+        }
     }
-
-    public virtual string GetDesc()
-    {
-
-        return "";
-    }
-
-    public virtual void Apply()
-    {
-        //이 업그레이드를 선택했을때 효과 적용 (터렛스폰, 스탯 강화 등)
-    }
-
-
 
 }

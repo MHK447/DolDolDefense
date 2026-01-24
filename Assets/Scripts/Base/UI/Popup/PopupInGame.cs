@@ -26,6 +26,9 @@ public class PopupInGame : CommonUIBase
     [SerializeField]
     private TextMeshProUGUI SilverCoinText;
 
+    [SerializeField]
+    private Button ReRollBtn;
+
     public Transform SilverCoinRoot;
 
     private CompositeDisposable disposables = new CompositeDisposable();
@@ -36,6 +39,8 @@ public class PopupInGame : CommonUIBase
         base.Awake();
 
         PauseBtn.onClick.AddListener(OnClickPause);
+
+        ReRollBtn.onClick.AddListener(OnClickReRoll);
     }
 
 
@@ -66,6 +71,24 @@ public class PopupInGame : CommonUIBase
     public void OnClickPause()
     {
         GameRoot.Instance.UISystem.OpenUI<PopupStageGiveup>();
+    }
+
+    public void OnClickReRoll()
+    {
+        var rollcount = Random.Range(1, 4);
+        var tier = Random.Range(1, 4);
+
+        if (rollcount == 3)
+        {
+            GameRoot.Instance.UserData.Ingamesilvercoin.Value += 100 * tier;
+        }
+        else
+        {
+            GameRoot.Instance.UISystem.OpenUI<PopupLevelUpReward>(x =>
+            {
+                x.Init((PopupLevelUpRewardType)rollcount, (UpgradeTier)tier, true);
+            });
+        }
     }
 
     void OnDisable()

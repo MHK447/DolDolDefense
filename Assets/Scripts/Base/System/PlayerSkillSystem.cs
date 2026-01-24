@@ -8,7 +8,7 @@ public class PlayerSkillSystem
 {
     public enum PlayerSkillType
     {
-        DarkBullet = 1,
+        BlackBall = 1,
         Lightning = 2,
         IceOrb = 3,
         DarkGear = 4,

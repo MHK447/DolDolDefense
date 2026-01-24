@@ -4,6 +4,7 @@ using UniRx;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 
 public partial class UserDataSystem
 {
@@ -56,7 +57,7 @@ public class InGamePlayerData
     public IReactiveProperty<int> InGameMoneyProperty { get; private set; } = new ReactiveProperty<int>(0);
     public int InGameReRollCount = 0;
 
-    public ReactiveCollection<PlayerSkillData> PlayerSkillDataList = new ReactiveCollection<PlayerSkillData>();
+    public ReactiveCollection<PlayerSkillBase> PlayerSkillList = new ReactiveCollection<PlayerSkillBase>();
 
 
     public void SetPlayerLevel(int level)
@@ -67,7 +68,7 @@ public class InGamePlayerData
 
     public void StageClear()
     {
-        PlayerSkillDataList.Clear();
+        PlayerSkillList.Clear();
         InGameExpProperty.Value = 0;
         InGameUpgradeCountProperty.Value = 1;
         InGameMoneyProperty.Value = 0;
@@ -83,16 +84,24 @@ public class InGamePlayerData
     }
 
 
-    public void AddPlayerSkill(int skillidx , int skillevel, float skillcooltime , float attackdamage)
+    public void AddPlayerSkill(PlayerSkillBase skill)
     {
-        var finddata = PlayerSkillDataList.ToList().Find(x => x.SkillIdx == skillidx);
+        var finddata = PlayerSkillList.ToList().Find(x => x.SkillIdx == skill.SkillIdx);
         if (finddata != null)
         {
-            finddata.SkillLevel += skillevel;
+            finddata.SkillLevel += 1;
         }
         else
         {
-            PlayerSkillDataList.Add(new PlayerSkillData(skillidx , skillevel , skillcooltime , attackdamage));
+            PlayerSkillList.Add(skill);
+        }
+    }
+
+    public void SkillUpdate()
+    {
+        for(int i = PlayerSkillList.Count - 1; i >= 0; i--)
+        {
+            PlayerSkillList[i].Update();
         }
     }
 }

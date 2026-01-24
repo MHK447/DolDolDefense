@@ -396,16 +396,15 @@ public class GameRoot : Singleton<GameRoot>
 		}
 
 
-		InGameUpgradeSystem.Init();
 		GameSpeedSystem.Create();
 		GameNotification.Create();
 		GameNotification.Create();
 		ContentsOpenSystem.Create();
 		GameSpeedSystem.Create();
-		InGameUpgradeSystem.Init();
 		UnitSystem.Create();
 		TrainingSystem.Create();
 		DamageTextSystem.Create();
+		InGameUpgradeSystem.Create();
 
 	}
 

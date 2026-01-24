@@ -105,6 +105,7 @@ public partial class UserDataSystem
     {
         /* 아래 @주석 위치를 찾아서 함수가 자동 추가됩니다 ConnectReadOnlyDatas 함수에서 SetLoadDatas를 호출해주세요 */
         // @자동 로드 데이터 함수들
+        LoadData_SkillCardData();
         LoadData_CardData();
         LoadData_StageRewardBoxGroupData();
         LoadData_TrainingGroupData();

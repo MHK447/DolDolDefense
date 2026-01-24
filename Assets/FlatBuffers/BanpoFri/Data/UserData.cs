@@ -62,13 +62,14 @@ public struct UserData : IFlatbufferObject
   public BanpoFri.Data.UnitGroupData? Unitgroupdata { get { int o = __p.__offset(34); return o != 0 ? (BanpoFri.Data.UnitGroupData?)(new BanpoFri.Data.UnitGroupData()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
   public int Material { get { int o = __p.__offset(36); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public bool MutateMaterial(int material) { int o = __p.__offset(36); if (o != 0) { __p.bb.PutInt(o + __p.bb_pos, material); return true; } else { return false; } }
-  public BanpoFri.Data.PlayerData? Playerdata { get { int o = __p.__offset(38); return o != 0 ? (BanpoFri.Data.PlayerData?)(new BanpoFri.Data.PlayerData()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
-  public int Newtrainingdatabuyorder { get { int o = __p.__offset(40); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public bool MutateNewtrainingdatabuyorder(int newtrainingdatabuyorder) { int o = __p.__offset(40); if (o != 0) { __p.bb.PutInt(o + __p.bb_pos, newtrainingdatabuyorder); return true; } else { return false; } }
-  public BanpoFri.Data.CardData? Carddatas(int j) { int o = __p.__offset(42); return o != 0 ? (BanpoFri.Data.CardData?)(new BanpoFri.Data.CardData()).__assign(__p.__indirect(__p.__vector(o) + j * 4), __p.bb) : null; }
-  public int CarddatasLength { get { int o = __p.__offset(42); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public int Ingamesilvercoin { get { int o = __p.__offset(44); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public bool MutateIngamesilvercoin(int ingamesilvercoin) { int o = __p.__offset(44); if (o != 0) { __p.bb.PutInt(o + __p.bb_pos, ingamesilvercoin); return true; } else { return false; } }
+  public int Newtrainingdatabuyorder { get { int o = __p.__offset(38); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public bool MutateNewtrainingdatabuyorder(int newtrainingdatabuyorder) { int o = __p.__offset(38); if (o != 0) { __p.bb.PutInt(o + __p.bb_pos, newtrainingdatabuyorder); return true; } else { return false; } }
+  public BanpoFri.Data.CardData? Carddatas(int j) { int o = __p.__offset(40); return o != 0 ? (BanpoFri.Data.CardData?)(new BanpoFri.Data.CardData()).__assign(__p.__indirect(__p.__vector(o) + j * 4), __p.bb) : null; }
+  public int CarddatasLength { get { int o = __p.__offset(40); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public int Ingamesilvercoin { get { int o = __p.__offset(42); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public bool MutateIngamesilvercoin(int ingamesilvercoin) { int o = __p.__offset(42); if (o != 0) { __p.bb.PutInt(o + __p.bb_pos, ingamesilvercoin); return true; } else { return false; } }
+  public BanpoFri.Data.SkillCardData? Skillcarddatas(int j) { int o = __p.__offset(44); return o != 0 ? (BanpoFri.Data.SkillCardData?)(new BanpoFri.Data.SkillCardData()).__assign(__p.__indirect(__p.__vector(o) + j * 4), __p.bb) : null; }
+  public int SkillcarddatasLength { get { int o = __p.__offset(44); return o != 0 ? __p.__vector_len(o) : 0; } }
 
   public static Offset<BanpoFri.Data.UserData> CreateUserData(FlatBufferBuilder builder,
       int cash = 0,
@@ -88,18 +89,18 @@ public struct UserData : IFlatbufferObject
       Offset<BanpoFri.Data.StageRewardBoxGroupData> stagerewardboxgroupOffset = default(Offset<BanpoFri.Data.StageRewardBoxGroupData>),
       Offset<BanpoFri.Data.UnitGroupData> unitgroupdataOffset = default(Offset<BanpoFri.Data.UnitGroupData>),
       int material = 0,
-      Offset<BanpoFri.Data.PlayerData> playerdataOffset = default(Offset<BanpoFri.Data.PlayerData>),
       int newtrainingdatabuyorder = 0,
       VectorOffset carddatasOffset = default(VectorOffset),
-      int ingamesilvercoin = 0) {
+      int ingamesilvercoin = 0,
+      VectorOffset skillcarddatasOffset = default(VectorOffset)) {
     builder.StartTable(21);
     UserData.AddUuid(builder, uuid);
     UserData.AddGamestarttime(builder, gamestarttime);
     UserData.AddLastlogintime(builder, lastlogintime);
+    UserData.AddSkillcarddatas(builder, skillcarddatasOffset);
     UserData.AddIngamesilvercoin(builder, ingamesilvercoin);
     UserData.AddCarddatas(builder, carddatasOffset);
     UserData.AddNewtrainingdatabuyorder(builder, newtrainingdatabuyorder);
-    UserData.AddPlayerdata(builder, playerdataOffset);
     UserData.AddMaterial(builder, material);
     UserData.AddUnitgroupdata(builder, unitgroupdataOffset);
     UserData.AddStagerewardboxgroup(builder, stagerewardboxgroupOffset);
@@ -150,15 +151,20 @@ public struct UserData : IFlatbufferObject
   public static void AddStagerewardboxgroup(FlatBufferBuilder builder, Offset<BanpoFri.Data.StageRewardBoxGroupData> stagerewardboxgroupOffset) { builder.AddOffset(14, stagerewardboxgroupOffset.Value, 0); }
   public static void AddUnitgroupdata(FlatBufferBuilder builder, Offset<BanpoFri.Data.UnitGroupData> unitgroupdataOffset) { builder.AddOffset(15, unitgroupdataOffset.Value, 0); }
   public static void AddMaterial(FlatBufferBuilder builder, int material) { builder.AddInt(16, material, 0); }
-  public static void AddPlayerdata(FlatBufferBuilder builder, Offset<BanpoFri.Data.PlayerData> playerdataOffset) { builder.AddOffset(17, playerdataOffset.Value, 0); }
-  public static void AddNewtrainingdatabuyorder(FlatBufferBuilder builder, int newtrainingdatabuyorder) { builder.AddInt(18, newtrainingdatabuyorder, 0); }
-  public static void AddCarddatas(FlatBufferBuilder builder, VectorOffset carddatasOffset) { builder.AddOffset(19, carddatasOffset.Value, 0); }
+  public static void AddNewtrainingdatabuyorder(FlatBufferBuilder builder, int newtrainingdatabuyorder) { builder.AddInt(17, newtrainingdatabuyorder, 0); }
+  public static void AddCarddatas(FlatBufferBuilder builder, VectorOffset carddatasOffset) { builder.AddOffset(18, carddatasOffset.Value, 0); }
   public static VectorOffset CreateCarddatasVector(FlatBufferBuilder builder, Offset<BanpoFri.Data.CardData>[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
   public static VectorOffset CreateCarddatasVectorBlock(FlatBufferBuilder builder, Offset<BanpoFri.Data.CardData>[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateCarddatasVectorBlock(FlatBufferBuilder builder, ArraySegment<Offset<BanpoFri.Data.CardData>> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateCarddatasVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<Offset<BanpoFri.Data.CardData>>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartCarddatasVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddIngamesilvercoin(FlatBufferBuilder builder, int ingamesilvercoin) { builder.AddInt(20, ingamesilvercoin, 0); }
+  public static void AddIngamesilvercoin(FlatBufferBuilder builder, int ingamesilvercoin) { builder.AddInt(19, ingamesilvercoin, 0); }
+  public static void AddSkillcarddatas(FlatBufferBuilder builder, VectorOffset skillcarddatasOffset) { builder.AddOffset(20, skillcarddatasOffset.Value, 0); }
+  public static VectorOffset CreateSkillcarddatasVector(FlatBufferBuilder builder, Offset<BanpoFri.Data.SkillCardData>[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
+  public static VectorOffset CreateSkillcarddatasVectorBlock(FlatBufferBuilder builder, Offset<BanpoFri.Data.SkillCardData>[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateSkillcarddatasVectorBlock(FlatBufferBuilder builder, ArraySegment<Offset<BanpoFri.Data.SkillCardData>> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateSkillcarddatasVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<Offset<BanpoFri.Data.SkillCardData>>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartSkillcarddatasVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
   public static Offset<BanpoFri.Data.UserData> EndUserData(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<BanpoFri.Data.UserData>(o);
@@ -191,11 +197,12 @@ public struct UserData : IFlatbufferObject
     _o.Stagerewardboxgroup = this.Stagerewardboxgroup.HasValue ? this.Stagerewardboxgroup.Value.UnPack() : null;
     _o.Unitgroupdata = this.Unitgroupdata.HasValue ? this.Unitgroupdata.Value.UnPack() : null;
     _o.Material = this.Material;
-    _o.Playerdata = this.Playerdata.HasValue ? this.Playerdata.Value.UnPack() : null;
     _o.Newtrainingdatabuyorder = this.Newtrainingdatabuyorder;
     _o.Carddatas = new List<BanpoFri.Data.CardDataT>();
     for (var _j = 0; _j < this.CarddatasLength; ++_j) {_o.Carddatas.Add(this.Carddatas(_j).HasValue ? this.Carddatas(_j).Value.UnPack() : null);}
     _o.Ingamesilvercoin = this.Ingamesilvercoin;
+    _o.Skillcarddatas = new List<BanpoFri.Data.SkillCardDataT>();
+    for (var _j = 0; _j < this.SkillcarddatasLength; ++_j) {_o.Skillcarddatas.Add(this.Skillcarddatas(_j).HasValue ? this.Skillcarddatas(_j).Value.UnPack() : null);}
   }
   public static Offset<BanpoFri.Data.UserData> Pack(FlatBufferBuilder builder, UserDataT _o) {
     if (_o == null) return default(Offset<BanpoFri.Data.UserData>);
@@ -223,12 +230,17 @@ public struct UserData : IFlatbufferObject
     var _traininggroupdata = _o.Traininggroupdata == null ? default(Offset<BanpoFri.Data.TrainingGroupData>) : BanpoFri.Data.TrainingGroupData.Pack(builder, _o.Traininggroupdata);
     var _stagerewardboxgroup = _o.Stagerewardboxgroup == null ? default(Offset<BanpoFri.Data.StageRewardBoxGroupData>) : BanpoFri.Data.StageRewardBoxGroupData.Pack(builder, _o.Stagerewardboxgroup);
     var _unitgroupdata = _o.Unitgroupdata == null ? default(Offset<BanpoFri.Data.UnitGroupData>) : BanpoFri.Data.UnitGroupData.Pack(builder, _o.Unitgroupdata);
-    var _playerdata = _o.Playerdata == null ? default(Offset<BanpoFri.Data.PlayerData>) : BanpoFri.Data.PlayerData.Pack(builder, _o.Playerdata);
     var _carddatas = default(VectorOffset);
     if (_o.Carddatas != null) {
       var __carddatas = new Offset<BanpoFri.Data.CardData>[_o.Carddatas.Count];
       for (var _j = 0; _j < __carddatas.Length; ++_j) { __carddatas[_j] = BanpoFri.Data.CardData.Pack(builder, _o.Carddatas[_j]); }
       _carddatas = CreateCarddatasVector(builder, __carddatas);
+    }
+    var _skillcarddatas = default(VectorOffset);
+    if (_o.Skillcarddatas != null) {
+      var __skillcarddatas = new Offset<BanpoFri.Data.SkillCardData>[_o.Skillcarddatas.Count];
+      for (var _j = 0; _j < __skillcarddatas.Length; ++_j) { __skillcarddatas[_j] = BanpoFri.Data.SkillCardData.Pack(builder, _o.Skillcarddatas[_j]); }
+      _skillcarddatas = CreateSkillcarddatasVector(builder, __skillcarddatas);
     }
     return CreateUserData(
       builder,
@@ -249,10 +261,10 @@ public struct UserData : IFlatbufferObject
       _stagerewardboxgroup,
       _unitgroupdata,
       _o.Material,
-      _playerdata,
       _o.Newtrainingdatabuyorder,
       _carddatas,
-      _o.Ingamesilvercoin);
+      _o.Ingamesilvercoin,
+      _skillcarddatas);
   }
 }
 
@@ -292,14 +304,14 @@ public class UserDataT
   public BanpoFri.Data.UnitGroupDataT Unitgroupdata { get; set; }
   [Newtonsoft.Json.JsonProperty("material")]
   public int Material { get; set; }
-  [Newtonsoft.Json.JsonProperty("playerdata")]
-  public BanpoFri.Data.PlayerDataT Playerdata { get; set; }
   [Newtonsoft.Json.JsonProperty("newtrainingdatabuyorder")]
   public int Newtrainingdatabuyorder { get; set; }
   [Newtonsoft.Json.JsonProperty("carddatas")]
   public List<BanpoFri.Data.CardDataT> Carddatas { get; set; }
   [Newtonsoft.Json.JsonProperty("ingamesilvercoin")]
   public int Ingamesilvercoin { get; set; }
+  [Newtonsoft.Json.JsonProperty("skillcarddatas")]
+  public List<BanpoFri.Data.SkillCardDataT> Skillcarddatas { get; set; }
 
   public UserDataT() {
     this.Cash = 0;
@@ -319,10 +331,10 @@ public class UserDataT
     this.Stagerewardboxgroup = null;
     this.Unitgroupdata = null;
     this.Material = 0;
-    this.Playerdata = null;
     this.Newtrainingdatabuyorder = 0;
     this.Carddatas = null;
     this.Ingamesilvercoin = 0;
+    this.Skillcarddatas = null;
   }
 
   public static UserDataT DeserializeFromJson(string jsonText) {
@@ -364,10 +376,10 @@ static public class UserDataVerify
       && verifier.VerifyTable(tablePos, 32 /*Stagerewardboxgroup*/, BanpoFri.Data.StageRewardBoxGroupDataVerify.Verify, false)
       && verifier.VerifyTable(tablePos, 34 /*Unitgroupdata*/, BanpoFri.Data.UnitGroupDataVerify.Verify, false)
       && verifier.VerifyField(tablePos, 36 /*Material*/, 4 /*int*/, 4, false)
-      && verifier.VerifyTable(tablePos, 38 /*Playerdata*/, BanpoFri.Data.PlayerDataVerify.Verify, false)
-      && verifier.VerifyField(tablePos, 40 /*Newtrainingdatabuyorder*/, 4 /*int*/, 4, false)
-      && verifier.VerifyVectorOfTables(tablePos, 42 /*Carddatas*/, BanpoFri.Data.CardDataVerify.Verify, false)
-      && verifier.VerifyField(tablePos, 44 /*Ingamesilvercoin*/, 4 /*int*/, 4, false)
+      && verifier.VerifyField(tablePos, 38 /*Newtrainingdatabuyorder*/, 4 /*int*/, 4, false)
+      && verifier.VerifyVectorOfTables(tablePos, 40 /*Carddatas*/, BanpoFri.Data.CardDataVerify.Verify, false)
+      && verifier.VerifyField(tablePos, 42 /*Ingamesilvercoin*/, 4 /*int*/, 4, false)
+      && verifier.VerifyVectorOfTables(tablePos, 44 /*Skillcarddatas*/, BanpoFri.Data.SkillCardDataVerify.Verify, false)
       && verifier.VerifyTableEnd(tablePos);
   }
 }

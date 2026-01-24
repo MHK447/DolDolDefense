@@ -133,7 +133,7 @@ public class RewardThrowEffect : Effect
                 {
                     PopupLevelUpRewardType type = PopupLevelUpRewardType.StatType;
 
-                    GameRoot.Instance.UISystem.OpenUI<PopupLevelUpReward>(popup => popup.Init(type, true), () =>
+                    GameRoot.Instance.UISystem.OpenUI<PopupLevelUpReward>(popup => popup.Init(type, UpgradeTier.Rare, true), () =>
                     {
                         EndCallBack?.Invoke();
                         EndCallBack = null;

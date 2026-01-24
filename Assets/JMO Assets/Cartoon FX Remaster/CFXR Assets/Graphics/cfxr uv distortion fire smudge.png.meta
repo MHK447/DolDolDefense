@@ -2,12 +2,12 @@ fileFormatVersion: 2
 guid: 74db0952acdd7ba488d3d0b114954504
 AssetOrigin:
   serializedVersion: 1
-  productId: 23634
-  packageName: Cartoon FX 4 Remaster
+  productId: 4274
+  packageName: Cartoon FX 2 Remaster
   packageVersion: R 1.5.0
   assetPath: Assets/JMO Assets/Cartoon FX Remaster/CFXR Assets/Graphics/cfxr uv distortion
     fire smudge.png
-  uploadId: 756875
+  uploadId: 836228
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

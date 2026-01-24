@@ -75,10 +75,7 @@ public class LevelupRewardComponent : MonoBehaviour
         BgImg.sprite = AtlasManager.Instance.GetSprite(Atlas.Atlas_UI_LevelUp, $"Common_Frame_Levelup_{upgrade.UpgradeChoiceData.category}");
 
         UpgradeNameText.text = Tables.Instance.GetTable<Localize>().GetString(upgrade.UpgradeChoiceData.choice_name);
-        ChoiceDesc.text = upgrade.GetDesc();
-
-
-        SetBlockUpgradeImages();
+       
     }
 
 
@@ -87,42 +84,6 @@ public class LevelupRewardComponent : MonoBehaviour
     public void OnClickChoice()
     {
         OnSelectCallback?.Invoke(Upgrade);
-    }
-
-
-    private void SetBlockUpgradeImages()
-    {
-
-        DoBlink = true;
-        BlinkEmptySprite = AtlasManager.Instance.GetSprite(Atlas.Atlas_UI_Common, "Common_Icon_LevelupEmpty");
-        BlinkFilledSprite = AtlasManager.Instance.GetSprite(Atlas.Atlas_UI_Common, "Common_Icon_LevelupFill");
-
-
-        //set level dot
-        ProjectUtility.SetActiveCheck(BlockLevelGroup, true);
-
-
-        int blockLevel = GameRoot.Instance.InGameUpgradeSystem.GetUpgradeLevel(Upgrade.UpgradeChoiceData.idx);
-
-
-        // for (int i = 0; i < BlockRootLevelImages.Length; ++i)
-        // {
-        //    //ProjectUtility.SetActiveCheck(BlockRootLevelImages[i].gameObject, Upgrade.UpgradeChoiceData.upgrade_count > i);
-        //    //ProjectUtility.SetActiveCheck(BlockRootLevelImages[i].gameObject, true);
-        // }
-
-        for (int i = 0; i < 3; i++)
-        {
-            BlockLevelImages[i].DOKill();
-            if (i < blockLevel) BlockLevelImages[i].color = Color.white;
-            else BlockLevelImages[i].color = Color.white.WithAlpha(0);
-        }
-
-        BlockLevelImages[blockLevel].DOFade(1, 0.5f)
-            .SetEase(Ease.InOutCubic)
-            .SetUpdate(true)
-            .SetLoops(-1, LoopType.Yoyo);
-
     }
 
 

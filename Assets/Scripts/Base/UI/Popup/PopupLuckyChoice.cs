@@ -27,7 +27,7 @@ public class PopupLuckyChoice : UIBase
         UpgradeLock = false;
 
         GameRoot.Instance.GameSpeedSystem.StopGameSpeed(true, false);
-        SelectedUpgrades = GameRoot.Instance.InGameUpgradeSystem.GetUpgrades();
+        //SelectedUpgrades = GameRoot.Instance.InGameUpgradeSystem.GetUpgrades();
         for (int i = 0; i < LevelUpComponents.Length; i++)
         {
             LevelUpComponents[i].Set(SelectedUpgrades[i], OnSelect);

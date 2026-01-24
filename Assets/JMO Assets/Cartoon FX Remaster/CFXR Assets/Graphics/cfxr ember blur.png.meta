@@ -2,12 +2,12 @@ fileFormatVersion: 2
 guid: 209460ccb2aaaf847a61d7e73c92f193
 AssetOrigin:
   serializedVersion: 1
-  productId: 23634
-  packageName: Cartoon FX 4 Remaster
+  productId: 4274
+  packageName: Cartoon FX 2 Remaster
   packageVersion: R 1.5.0
   assetPath: Assets/JMO Assets/Cartoon FX Remaster/CFXR Assets/Graphics/cfxr ember
     blur.png
-  uploadId: 756875
+  uploadId: 836228
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

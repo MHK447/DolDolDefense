@@ -48,11 +48,13 @@ public class PopupLevelUpReward : UIBase
     }
 
 
-    public void Init(PopupLevelUpRewardType type , bool isfirst = false)
+    public void Init(PopupLevelUpRewardType type , UpgradeTier tier ,bool isfirst = false)
     {
         Type = type;
 
         UpgradeLock = false;
+
+        CurrentUpgradeTier = tier;
 
         // 이전 애니메이션 정리
         foreach (var component in LevelUpChoiceComponents)
@@ -70,8 +72,6 @@ public class PopupLevelUpReward : UIBase
         }
 
         int stageidx = GameRoot.Instance.UserData.Stageidx.Value;
-
-        var tier = IsReroll ? UpgradeTier.Legendary : UpgradeTier.Rare;
 
         //get upgrades
         List<InGameUpgrade> upgrades = GameRoot.Instance.InGameUpgradeSystem.GetUpgrades(tier);
@@ -122,12 +122,7 @@ public class PopupLevelUpReward : UIBase
     private void OnClickReroll()
     {
         IsReroll = true;
-        Init(Type);
-    }
-
-    public void OnClickEyes()
-    {
-
+        Init(Type, CurrentUpgradeTier);
     }
 
     public override void Hide()

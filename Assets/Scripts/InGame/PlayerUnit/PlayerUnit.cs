@@ -58,13 +58,12 @@ public class PlayerUnit : MonoBehaviour
             PlayerUnitInfoData.StartHp = td.base_hp;
             PlayerUnitInfoData.CurHp = td.base_hp;
             PlayerUnitInfoData.AttackRange = 500 * 0.01f;
-            AddPlayerSkill(td.base_skill, 1);
+
+            GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_BlackBall());
 
             UnitState = PlayerUnitState.Idle;
 
             SetHpProgress(PlayerUnitInfoData.CurHp);
-
-            StartAttack();
 
             CreateCircle();
         }
@@ -130,45 +129,13 @@ public class PlayerUnit : MonoBehaviour
     }
 
 
-    public virtual void StartAttack()
+
+
+    public virtual bool BulletCreate(int skillidx)
     {
-        if (AttackCo != null)
-        {
-            GameRoot.Instance.StopCoroutine(AttackCo);
-        }
+        var prefab = Tables.Instance.GetTable<PlayerSkillInfo>().GetData(skillidx).bullet_prefab;
 
-        AttackCo = StartCoroutine(AttackCoroutine());
-    }
-
-    private IEnumerator AttackCoroutine()
-    {
-        while (!IsDead)
-        {
-            var playerSkillList = GameRoot.Instance.UserData.InGamePlayerData.PlayerSkillDataList;
-
-            foreach (var skill in playerSkillList)
-            {
-                skill.SkilldeltaTime += Time.deltaTime;
-
-                if (skill.SkilldeltaTime >= skill.SKillCoolTime)
-                {
-                    // 공격이 성공했을 때만 쿨타임 리셋
-                    if (Attack(skill))
-                    {
-                        skill.SkilldeltaTime = 0f;
-                    }
-                }
-            }
-
-            yield return null;
-        }
-    }
-
-    public virtual bool Attack(PlayerSkillData skill)
-    {
-        var prefab = Tables.Instance.GetTable<PlayerSkillInfo>().GetData(skill.SkillIdx).bullet_prefab;
-
-        var finddata = PlayerBulletList.Find(x => x.GetBulletIdx == skill.SkillIdx && !x.gameObject.activeSelf);
+        var finddata = PlayerBulletList.Find(x => x.GetBulletIdx == skillidx && !x.gameObject.activeSelf);
 
         var findenemy = GameRoot.Instance.InGameSystem.GetInGame<InGameBase>().Stage.EnemyUnitGroup.FindEnemyTarget(transform.position, PlayerUnitInfoData.AttackRange);
 
@@ -183,12 +150,12 @@ public class PlayerUnit : MonoBehaviour
             ProjectUtility.SetActiveCheck(finddata.gameObject, true);
 
             finddata.transform.position = transform.position;
-            finddata.Set(skill.SkillIdx, this, findenemy.transform.position, BulletColisionAction);
+            finddata.Set(skillidx, this, findenemy.transform.position, BulletColisionAction);
         }
         else
         {
             var bullet = Addressables.InstantiateAsync(prefab, transform).WaitForCompletion().GetComponent<PlayerBulletBase>();
-            bullet.Set(skill.SkillIdx, this, findenemy.transform.position, BulletColisionAction);
+            bullet.Set(skillidx, this, findenemy.transform.position, BulletColisionAction);
 
             ProjectUtility.SetActiveCheck(bullet.gameObject, true);
 
@@ -200,14 +167,9 @@ public class PlayerUnit : MonoBehaviour
     }
 
 
-    public void AddPlayerSkill(int skillidx, int skilllevel)
+    public void AddPlayerSkill(PlayerSkillBase skill)
     {
-        var td = Tables.Instance.GetTable<PlayerSkillInfo>().GetData(skillidx);
-
-        if (td != null)
-        {
-            GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(skillidx, skilllevel, td.base_atk_speed / 100f, td.base_atk);
-        }
+        GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(skill);
     }
 
 

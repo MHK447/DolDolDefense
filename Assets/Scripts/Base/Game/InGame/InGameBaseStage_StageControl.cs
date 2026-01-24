@@ -31,6 +31,7 @@ public partial class InGameBaseStage : MonoBehaviour
     public void StartBattle()
     {
 
+        GameRoot.Instance.InGameUpgradeSystem.GameStartCheck();
         GameRoot.Instance.UserData.Waveidx.Value = 0;
         GameRoot.Instance.UserData.Ingamesilvercoin.Value = 0;
         GameRoot.Instance.UserData.InGamePlayerData.KillCountProperty.Value = 0;
@@ -54,9 +55,6 @@ public partial class InGameBaseStage : MonoBehaviour
         SetPlayerUnit(1);
 
         StartNextWaveCheck();
-
-
-
     }
 
 
@@ -92,7 +90,6 @@ public partial class InGameBaseStage : MonoBehaviour
         GameRoot.Instance.UserData.InGamePlayerData.IsGameStartProperty.Value = false;
         GameRoot.Instance.UserData.Ingamesilvercoin.Value = 0;
         GameRoot.Instance.AlimentSystem.Clear();
-        GameRoot.Instance.InGameUpgradeSystem.ClearData();
 
         GameRoot.Instance.GameSpeedSystem.ResetGameSpeed();
         GameRoot.Instance.InGameUpgradeSystem.Reset();
@@ -290,6 +287,8 @@ public partial class InGameBaseStage : MonoBehaviour
     void Update()
     {
         if(!GameRoot.Instance.UserData.InGamePlayerData.IsGameStartProperty.Value) return;
+
+        GameRoot.Instance.UserData.InGamePlayerData.SkillUpdate();
 
 
         oneseconddeltime += Time.deltaTime;

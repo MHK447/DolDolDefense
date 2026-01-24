@@ -83,18 +83,18 @@ public class InGamePlayerComponent : MonoBehaviour
 
     public void UpgradeObjCheck()
     {
-        var level = GameRoot.Instance.InGameUpgradeSystem.GetUpgradeLevel(UnitIdx);
+        //var level = GameRoot.Instance.InGameUpgradeSystem.GetUpgradeLevel(UnitIdx);
 
-        for(int i = 0; i < UpgradeObjList.Count; i++)
-        {
-            var parent = UpgradeObjList[i];
-            bool isActive = level >= i + 1;
+        // for(int i = 0; i < UpgradeObjList.Count; i++)
+        // {
+        //     var parent = UpgradeObjList[i];
+        //     bool isActive = level >= i + 1;
             
-            foreach(Transform child in parent.transform)
-            {
-                ProjectUtility.SetActiveCheck(child.gameObject, isActive);
-            }
-        }
+        //     foreach(Transform child in parent.transform)
+        //     {
+        //         ProjectUtility.SetActiveCheck(child.gameObject, isActive);
+        //     }
+        // }
     }
 
 

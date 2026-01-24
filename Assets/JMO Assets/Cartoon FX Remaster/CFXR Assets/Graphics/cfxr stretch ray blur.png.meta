@@ -2,12 +2,12 @@ fileFormatVersion: 2
 guid: ea08f0da7f459e147ba80e6dd6e38bb9
 AssetOrigin:
   serializedVersion: 1
-  productId: 23634
-  packageName: Cartoon FX 4 Remaster
+  productId: 4274
+  packageName: Cartoon FX 2 Remaster
   packageVersion: R 1.5.0
   assetPath: Assets/JMO Assets/Cartoon FX Remaster/CFXR Assets/Graphics/cfxr stretch
     ray blur.png
-  uploadId: 756875
+  uploadId: 836228
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
