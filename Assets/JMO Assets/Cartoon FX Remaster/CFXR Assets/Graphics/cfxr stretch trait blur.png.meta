@@ -2,12 +2,12 @@ fileFormatVersion: 2
 guid: acdb793533f4e154c9ba0b0f665f5445
 AssetOrigin:
   serializedVersion: 1
-  productId: 4274
-  packageName: Cartoon FX 2 Remaster
+  productId: 23634
+  packageName: Cartoon FX 4 Remaster
   packageVersion: R 1.5.0
   assetPath: Assets/JMO Assets/Cartoon FX Remaster/CFXR Assets/Graphics/cfxr stretch
     trait blur.png
-  uploadId: 836228
+  uploadId: 836234
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

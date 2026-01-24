@@ -2,12 +2,12 @@ fileFormatVersion: 2
 guid: 2f6e48026c6d24d4d8e7fc74722c663c
 AssetOrigin:
   serializedVersion: 1
-  productId: 4010
-  packageName: Cartoon FX Remaster
+  productId: 23634
+  packageName: Cartoon FX 4 Remaster
   packageVersion: R 1.5.0
   assetPath: Assets/JMO Assets/Cartoon FX Remaster/CFXR Assets/Graphics/cfxr water
     foam.png
-  uploadId: 836224
+  uploadId: 836234
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

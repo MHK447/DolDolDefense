@@ -2,12 +2,12 @@ fileFormatVersion: 2
 guid: 0f396005b9d2a904aaaccab1ad4b77a2
 AssetOrigin:
   serializedVersion: 1
-  productId: 4274
-  packageName: Cartoon FX 2 Remaster
+  productId: 23634
+  packageName: Cartoon FX 4 Remaster
   packageVersion: R 1.5.0
   assetPath: Assets/JMO Assets/Cartoon FX Remaster/CFXR Assets/Graphics/cfxr stretch
     inv spike fade.png
-  uploadId: 836228
+  uploadId: 836234
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -77,7 +77,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -90,7 +90,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 1
   - serializedVersion: 4
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
