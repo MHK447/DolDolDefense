@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1bb33b11479051949bd75abfda4c1669, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 638aa52f92b3e234eb73f8132ae28843, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -116,7 +116,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 260, y: 130}
+  m_SizeDelta: {x: 280, y: 126}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8770839696375984284
 CanvasRenderer:
@@ -303,8 +303,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 2}
-  m_SizeDelta: {x: -30, y: -28}
+  m_AnchoredPosition: {x: 0, y: 6.5}
+  m_SizeDelta: {x: -30, y: -37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3162217136175662676
 MonoBehaviour:
@@ -411,7 +411,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1bb33b11479051949bd75abfda4c1669, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 638aa52f92b3e234eb73f8132ae28843, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -487,7 +487,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3864707d3ccc74c79b7c96abc3205f04, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a76068fd979cbbc41841efa316a44794, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -536,7 +536,7 @@ PrefabInstance:
     - target: {fileID: 5257182365439181791, guid: 169dbd8849f643b42ad29fb079497f19, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 2100000, guid: 848fc091b65c1984680c5d8064a88597, type: 2}
+      objectReference: {fileID: 2100000, guid: 2cf4ec93a6f4eb14d856cc36d2009e32, type: 2}
     - target: {fileID: 7607118684987216968, guid: 169dbd8849f643b42ad29fb079497f19, type: 3}
       propertyPath: m_Name
       value: TMP

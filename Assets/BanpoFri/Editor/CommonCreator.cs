@@ -5,6 +5,7 @@ using UnityEditor;
 
 public class CommonCreator
 {
+
     [MenuItem("GameObject/BanpoFri Common UI/Dim", false, 8)]
     public static void CommonDim()
     {
@@ -17,30 +18,41 @@ public class CommonCreator
             obj.transform.SetParent(Selection.activeGameObject.transform, false);
     }
 
-    [MenuItem("GameObject/BanpoFri Common UI/Arrow", false, 8)]
-    public static void CommonArrow()
+    [MenuItem("GameObject/BanpoFri Common UI/LayoutHorizontal", false, 8)]
+    public static void CommonLayoutHorizontal()
     {
         var loadResource =
             AssetDatabase.LoadAssetAtPath<GameObject>(
-                "Assets/Arts/Prefabs/Common/Arrow.prefab");
+                "Assets/Arts/Prefabs/Common/Layout_Horizontal.prefab");
 
         var obj = PrefabUtility.InstantiatePrefab(loadResource) as GameObject;
         if (Selection.activeGameObject != null)
             obj.transform.SetParent(Selection.activeGameObject.transform, false);
     }
 
-     [MenuItem("GameObject/BanpoFri Common UI/Btn_IconText", false, 8)]
-    public static void CommonBtnIconText()
+    [MenuItem("GameObject/BanpoFri Common UI/LayoutVertical", false, 8)]
+    public static void CommonLayoutVertical()
     {
         var loadResource =
             AssetDatabase.LoadAssetAtPath<GameObject>(
-                "Assets/Arts/Prefabs/Common/Btn_IconText.prefab");
+                "Assets/Arts/Prefabs/Common/Layout_Vertical.prefab");
 
         var obj = PrefabUtility.InstantiatePrefab(loadResource) as GameObject;
         if (Selection.activeGameObject != null)
             obj.transform.SetParent(Selection.activeGameObject.transform, false);
     }
 
+    [MenuItem("GameObject/BanpoFri Common UI/BtnAds", false, 8)]
+    public static void CommonBtnAds()
+    {
+        var loadResource =
+            AssetDatabase.LoadAssetAtPath<GameObject>(
+                "Assets/Arts/Prefabs/Common/Btn_Ads.prefab");
+
+        var obj = PrefabUtility.InstantiatePrefab(loadResource) as GameObject;
+        if (Selection.activeGameObject != null)
+            obj.transform.SetParent(Selection.activeGameObject.transform, false);
+    }
 
     [MenuItem("GameObject/BanpoFri Common UI/BtnImage", false, 8)]
     public static void CommonBtnImage()
@@ -54,6 +66,29 @@ public class CommonCreator
             obj.transform.SetParent(Selection.activeGameObject.transform, false);
     }
 
+    [MenuItem("GameObject/BanpoFri Common UI/BtnIcon", false, 8)]
+    public static void CommonBtnIcon()
+    {
+        var loadResource =
+            AssetDatabase.LoadAssetAtPath<GameObject>(
+                "Assets/Arts/Prefabs/Common/Btn_Icon.prefab");
+
+        var obj = PrefabUtility.InstantiatePrefab(loadResource) as GameObject;
+        if (Selection.activeGameObject != null)
+            obj.transform.SetParent(Selection.activeGameObject.transform, false);
+    }
+
+    [MenuItem("GameObject/BanpoFri Common UI/BtnIconText", false, 8)]
+    public static void CommonBtnIconText()
+    {
+        var loadResource =
+            AssetDatabase.LoadAssetAtPath<GameObject>(
+                "Assets/Arts/Prefabs/Common/Btn_IconText.prefab");
+
+        var obj = PrefabUtility.InstantiatePrefab(loadResource) as GameObject;
+        if (Selection.activeGameObject != null)
+            obj.transform.SetParent(Selection.activeGameObject.transform, false);
+    }
 
     [MenuItem("GameObject/BanpoFri Common UI/BtnText", false, 8)]
     public static void CommonBtnText()
@@ -67,7 +102,6 @@ public class CommonCreator
             obj.transform.SetParent(Selection.activeGameObject.transform, false);
     }
 
-
     [MenuItem("GameObject/BanpoFri Common UI/BtnVertical", false, 8)]
     public static void CommonBtnVertical()
     {
@@ -80,12 +114,12 @@ public class CommonCreator
             obj.transform.SetParent(Selection.activeGameObject.transform, false);
     }
 
-    [MenuItem("GameObject/BanpoFri Common UI/ImageNoneRaycast", false, 8)]
-    public static void CommonImgNoRaycast()
+    [MenuItem("GameObject/BanpoFri Common UI/Image", false, 8)]
+    public static void CommonImage()
     {
         var loadResource =
             AssetDatabase.LoadAssetAtPath<GameObject>(
-                "Assets/Arts/Prefabs/Common/ImageNoneRaycast.prefab");
+                "Assets/Arts/Prefabs/Common/Image.prefab");
 
         var obj = PrefabUtility.InstantiatePrefab(loadResource) as GameObject;
         if (Selection.activeGameObject != null)
@@ -97,19 +131,7 @@ public class CommonCreator
     {
         var loadResource =
             AssetDatabase.LoadAssetAtPath<GameObject>(
-                "Assets/Arts/Prefabs/Base/Common/Popup.prefab");
-
-        var obj = PrefabUtility.InstantiatePrefab(loadResource) as GameObject;
-        if (Selection.activeGameObject != null)
-            obj.transform.SetParent(Selection.activeGameObject.transform, false);
-    }
-
-    [MenuItem("GameObject/BanpoFri Common UI/PopupSet", false, 8)]
-    public static void CommonPopupSet()
-    {
-        var loadResource =
-            AssetDatabase.LoadAssetAtPath<GameObject>(
-                "Assets/Arts/Prefabs/Common/PopupSet.prefab");
+                "Assets/Arts/Prefabs/Common/Popup.prefab");
 
         var obj = PrefabUtility.InstantiatePrefab(loadResource) as GameObject;
         if (Selection.activeGameObject != null)
@@ -128,17 +150,6 @@ public class CommonCreator
             obj.transform.SetParent(Selection.activeGameObject.transform, false);
     }
 
-    [MenuItem("GameObject/BanpoFri Common UI/RayEffect", false, 8)]
-    public static void CommonRayEffect()
-    {
-        var loadResource =
-            AssetDatabase.LoadAssetAtPath<GameObject>(
-                "Assets/Arts/Prefabs/Common/RayEffect.prefab");
-
-        var obj = PrefabUtility.InstantiatePrefab(loadResource) as GameObject;
-        if (Selection.activeGameObject != null)
-            obj.transform.SetParent(Selection.activeGameObject.transform, false);
-    }
 
     [MenuItem("GameObject/BanpoFri Common UI/Reddot", false, 8)]
     public static void CommonReddot()
@@ -152,7 +163,6 @@ public class CommonCreator
             obj.transform.SetParent(Selection.activeGameObject.transform, false);
     }
 
-
     [MenuItem("GameObject/BanpoFri Common UI/ScrollView", false, 8)]
     public static void CommonScrollView()
     {
@@ -164,7 +174,6 @@ public class CommonCreator
         if (Selection.activeGameObject != null)
             obj.transform.SetParent(Selection.activeGameObject.transform, false);
     }
-
 
     [MenuItem("GameObject/BanpoFri Common UI/TMP", false, 8)]
     public static void CommonTMP()
@@ -178,6 +187,40 @@ public class CommonCreator
             obj.transform.SetParent(Selection.activeGameObject.transform, false);
     }
 
+    [MenuItem("GameObject/BanpoFri Common UI/RayEffect", false, 8)]
+    public static void CommonRayEffect()
+    {
+        var loadResource =
+            AssetDatabase.LoadAssetAtPath<GameObject>(
+                "Assets/Arts/Prefabs/Common/RayEffect.prefab");
 
+        var obj = PrefabUtility.InstantiatePrefab(loadResource) as GameObject;
+        if (Selection.activeGameObject != null)
+            obj.transform.SetParent(Selection.activeGameObject.transform, false);
+    }
+
+    [MenuItem("GameObject/BanpoFri Common UI/RecycleScrollViewer", false, 8)]
+    public static void CommonRecycleScrollViewer()
+    {
+        var loadResource =
+            AssetDatabase.LoadAssetAtPath<GameObject>(
+                "Assets/Arts/Prefabs/Common/RecycleScrollViewer.prefab");
+
+        var obj = PrefabUtility.InstantiatePrefab(loadResource) as GameObject;
+        if (Selection.activeGameObject != null)
+            obj.transform.SetParent(Selection.activeGameObject.transform, false);
+    }
+    
+    [MenuItem("GameObject/BanpoFri Common UI/Tile", false, 8)]
+    public static void CommonTile()
+    {
+        var loadResource =
+            AssetDatabase.LoadAssetAtPath<GameObject>(
+                "Assets/Arts/Prefabs/Common/Tile.prefab");
+
+        var obj = PrefabUtility.InstantiatePrefab(loadResource) as GameObject;
+        if (Selection.activeGameObject != null)
+            obj.transform.SetParent(Selection.activeGameObject.transform, false);
+    }
 
 }
