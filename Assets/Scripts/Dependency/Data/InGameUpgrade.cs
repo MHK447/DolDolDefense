@@ -127,22 +127,22 @@ public class InGameUpgrade
                 break;
             case (int)SkillLevelStatTypeEnum.StatAttackIncrease:
                 {
-
+                    //attack increase
                 }
                 break;
             case (int)SkillLevelStatTypeEnum.StatHpIncrease:
                 {
-
+                    //hp increase
                 }
                 break;
             case (int)SkillLevelStatTypeEnum.StatCoolTimeIncrease:
                 {
-
+                    //cool time increase
                 }
                 break;
             case (int)SkillLevelStatTypeEnum.StatCriticalDamageIncrease:
                 {
-
+                    //critical damage increase
                 }
                 break;
         }
@@ -177,19 +177,19 @@ public class InGameUpgrade
             case (int)PlayerSkillSystem.PlayerSkillType.LaserCannon:
                 GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_Poison());
                 break;
-            case (int)PlayerSkillSystem.PlayerSkillType.ShadowBlade:
+            case (int)PlayerSkillSystem.PlayerSkillType.ShadowKnife:
                 GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_Poison());
                 break;
             case (int)PlayerSkillSystem.PlayerSkillType.LifeSteal:
                 GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_Lifesteal());
                 break;
-            case (int)PlayerSkillSystem.PlayerSkillType.ExplosiveBomb:
+            case (int)PlayerSkillSystem.PlayerSkillType.BombKnockBack:
                 GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_Poison());
                 break;
             case (int)PlayerSkillSystem.PlayerSkillType.LogThrow:
                 GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_Poison());
                 break;
-            case (int)PlayerSkillSystem.PlayerSkillType.BlueSpirit:
+            case (int)PlayerSkillSystem.PlayerSkillType.BlueSoul:
                 GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_Poison());
                 break;
         }

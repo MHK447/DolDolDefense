@@ -165,7 +165,7 @@ public class CheatWindow : MonoBehaviour
 
     public void StartSkillChoiceLevelUpReward()
     {
-        GameRoot.Instance.UISystem.OpenUI<PopupLevelUpReward>(popup => popup.Init(PopupLevelUpRewardType.SkillType, UpgradeTier.Rare, true));
+        GameRoot.Instance.UISystem.OpenUI<PopupLevelUpReward>(popup => popup.Init(InGameUpgradeCategory.AddSKill, UpgradeTier.Rare, true));
     }
 
     public void OnClick_Hide()
@@ -220,7 +220,7 @@ public class CheatWindow : MonoBehaviour
 
     public void ThreeInGameUpgradeOpen()
     {
-        GameRoot.Instance.UISystem.OpenUI<PopupLevelUpReward>(popup => popup.Init(PopupLevelUpRewardType.StatType, UpgradeTier.Rare, true));
+        GameRoot.Instance.UISystem.OpenUI<PopupLevelUpReward>(popup => popup.Init(InGameUpgradeCategory.AddStat, UpgradeTier.Rare, true));
     }
 
 
@@ -231,7 +231,7 @@ public class CheatWindow : MonoBehaviour
 
     public void ShowSelectChoice()
     {
-        GameRoot.Instance.UISystem.OpenUI<PopupLevelUpReward>(popup => popup.Init(PopupLevelUpRewardType.StatType, UpgradeTier.Rare, true));
+        GameRoot.Instance.UISystem.OpenUI<PopupLevelUpReward>(popup => popup.Init(InGameUpgradeCategory.AddStat, UpgradeTier.Rare, true));
     }
 
 

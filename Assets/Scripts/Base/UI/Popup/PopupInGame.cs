@@ -86,7 +86,7 @@ public class PopupInGame : CommonUIBase
         {
             GameRoot.Instance.UISystem.OpenUI<PopupLevelUpReward>(x =>
             {
-                x.Init((PopupLevelUpRewardType)rollcount, (UpgradeTier)tier, true);
+                x.Init((InGameUpgradeCategory)rollcount, (UpgradeTier)tier, true);
             });
         }
     }

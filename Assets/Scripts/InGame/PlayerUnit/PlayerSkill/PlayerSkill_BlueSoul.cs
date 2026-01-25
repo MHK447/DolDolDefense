@@ -4,10 +4,27 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.UI;
 
-public class PlayerSkill_BlueSoul : MonoBehaviour
+public class PlayerSkill_BlueSoul : PlayerSkillBase
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public override void OnInitalize()
+    {
+        SkillIdx = (int)PlayerSkillSystem.PlayerSkillType.BlueSoul;
+        base.OnInitalize();
+    }
 
-    // Update is called once per frame
+    public override void Update()
+    {
+        base.Update();
+    }
+    
+    override public void OnSkillUse()
+    {
+        base.OnSkillUse();
+
+        if (InGameStage.PlayerUnit.BulletCreate(SkillIdx , false))
+        {
+            Skilldeltatime = 0f;
+        }
+    }
 }
 

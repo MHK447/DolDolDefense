@@ -5,13 +5,6 @@ using TMPro;
 using System.Collections.Generic;
 using DG.Tweening;
 
-public enum PopupLevelUpRewardType
-{
-    StatType = 1,
-    SkillType = 2,
-}
-
-
 [UIPath("UI/Popup/PopupLevelUpReward")]
 public class PopupLevelUpReward : UIBase
 {
@@ -25,7 +18,7 @@ public class PopupLevelUpReward : UIBase
     [SerializeField]
     private TextMeshProUGUI RerollText;
 
-    private PopupLevelUpRewardType Type;
+    private InGameUpgradeCategory Type;
 
 
     private UpgradeTier CurrentUpgradeTier;
@@ -48,7 +41,7 @@ public class PopupLevelUpReward : UIBase
     }
 
 
-    public void Init(PopupLevelUpRewardType type , UpgradeTier tier ,bool isfirst = false)
+    public void Init(InGameUpgradeCategory type , UpgradeTier tier ,bool isfirst = false)
     {
         Type = type;
 
@@ -74,7 +67,7 @@ public class PopupLevelUpReward : UIBase
         int stageidx = GameRoot.Instance.UserData.Stageidx.Value;
 
         //get upgrades
-        List<InGameUpgrade> upgrades = GameRoot.Instance.InGameUpgradeSystem.GetUpgrades(tier);
+        List<InGameUpgrade> upgrades = GameRoot.Instance.InGameUpgradeSystem.GetUpgrades(type , tier);
         if (upgrades == null || upgrades.Count == 0)
         {
             Hide();

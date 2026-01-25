@@ -7,6 +7,7 @@ public enum InGameUpgradeCategory
 {
     AddSKill = 1,
     AddStat = 2,
+    AddCoin = 3,
 }
 
 public enum UpgradeTier
@@ -22,11 +23,22 @@ public class InGameUpgradeSystem
 
     public int UpgradeCount = 0;
 
-    public List<InGameUpgrade> AllUpgrades = new();
-
+    public List<InGameUpgrade> SkillAllUpgrades = new();
+    public List<InGameUpgrade> StatAllUpgrades = new();
 
     public void Create()
     {
+        var tdlist = Tables.Instance.GetTable<InGameUpgradeChoice>().DataList.FindAll(x=> x.category == 2).ToList();
+
+        foreach (var td in tdlist)
+        {
+            StatAllUpgrades.Add(new InGameUpgrade(
+                td.idx,
+                UpgradeTier.Rare,
+                1,
+                td
+            ));
+        }
 
         //temp
         if (GameRoot.Instance.UserData.Skillcarddatas.Count == 0)
@@ -62,7 +74,7 @@ public class InGameUpgradeSystem
 
     public void GameStartCheck()
     {
-        AllUpgrades.Clear();
+        SkillAllUpgrades.Clear();
 
 
 
@@ -79,7 +91,7 @@ public class InGameUpgradeSystem
                 continue;
             }
 
-            AllUpgrades.Add(new InGameUpgrade(
+            SkillAllUpgrades.Add(new InGameUpgrade(
                 skilldata.Skillidx,
                 UpgradeTier.Rare,
                 skilldata.Skillevel,
@@ -89,27 +101,55 @@ public class InGameUpgradeSystem
     }
 
 
-    public List<InGameUpgrade> GetUpgrades(UpgradeTier minimumTier = UpgradeTier.Rare)
+    public List<InGameUpgrade> GetUpgrades(InGameUpgradeCategory category, UpgradeTier minimumTier = UpgradeTier.Rare)
     {
         //티어설정
         UpgradeTier tierToApply;
 
-
-        tierToApply = SelectTierByWeight(minimumTier);
-
-        var selectData = GetSelectInfoData();
-        if (selectData == null)
+        if (category == InGameUpgradeCategory.AddSKill)
         {
-            return NaturalChoices(AllUpgrades, tierToApply);
+            tierToApply = SelectTierByWeight(minimumTier);
+
+            var selectData = GetSelectInfoData();
+            if (selectData == null)
+            {
+                return SkillNaturalChoices(SkillAllUpgrades, tierToApply);
+            }
+            else
+            {
+                return SkillNaturalChoices(SkillAllUpgrades, tierToApply);
+            }
         }
         else
         {
-            return NaturalChoices(AllUpgrades, tierToApply);
+            tierToApply = SelectTierByWeight(minimumTier);
+
+            return StatNaturalChoices(StatAllUpgrades, tierToApply);
         }
     }
 
+    public List<InGameUpgrade> StatNaturalChoices(List<InGameUpgrade> upgrades, UpgradeTier tier)
+    {
+        List<InGameUpgrade> choicelist = new();
 
-    public List<InGameUpgrade> NaturalChoices(List<InGameUpgrade> upgrades, UpgradeTier tier)
+        // 중복 없이 최대 3개 랜덤 선택
+        int countToSelect = Mathf.Min(3, upgrades.Count);
+        var shuffled = upgrades.OrderBy(x => Random.Range(0, int.MaxValue)).Take(countToSelect).ToList();
+
+        foreach (var upgrade in shuffled)
+        {
+            upgrade.Tier = tier;
+            upgrade.RandSelectType();
+            choicelist.Add(upgrade);
+        }
+
+
+        return choicelist;
+    }
+
+
+
+    public List<InGameUpgrade> SkillNaturalChoices(List<InGameUpgrade> upgrades, UpgradeTier tier)
     {
         List<InGameUpgrade> choicelist = new();
 

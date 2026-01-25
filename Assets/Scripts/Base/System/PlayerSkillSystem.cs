@@ -16,11 +16,11 @@ public class PlayerSkillSystem
         Fireball = 6, 
         Amageddon = 7,
         LaserCannon = 8, 
-        ShadowBlade = 9,
+        ShadowKnife = 9,
         LifeSteal = 10,
-        ExplosiveBomb = 11,
+        BombKnockBack = 11,
         LogThrow = 12,
-        BlueSpirit = 13,
+        BlueSoul = 13,
     }
 
 

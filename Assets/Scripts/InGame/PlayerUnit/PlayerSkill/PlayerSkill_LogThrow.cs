@@ -1,16 +1,25 @@
 using UnityEngine;
 
-public class PlayerSkill_LogThrow : MonoBehaviour
+public class PlayerSkill_LogThrow : PlayerSkillBase
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void OnInitalize()
     {
-        
+        SkillIdx = (int)PlayerSkillSystem.PlayerSkillType.LogThrow;
+        base.OnInitalize();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Update()
     {
-        
+        base.Update();
+    }
+
+    override public void OnSkillUse()
+    {
+        base.OnSkillUse();
+
+        if (InGameStage.PlayerUnit.BulletCreate(SkillIdx))
+        {
+            Skilldeltatime = 0f;
+        }
     }
 }

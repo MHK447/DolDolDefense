@@ -475,6 +475,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dc83a26f972b34fb58d85b0d7c42b5ee
+    m_Address: Bullet_BombKnockBack
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: de269e1a5d0f87f49af3c0275a07e948
     m_Address: Unit_2_2
     m_ReadOnly: 0
@@ -522,6 +527,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e9a4f95e54d4a4388816833aef9d7f7c
     m_Address: Unit_3_2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f4ff1cdd374834b068ce93acf3349ec0
+    m_Address: Bullet_Laser
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

@@ -1,10 +1,17 @@
-﻿using UnityEngine;
+using UnityEngine;
 using BanpoFri;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.UI;
 using DG.Tweening;
 using System.Numerics;
+
+public enum KnocBackDirection
+{
+    Back,
+    Left,
+    Right,
+}
 
 public class EnemyUnit : MonoBehaviour
 {
@@ -196,6 +203,33 @@ public class EnemyUnit : MonoBehaviour
                 }
             });
         }
+    }
+
+
+    public void KnockBack(KnocBackDirection direction , float power = 5f)
+    {
+        if (PlayerUnit == null) return;
+
+        UnityEngine.Vector3 knockbackDirection = UnityEngine.Vector3.zero;
+
+        switch (direction)
+        {
+            case KnocBackDirection.Back:
+                // 현재 이동 방향의 반대편으로 넉백
+                knockbackDirection = (transform.position - PlayerUnit.transform.position).normalized;
+                break;
+            case KnocBackDirection.Left:
+                // 왼쪽으로 넉백
+                knockbackDirection = UnityEngine.Vector3.left;
+                break;
+            case KnocBackDirection.Right:
+                // 오른쪽으로 넉백
+                knockbackDirection = UnityEngine.Vector3.right;
+                break;
+        }
+
+        // 넉백 효과 적용
+        transform.position += knockbackDirection * power * Time.deltaTime;
     }
 }
 

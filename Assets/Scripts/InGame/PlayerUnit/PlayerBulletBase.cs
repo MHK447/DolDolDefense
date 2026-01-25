@@ -18,7 +18,7 @@ public class PlayerBulletBase : MonoBehaviour
     public int GetBulletIdx { get { return BulletIdx; } }
 
     protected PlayerUnit PlayerUnit;
-    private System.Action<PlayerBulletBase> DeleteAction;
+    protected System.Action<PlayerBulletBase> DeleteAction;
 
     private Vector3 TargetPosition;
     private Vector3 Direction;
@@ -39,7 +39,7 @@ public class PlayerBulletBase : MonoBehaviour
         }
     }
 
-    public void Set(int bulletidx, PlayerUnit unit, Vector3 targetposition, System.Action<PlayerBulletBase> deleteaction)
+    public virtual void Set(int bulletidx, PlayerUnit unit, Vector3 targetposition, System.Action<PlayerBulletBase> deleteaction)
     {
         IsDamageOn = false;
         BulletIdx = bulletidx;
