@@ -67,7 +67,7 @@ public class PlayerUnit : MonoBehaviour
 
             SetHpProgress(PlayerUnitInfoData.CurHp);
 
-            CreateCircle();
+            //CreateCircle();
         }
     }
 
