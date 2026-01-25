@@ -21,6 +21,20 @@ namespace BanpoFri
 			set { _base_atk = value;}
 		}
 		[SerializeField]
+		private int _base_atk_count;
+		public int base_atk_count
+		{
+			get { return _base_atk_count;}
+			set { _base_atk_count = value;}
+		}
+		[SerializeField]
+		private int _base_atk_range;
+		public int base_atk_range
+		{
+			get { return _base_atk_range;}
+			set { _base_atk_range = value;}
+		}
+		[SerializeField]
 		private int _base_atk_speed;
 		public int base_atk_speed
 		{

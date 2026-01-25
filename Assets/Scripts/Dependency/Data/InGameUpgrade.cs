@@ -103,11 +103,11 @@ public class InGameUpgrade
         {
             case (int)SkillLevelStatTypeEnum.SKillAdd:
                 {
-                    GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_BlackBall());
+                    AddSkill(UpgradeIdx);
                 }
                 break;
             case (int)SkillLevelStatTypeEnum.SKillCountAdd:
-                {
+                {   
                 }
                 break;
             case (int)SkillLevelStatTypeEnum.SkillUpScale:
@@ -146,6 +146,54 @@ public class InGameUpgrade
                 }
                 break;
         }
+    }
+
+
+    public void AddSkill(int skillidx)
+    {
+        switch(skillidx)
+        {
+            case (int)PlayerSkillSystem.PlayerSkillType.BlackBall:
+                GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_BlackBall());
+                break;
+            case (int)PlayerSkillSystem.PlayerSkillType.Lightning:
+                GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_Lightning());
+                break;
+            case (int)PlayerSkillSystem.PlayerSkillType.IceOrb:
+                GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_Poison());
+                break;
+            case (int)PlayerSkillSystem.PlayerSkillType.DarkGear:
+                GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_DarkGear());
+                break;
+            case (int)PlayerSkillSystem.PlayerSkillType.PoisonBullet:
+                GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_Poison());
+                break;
+            case (int)PlayerSkillSystem.PlayerSkillType.Fireball:
+                GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_FireBall());
+                break;
+            case (int)PlayerSkillSystem.PlayerSkillType.Amageddon:
+                GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_Amagetdon());
+                break;
+            case (int)PlayerSkillSystem.PlayerSkillType.LaserCannon:
+                GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_Poison());
+                break;
+            case (int)PlayerSkillSystem.PlayerSkillType.ShadowBlade:
+                GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_Poison());
+                break;
+            case (int)PlayerSkillSystem.PlayerSkillType.LifeSteal:
+                GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_Lifesteal());
+                break;
+            case (int)PlayerSkillSystem.PlayerSkillType.ExplosiveBomb:
+                GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_Poison());
+                break;
+            case (int)PlayerSkillSystem.PlayerSkillType.LogThrow:
+                GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_Poison());
+                break;
+            case (int)PlayerSkillSystem.PlayerSkillType.BlueSpirit:
+                GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_Poison());
+                break;
+        }
+
     }
 
 }

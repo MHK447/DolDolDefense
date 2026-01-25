@@ -51,7 +51,7 @@ public class EnemyUnitGroup : MonoBehaviour
     }
 
 
-    public EnemyUnit FindEnemyTarget(Vector3 position, float range)
+    public EnemyUnit FindEnemyTarget(Vector3 position, float range = int.MaxValue)
     {
         var findenemytarget = ActiveUnits
             .Where(x => !x.IsDead) // 살아있는 적만

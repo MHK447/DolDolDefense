@@ -17,26 +17,29 @@ public class PlayerBulletBase : MonoBehaviour
 
     public int GetBulletIdx { get { return BulletIdx; } }
 
-    private PlayerUnit PlayerUnit;
+    protected PlayerUnit PlayerUnit;
     private System.Action<PlayerBulletBase> DeleteAction;
 
     private Vector3 TargetPosition;
     private Vector3 Direction;
 
-    private bool IsDamageOn = false;
+    protected bool IsDamageOn = false;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        var enemy = collision.gameObject.GetComponent<EnemyUnit>();
-        if (enemy != null && !IsDamageOn)
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            IsDamageOn = true;
-            enemy.Damage(BulletIdx);
-            DeleteAction?.Invoke(this);
+            var enemy = collision.gameObject.GetComponent<EnemyUnit>();
+            if (enemy != null && !IsDamageOn)
+            {
+                IsDamageOn = true;
+                enemy.Damage(BulletIdx);
+                DeleteAction?.Invoke(this);
+            }
         }
     }
 
-    public void Set(int bulletidx, PlayerUnit unit, Vector3 targetposition , System.Action<PlayerBulletBase> deleteaction)
+    public void Set(int bulletidx, PlayerUnit unit, Vector3 targetposition, System.Action<PlayerBulletBase> deleteaction)
     {
         IsDamageOn = false;
         BulletIdx = bulletidx;

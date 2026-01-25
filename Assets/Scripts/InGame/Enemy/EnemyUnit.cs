@@ -24,6 +24,8 @@ public class EnemyUnit : MonoBehaviour
     [SerializeField]
     private SpriteRenderer UnitImg;
 
+    public SpriteRenderer GetUnitImg { get { return UnitImg; } }
+
 
     private int EnemyIdx = 0;
 
@@ -99,12 +101,12 @@ public class EnemyUnit : MonoBehaviour
     }
 
 
-    public virtual void Damage(int damage)
+    public virtual void Damage(double damage)
     {
         GameRoot.Instance.DamageTextSystem.ShowDamage(damage,
         new UnityEngine.Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Color.white);
 
-        EnemyInfoData.CurHp -= damage;
+        EnemyInfoData.CurHp -= (int)damage;
         InGameHpProgress?.SetHpText((int)EnemyInfoData.CurHp, EnemyInfoData.StartHp);
 
         DamageColorEffect();

@@ -15,6 +15,10 @@ public class PlayerSkillBase
 
     public float Skilldeltatime = 0f;
 
+    public int SkillCount = 1;
+
+    public float AttackRange = 0;
+
     protected InGameBaseStage InGameStage = null;
 
     public PlayerSkillBase()
@@ -33,6 +37,9 @@ public class PlayerSkillBase
         {
             Skilldeltatime = 0f;
             SkillCoolTime = td.base_atk_speed * 0.01f;
+            SkillCount = td.base_atk_count;
+
+            AttackRange = td.base_atk_range * 0.01f;
         }
 
     }

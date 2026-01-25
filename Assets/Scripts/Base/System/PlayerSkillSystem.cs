@@ -17,7 +17,7 @@ public class PlayerSkillSystem
         Amageddon = 7,
         LaserCannon = 8, 
         ShadowBlade = 9,
-        LifeDrainOrb = 10,
+        LifeSteal = 10,
         ExplosiveBomb = 11,
         LogThrow = 12,
         BlueSpirit = 13,

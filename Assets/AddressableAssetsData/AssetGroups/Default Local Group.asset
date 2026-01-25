@@ -15,6 +15,11 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: 08a828bfbd41f48f29c62c948b8cf964
   m_SerializeEntries:
+  - m_GUID: 0425aea0db2dc524fa6347771885fa50
+    m_Address: Effect/AmagetdonEffect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 055ee5af5d3aaca45abf507622c5280e
     m_Address: UI/Page/LoadingBasic
     m_ReadOnly: 0
@@ -175,6 +180,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 492f9394066b14bd9a2679305aaa1313
+    m_Address: Effect/LifeStealEffect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 49d11929ccf7b42f58335a251b3a8e4c
     m_Address: GameRoot
     m_ReadOnly: 0
@@ -225,6 +235,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5d7591d6fb7b3e54f9c9ae8e581e9b31
+    m_Address: Effect/InfectionEffect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6233b4aa473a74ef5a9b93aae88c15c5
     m_Address: UI/InGame/CastleHpProgress
     m_ReadOnly: 0
@@ -232,6 +247,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 63045c64b29095947a814a794bb193ed
     m_Address: Unit_1_2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 71246c7c344d54f6082b580755242bd7
+    m_Address: Bullet_Poison
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -355,6 +375,16 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a925e8bee460540db9027861e7bcb3fe
+    m_Address: Assets/Arts/Dependency/Prefab/Bullet/Bullet_DarkWheel.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: afda311d2f2dd482b9dd83cd6710dc35
+    m_Address: DarkGear
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b0163f8b55cd84f28b272630e28ace3f
     m_Address: UI/InGame/InGameHpProgress
     m_ReadOnly: 0
@@ -397,6 +427,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ca539427454194cf3b741dd3baf027a0
     m_Address: Effect/RewardThrowEffect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ccd88de42cb674f5f95bcc26ada3cf32
+    m_Address: Bullet_FireBall
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

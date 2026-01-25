@@ -16,7 +16,7 @@ public class PlayerUnit : MonoBehaviour
     }
 
 
-    [SerializeField]    
+    [SerializeField]
     private SpriteRenderer PlayerUnitImg;
 
     [SerializeField]
@@ -60,6 +60,8 @@ public class PlayerUnit : MonoBehaviour
             PlayerUnitInfoData.AttackRange = 500 * 0.01f;
 
             GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_BlackBall());
+            GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_Lightning());
+            GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_DarkGear());
 
             UnitState = PlayerUnitState.Idle;
 
@@ -131,7 +133,7 @@ public class PlayerUnit : MonoBehaviour
 
 
 
-    public virtual bool BulletCreate(int skillidx)
+    public virtual bool BulletCreate(int skillidx, bool isenemylive = true)
     {
         var prefab = Tables.Instance.GetTable<PlayerSkillInfo>().GetData(skillidx).bullet_prefab;
 
@@ -140,22 +142,26 @@ public class PlayerUnit : MonoBehaviour
         var findenemy = GameRoot.Instance.InGameSystem.GetInGame<InGameBase>().Stage.EnemyUnitGroup.FindEnemyTarget(transform.position, PlayerUnitInfoData.AttackRange);
 
         // 적이 없으면 공격 실패 (false 반환하여 쿨타임 리셋 안 함)
-        if (findenemy == null)
+        if (findenemy == null && isenemylive)
         {
             return false;
         }
+
+
+        var enemypos = findenemy == null ? Vector3.zero : findenemy.transform.position;
+
 
         if (finddata != null)
         {
             ProjectUtility.SetActiveCheck(finddata.gameObject, true);
 
             finddata.transform.position = transform.position;
-            finddata.Set(skillidx, this, findenemy.transform.position, BulletColisionAction);
+            finddata.Set(skillidx, this, enemypos, BulletColisionAction);
         }
         else
         {
             var bullet = Addressables.InstantiateAsync(prefab, transform).WaitForCompletion().GetComponent<PlayerBulletBase>();
-            bullet.Set(skillidx, this, findenemy.transform.position, BulletColisionAction);
+            bullet.Set(skillidx, this, enemypos, BulletColisionAction);
 
             ProjectUtility.SetActiveCheck(bullet.gameObject, true);
 
@@ -206,7 +212,7 @@ public class PlayerUnit : MonoBehaviour
 
     void CreateCircle()
     {
-        
+
         AttackRangeRenderer.positionCount = segments + 1;
         AttackRangeRenderer.useWorldSpace = false; // 로컬 좌표계 사용 (유닛을 따라다님)
         AttackRangeRenderer.loop = true; // 원의 시작점과 끝점을 연결
@@ -214,12 +220,12 @@ public class PlayerUnit : MonoBehaviour
         // Width 설정 - 반지름에 비례하게 조정
         AttackRangeRenderer.startWidth = 0.1f;
         AttackRangeRenderer.endWidth = 0.1f;
-        
+
         // Color 설정 (알파값 포함하여 더 잘 보이게)
         AttackRangeRenderer.startColor = new Color(1f, 1f, 1f, 0.5f); // 흰색
         AttackRangeRenderer.endColor = new Color(1f, 1f, 1f, 0.5f);
-        
-      
+
+
         float angle = 0f;
         float radius = 3f; // 반지름을 명시적으로 지정
 
@@ -232,7 +238,7 @@ public class PlayerUnit : MonoBehaviour
             AttackRangeRenderer.SetPosition(i, new Vector3(x, y, 0f));
             angle += (360f / segments);
         }
-        
+
         Debug.Log($"Circle created at {transform.position} with radius {radius}, LineRenderer enabled: {AttackRangeRenderer.enabled}, Material: {AttackRangeRenderer.material?.name}");
     }
 

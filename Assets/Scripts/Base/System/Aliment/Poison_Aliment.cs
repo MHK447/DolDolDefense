@@ -6,91 +6,94 @@ using UnityEngine.UI;
 
 public class Poison_Aliment : AlimentData
 {
-    // private List<Color> originalColors = new List<Color>();
-    // private bool isApplied = false;
+    private List<Color> originalColors = new List<Color>();
+    private bool isApplied = false;
 
-    // public override void Set(AlimentType type, float time, EnemyUnit target, double damage, float damagedelay, int maxStackCount = 1)
-    // {
-    //     base.Set(type, time, target, damage, damagedelay, maxStackCount);
+    public override void Set(AlimentType type, float time, EnemyUnit target, double damage, float damagedelay, int maxStackCount = 1)
+    {
+        base.Set(type, time, target, damage, damagedelay, maxStackCount);
 
-    //     deltatime = 0f;
-        
-    //     // 독 효과 적용
-    //     ApplyPoisonEffect();
-    // }
+        deltatime = 0f;
 
-    // private void ApplyPoisonEffect()
-    // {
-    //     if (Target == null || isApplied) return;
-        
-    //     isApplied = true;
-    //     originalColors.Clear();
-        
-    //     // 원래 색상 저장하고 초록색으로 변경
-    //     var spriteList = Target.GetComponent<UnitBase>()?.GetUnitSpriteList();
-    //     if (spriteList != null)
-    //     {
-    //         foreach (var sprite in spriteList)
-    //         {
-    //             if (sprite != null)
-    //             {
-    //                 // 원래 색상 저장
-    //                 originalColors.Add(sprite.color);
-                    
-    //                 // 초록색으로 변경 (밝은 초록색)
-    //                 sprite.color = new Color(0.5f, 1f, 0.5f, sprite.color.a);
-    //             }
-    //         }
-    //     }
-    // }
+        // 독 효과 적용
+        ApplyPoisonEffect();
+    }
 
-    // public override void Update()
-    // {
-    //     if (Time <= 0f)
-    //     {
-    //         // 독 효과 해제
-    //         RemovePoisonEffect();
-    //         return;
-    //     }
+    private void ApplyPoisonEffect()
+    {
+        if (Target == null || isApplied) return;
 
-    //     // 시간 감소
-    //     deltatime += UnityEngine.Time.deltaTime;
-    //     if (deltatime >= DamageDelay)
-    //     {
-    //         Time -= DamageDelay;
-    //         deltatime = 0f;
-    //         OnDamage();
-    //     }
-    // }
+        isApplied = true;
+        originalColors.Clear();
 
-    // private void RemovePoisonEffect()
-    // {
-    //     if (Target == null || !isApplied) return;
-        
-    //     // 원래 색상으로 복구
-    //     var spriteList = Target.GetComponent<UnitBase>()?.GetUnitSpriteList();
-    //     if (spriteList != null && originalColors.Count == spriteList.Count)
-    //     {
-    //         for (int i = 0; i < spriteList.Count; i++)
-    //         {
-    //             if (spriteList[i] != null && i < originalColors.Count)
-    //             {
-    //                 spriteList[i].color = originalColors[i];
-    //             }
-    //         }
-    //     }
-        
-    //     isApplied = false;
-    //     originalColors.Clear();
-    // }
+        // 원래 색상 저장하고 초록색으로 변경
+        var spriteList = Target.GetComponent<EnemyUnit>()?.GetUnitImg;
+        if (spriteList != null)
+        {
+            // 원래 색상 저장
+            originalColors.Add(spriteList.color);
 
-    // public override void OnDamage()
-    // {
-    //     base.OnDamage();
-    //     // 중첩 수에 따라 데미지 증가
-    //     double stackedDamage = Damage * StackCount;
-    //     Target.Damage(stackedDamage);
-    // }
+            // 초록색으로 변경 (밝은 초록색)
+            spriteList.color = new Color(0.5f, 1f, 0.5f, spriteList.color.a);
+        }
+    }
+
+    public override void Update()
+    {
+        if (Time <= 0f)
+        {
+            // 독 효과 해제
+            RemovePoisonEffect();
+            return;
+        }
+
+        // 시간 감소
+        deltatime += UnityEngine.Time.deltaTime;
+        if (deltatime >= DamageDelay)
+        {
+            Time -= DamageDelay;
+            deltatime = 0f;
+            OnDamage();
+        }
+
+        if (Target != null && Target.IsDead)
+        {
+            var findenemy = GameRoot.Instance.InGameSystem.GetInGame<InGameBase>().Stage.EnemyUnitGroup.FindEnemyTarget(Target.transform.position, int.MaxValue);
+
+            if (findenemy != null)
+            {
+                GameRoot.Instance.EffectSystem.MultiPlay<InfectionEffect>(Target.transform.position, (x) =>
+                {
+                    x.SetAutoRemove(true, 1.5f);
+                });
+            }
+        }
+    }
+
+    private void RemovePoisonEffect()
+    {
+        if (Target == null || !isApplied) return;
+
+        // 원래 색상으로 복구
+        var spriteList = Target.GetComponent<EnemyUnit>()?.GetUnitImg;
+        if (spriteList != null)
+        {
+            spriteList.color = originalColors[0];
+        }
+
+        isApplied = false;
+        originalColors.Clear();
+    }
+
+    public override void OnDamage()
+    {
+        base.OnDamage();
+        // 중첩 수에 따라 데미지 증가
+        double stackedDamage = Damage * StackCount;
+        Target.Damage(stackedDamage);
+
+
+    }
 
 
 

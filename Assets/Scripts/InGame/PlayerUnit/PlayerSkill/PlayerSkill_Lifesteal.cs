@@ -1,16 +1,19 @@
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
-public class PlayerSkill_Lifesteal : MonoBehaviour
+public class PlayerSkill_Lifesteal : PlayerSkillBase
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void OnInitalize()
     {
-        
+        SkillIdx = (int)PlayerSkillSystem.PlayerSkillType.LifeSteal;
+        base.OnInitalize();
+
+
+        GameRoot.Instance.EffectSystem.MultiPlay<LifeStealEffect>(InGameStage.PlayerUnit.transform.position, (x) =>
+        {
+            x.Init(InGameStage.PlayerUnit.PlayerUnitInfoData.AttackDamage);
+        });
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
