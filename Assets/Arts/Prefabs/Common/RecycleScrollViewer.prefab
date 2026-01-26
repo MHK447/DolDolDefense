@@ -162,7 +162,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3162158933679350765}
-  - component: {fileID: 6529610997032419092}
+  - component: {fileID: 6279759766685250028}
   m_Layer: 0
   m_Name: RecycleScrollViewer
   m_TagString: Untagged
@@ -190,7 +190,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0}
---- !u!114 &6529610997032419092
+--- !u!114 &6279759766685250028
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -199,11 +199,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8558638932025239597}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11a612d3b614d43499d40ad342549010, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ea92d2feef2341398a7401e48c410fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 7956556557953218215}
-  m_Horizontal: 0
+  m_Horizontal: 1
   m_Vertical: 1
   m_MovementType: 2
   m_Elasticity: 0
@@ -220,11 +220,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
-  DivCnt: 1
-  widthSpace: 0
-  heightSpace: 0
-  startWidthSpace: 0
-  startHeightSpace: 0
-  BottomYPadding: 0
-  Reverse: 1
-  childAlignment: 7
+  reversed: 0
+  paddingCount: 0
+  totalCount: 0
