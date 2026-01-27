@@ -39,6 +39,8 @@ MonoBehaviour:
     color: {r: 1, g: 0, b: 0.7748437, a: 1}
   - key_string: Blue
     color: {r: 0.061807156, g: 0, b: 1, a: 1}
+  - key_string: LightPurpleBlue
+    color: {r: 0.5176471, g: 0.5686275, b: 0.7411765, a: 1}
   _eventTextColorDefines: []
   mainfont: {fileID: 12800000, guid: 8ac0d01f370885f4ea47427a1f5f97e1, type: 3}
   _fontDefines: []

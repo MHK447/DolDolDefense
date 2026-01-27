@@ -149,6 +149,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Vibrate
       objectReference: {fileID: 0}
+    - target: {fileID: 6743518447489387465, guid: 573f64416355a4349901a06b35f3405d, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -355832776374284991, guid: 1154d2db12bbb994c908a7c2921aab10, type: 2}
     - target: {fileID: 7451686410441210633, guid: 573f64416355a4349901a06b35f3405d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -229,6 +233,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8044775329430915231, guid: 573f64416355a4349901a06b35f3405d, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -355832776374284991, guid: 1154d2db12bbb994c908a7c2921aab10, type: 2}
+    - target: {fileID: 8831024907509139340, guid: 573f64416355a4349901a06b35f3405d, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -355832776374284991, guid: 1154d2db12bbb994c908a7c2921aab10, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1654,6 +1666,30 @@ PrefabInstance:
       propertyPath: m_ChildForceExpandWidth
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6235516830849084024, guid: 9a19794b814697d4fab955bdb7bba1df, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6235516830849084024, guid: 9a19794b814697d4fab955bdb7bba1df, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6235516830849084024, guid: 9a19794b814697d4fab955bdb7bba1df, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6235516830849084024, guid: 9a19794b814697d4fab955bdb7bba1df, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6235516830849084024, guid: 9a19794b814697d4fab955bdb7bba1df, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6235516830849084024, guid: 9a19794b814697d4fab955bdb7bba1df, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6541298061708668123, guid: 9a19794b814697d4fab955bdb7bba1df, type: 3}
       propertyPath: list_FindImg.Array.size
       value: 0
@@ -1893,6 +1929,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemOptionToggleList_Bgm
       objectReference: {fileID: 0}
+    - target: {fileID: 6743518447489387465, guid: 573f64416355a4349901a06b35f3405d, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -355832776374284991, guid: 1154d2db12bbb994c908a7c2921aab10, type: 2}
     - target: {fileID: 7065919845473303325, guid: 573f64416355a4349901a06b35f3405d, type: 3}
       propertyPath: keyLocalize
       value: str_popup_option_bgm
@@ -1977,10 +2017,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8044775329430915231, guid: 573f64416355a4349901a06b35f3405d, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -355832776374284991, guid: 1154d2db12bbb994c908a7c2921aab10, type: 2}
     - target: {fileID: 8128584135416401482, guid: 573f64416355a4349901a06b35f3405d, type: 3}
       propertyPath: m_Text
       value: BGM
       objectReference: {fileID: 0}
+    - target: {fileID: 8831024907509139340, guid: 573f64416355a4349901a06b35f3405d, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -355832776374284991, guid: 1154d2db12bbb994c908a7c2921aab10, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2054,6 +2102,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6743518447489387465, guid: 573f64416355a4349901a06b35f3405d, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -355832776374284991, guid: 1154d2db12bbb994c908a7c2921aab10, type: 2}
     - target: {fileID: 7065919845473303325, guid: 573f64416355a4349901a06b35f3405d, type: 3}
       propertyPath: keyLocalize
       value: str_popup_option_sfx
@@ -2138,10 +2190,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8044775329430915231, guid: 573f64416355a4349901a06b35f3405d, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -355832776374284991, guid: 1154d2db12bbb994c908a7c2921aab10, type: 2}
     - target: {fileID: 8128584135416401482, guid: 573f64416355a4349901a06b35f3405d, type: 3}
       propertyPath: m_Text
       value: SFX
       objectReference: {fileID: 0}
+    - target: {fileID: 8831024907509139340, guid: 573f64416355a4349901a06b35f3405d, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -355832776374284991, guid: 1154d2db12bbb994c908a7c2921aab10, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
