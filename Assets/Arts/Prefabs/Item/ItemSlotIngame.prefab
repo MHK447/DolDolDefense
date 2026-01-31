@@ -75,8 +75,8 @@ RectTransform:
   m_Children:
   - {fileID: 6531608079277206014}
   - {fileID: 1065755684760507112}
-  - {fileID: 7587457436967223243}
   - {fileID: 4510473329672204719}
+  - {fileID: 7587457436967223243}
   - {fileID: 6914609345892785569}
   m_Father: {fileID: 6404005726795495106}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -260,6 +260,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Random
       objectReference: {fileID: 0}
+    - target: {fileID: 3907880745336004107, guid: e5205d9787c28484fa47d4ebd545a15d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7830188878274899093, guid: e5205d9787c28484fa47d4ebd545a15d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -392,7 +396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3907880745336004107, guid: e5205d9787c28484fa47d4ebd545a15d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7830188878274899093, guid: e5205d9787c28484fa47d4ebd545a15d, type: 3}
       propertyPath: m_Pivot.x
