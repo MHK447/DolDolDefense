@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ef13f6782ca2bd94b875b27cd57d7bac
+guid: 27ba4ff2ed73ef9498d51bacb0af9a81
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2082773781890143913
-    second: Common_Icon_Effect_0
+      213: -5473068583414277004
+    second: Common_Icon_Eyes_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Common_Icon_Effect_0
+      name: Common_Icon_Eyes_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 86
-        height: 111
+        width: 58
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 759e0f6c7408813e0800000000000000
-      internalID: -2082773781890143913
+      spriteID: 47cdd36fe11cb04b0800000000000000
+      internalID: -5473068583414277004
       vertices: []
       indices: 
       edges: []
@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Common_Icon_Eyes_0: -5473068583414277004
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
