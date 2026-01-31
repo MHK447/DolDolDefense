@@ -1742,6 +1742,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemSlotIngame (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2065773623994089121, guid: d5641e61014449e45aeb75d75af314db, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492463083856388287, guid: d5641e61014449e45aeb75d75af314db, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6404005726795495106, guid: d5641e61014449e45aeb75d75af314db, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1820,6 +1828,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6404005726795495106, guid: d5641e61014449e45aeb75d75af314db, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6838949723678717360, guid: d5641e61014449e45aeb75d75af314db, type: 3}
+      propertyPath: m_SortingLayer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7775801305287007273, guid: d5641e61014449e45aeb75d75af314db, type: 3}
@@ -1939,7 +1951,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6988881771772374751, guid: c8b6766ce8bcaa94f8918a2739b7eb92, type: 3}
       propertyPath: m_fontSize
-      value: 15
+      value: 21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2045,7 +2057,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6988881771772374751, guid: c8b6766ce8bcaa94f8918a2739b7eb92, type: 3}
       propertyPath: m_fontSize
-      value: 15
+      value: 21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2509,7 +2521,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6988881771772374751, guid: c8b6766ce8bcaa94f8918a2739b7eb92, type: 3}
       propertyPath: m_fontSize
-      value: 15
+      value: 21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2749,6 +2761,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemSlotIngame (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2065773623994089121, guid: d5641e61014449e45aeb75d75af314db, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492463083856388287, guid: d5641e61014449e45aeb75d75af314db, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6404005726795495106, guid: d5641e61014449e45aeb75d75af314db, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2827,6 +2847,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6404005726795495106, guid: d5641e61014449e45aeb75d75af314db, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6838949723678717360, guid: d5641e61014449e45aeb75d75af314db, type: 3}
+      propertyPath: m_SortingLayer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7775801305287007273, guid: d5641e61014449e45aeb75d75af314db, type: 3}
@@ -3472,7 +3496,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6988881771772374751, guid: c8b6766ce8bcaa94f8918a2739b7eb92, type: 3}
       propertyPath: m_fontSize
-      value: 15
+      value: 21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3712,6 +3736,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemSlotIngame
       objectReference: {fileID: 0}
+    - target: {fileID: 2065773623994089121, guid: d5641e61014449e45aeb75d75af314db, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492463083856388287, guid: d5641e61014449e45aeb75d75af314db, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6404005726795495106, guid: d5641e61014449e45aeb75d75af314db, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3790,6 +3822,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6404005726795495106, guid: d5641e61014449e45aeb75d75af314db, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6838949723678717360, guid: d5641e61014449e45aeb75d75af314db, type: 3}
+      propertyPath: m_SortingLayer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7775801305287007273, guid: d5641e61014449e45aeb75d75af314db, type: 3}
@@ -4139,6 +4175,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemSlotIngame (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2065773623994089121, guid: d5641e61014449e45aeb75d75af314db, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492463083856388287, guid: d5641e61014449e45aeb75d75af314db, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6404005726795495106, guid: d5641e61014449e45aeb75d75af314db, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4219,14 +4263,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7775801305287007273, guid: d5641e61014449e45aeb75d75af314db, type: 3}
-      propertyPath: m_Particles.Array.size
-      value: 2
+    - target: {fileID: 6838949723678717360, guid: d5641e61014449e45aeb75d75af314db, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7775801305287007273, guid: d5641e61014449e45aeb75d75af314db, type: 3}
-      propertyPath: 'm_Particles.Array.data[1]'
-      value: 
-      objectReference: {fileID: 7301542388261014101}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4235,11 +4275,6 @@ PrefabInstance:
 --- !u!224 &2351236493901980255 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6404005726795495106, guid: d5641e61014449e45aeb75d75af314db, type: 3}
-  m_PrefabInstance: {fileID: 8682619458314835101}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &7301542388261014101 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 2101657622422838984, guid: d5641e61014449e45aeb75d75af314db, type: 3}
   m_PrefabInstance: {fileID: 8682619458314835101}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8858934855729379953
@@ -4462,6 +4497,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemSlotIngame (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2065773623994089121, guid: d5641e61014449e45aeb75d75af314db, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492463083856388287, guid: d5641e61014449e45aeb75d75af314db, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6404005726795495106, guid: d5641e61014449e45aeb75d75af314db, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4540,6 +4583,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6404005726795495106, guid: d5641e61014449e45aeb75d75af314db, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6838949723678717360, guid: d5641e61014449e45aeb75d75af314db, type: 3}
+      propertyPath: m_SortingLayer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7775801305287007273, guid: d5641e61014449e45aeb75d75af314db, type: 3}
