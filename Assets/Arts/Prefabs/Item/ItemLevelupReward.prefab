@@ -15857,10 +15857,6 @@ PrefabInstance:
       value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 5257182365439181791, guid: 169dbd8849f643b42ad29fb079497f19, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 98c288a0a35ad47d59cb304cb61f0a15, type: 2}
-    - target: {fileID: 5257182365439181791, guid: 169dbd8849f643b42ad29fb079497f19, type: 3}
       propertyPath: m_fontStyle
       value: 0
       objectReference: {fileID: 0}
@@ -15887,7 +15883,7 @@ PrefabInstance:
     - target: {fileID: 5257182365439181791, guid: 169dbd8849f643b42ad29fb079497f19, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 6666625080244122716, guid: 98c288a0a35ad47d59cb304cb61f0a15, type: 2}
+      objectReference: {fileID: -355832776374284991, guid: 1154d2db12bbb994c908a7c2921aab10, type: 2}
     - target: {fileID: 5257182365439181791, guid: 169dbd8849f643b42ad29fb079497f19, type: 3}
       propertyPath: m_characterSpacing
       value: 0
@@ -18082,10 +18078,6 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5257182365439181791, guid: 169dbd8849f643b42ad29fb079497f19, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 98c288a0a35ad47d59cb304cb61f0a15, type: 2}
-    - target: {fileID: 5257182365439181791, guid: 169dbd8849f643b42ad29fb079497f19, type: 3}
       propertyPath: m_fontStyle
       value: 16
       objectReference: {fileID: 0}
@@ -18108,7 +18100,7 @@ PrefabInstance:
     - target: {fileID: 5257182365439181791, guid: 169dbd8849f643b42ad29fb079497f19, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 2100000, guid: 056e8485c3e7e4563adcad55b08d323c, type: 2}
+      objectReference: {fileID: 2100000, guid: 2cf4ec93a6f4eb14d856cc36d2009e32, type: 2}
     - target: {fileID: 5257182365439181791, guid: 169dbd8849f643b42ad29fb079497f19, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4294967295
