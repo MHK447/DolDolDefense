@@ -150,6 +150,14 @@ MonoBehaviour:
     color: {r: 0.99607843, g: 0.69411767, b: 0.35686275, a: 1}
   - key_string: StageColor_5_Bottom
     color: {r: 0.32156864, g: 0.85882354, b: 0.89411765, a: 1}
+  - key_string: slot_grade_1
+    color: {r: 0.40922034, g: 0.41473222, b: 0.41509432, a: 1}
+  - key_string: slot_grade_2
+    color: {r: 0, g: 0.16061544, b: 1, a: 1}
+  - key_string: slot_grade_3
+    color: {r: 0.3914833, g: 0, b: 1, a: 1}
+  - key_string: slot_grade_4
+    color: {r: 1, g: 0.92926645, b: 0, a: 1}
   _eventImgaeColorDefines: []
   SkeletonGraphicMat: {fileID: 0}
   DisableSpriteMat: {fileID: 0}

@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Common_Icon_Gacha_03_0: -5300015863751561154
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -60,8 +60,8 @@ public partial class InGameBaseStage : MonoBehaviour
 
     public void SetHp(int hp)
     {
-        GameRoot.Instance.UserData.InGamePlayerData.StartHpProperty.Value = hp;
-        GameRoot.Instance.UserData.InGamePlayerData.CurHpProperty.Value = hp;
+        GameRoot.Instance.UserData.InGamePlayerData.PlayerUnitInfoData.StartHpProperty.Value = hp;
+        GameRoot.Instance.UserData.InGamePlayerData.PlayerUnitInfoData.CurHpProperty.Value = hp;
     }
 
     public void TutorialCheck()

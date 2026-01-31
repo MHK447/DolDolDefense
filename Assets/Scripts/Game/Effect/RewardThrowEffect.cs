@@ -145,15 +145,15 @@ public class RewardThrowEffect : Effect
                 {
                     GameRoot.Instance.EffectSystem.MultiPlay<RewardEffect>(transform.position, x =>
                      {
-                         var target = GameRoot.Instance.UISystem.GetUI<PopupInGame>().SilverCoinRoot;
+                        //  var target = GameRoot.Instance.UISystem.GetUI<PopupInGame>().SilverCoinRoot;
 
-                         x.Set((int)Config.RewardType.Currency, (int)Config.CurrencyID.SilverCoin, target, () =>
-                         {
-                             EndCallBack?.Invoke();
-                             EndCallBack = null;
-                             GameRoot.Instance.UserData.SetReward((int)Config.RewardType.Currency, (int)Config.CurrencyID.SilverCoin, curwaveidx * 10);
-                         });
-                         x.SetAutoRemove(true, 1.5f);
+                        //  x.Set((int)Config.RewardType.Currency, (int)Config.CurrencyID.SilverCoin, target, () =>
+                        //  {
+                        //      EndCallBack?.Invoke();
+                        //      EndCallBack = null;
+                        //      GameRoot.Instance.UserData.SetReward((int)Config.RewardType.Currency, (int)Config.CurrencyID.SilverCoin, curwaveidx * 10);
+                        //  });
+                        //  x.SetAutoRemove(true, 1.5f);
                      });
                 }
                 break;

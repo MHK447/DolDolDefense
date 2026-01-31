@@ -578,6 +578,36 @@ public static class ProjectUtility
         iscurrencytext);
     }
 
+    public static int GetGachaSlotGrade()
+    {
+        var tdlist = Tables.Instance.GetTable<SlotRandGradeRatio>().DataList;
+        int selectgrade = 0;
+
+        // 전체 ratio 합계 계산
+        float totalRatio = 0f;
+        foreach (var data in tdlist)
+        {
+            totalRatio += data.ratio;
+        }
+
+        // 랜덤 값 생성 (0 ~ totalRatio)
+        float randomValue = UnityEngine.Random.Range(0f, totalRatio);
+
+        // 가중치에 따라 등급 선택
+        float currentSum = 0f;
+        foreach (var data in tdlist)
+        {
+            currentSum += data.ratio;
+            if (randomValue <= currentSum)
+            {
+                selectgrade = data.idx;
+                break;
+            }
+        }
+
+        return selectgrade;
+    }
+
 
     public static void GoodsGetEffect(
         UnityEngine.Vector3 worldStartPos,

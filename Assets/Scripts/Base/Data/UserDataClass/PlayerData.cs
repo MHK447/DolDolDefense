@@ -42,8 +42,6 @@ public class InGamePlayerData
     public int Playerlevel = 1;
     public int Playerexp = 0;
 
-    public IReactiveProperty<int> StartHpProperty { get; private set; } = new ReactiveProperty<int>(0);
-    public IReactiveProperty<int> CurHpProperty { get; private set; } = new ReactiveProperty<int>(0);
 
     public IReactiveProperty<int> InGameExpProperty { get; private set; } = new ReactiveProperty<int>(0);
     public IReactiveProperty<int> InGameUpgradeCountProperty { get; private set; } = new ReactiveProperty<int>(1);
@@ -56,6 +54,8 @@ public class InGamePlayerData
 
     public IReactiveProperty<int> InGameMoneyProperty { get; private set; } = new ReactiveProperty<int>(0);
     public int InGameReRollCount = 0;
+
+    public PlayerUnitInfoData PlayerUnitInfoData { get; private set; } = new PlayerUnitInfoData();
 
     public ReactiveCollection<PlayerSkillBase> PlayerSkillList = new ReactiveCollection<PlayerSkillBase>();
 
@@ -80,7 +80,7 @@ public class InGamePlayerData
 
     public void SetPlayerHp(int hp)
     {
-        StartHpProperty.Value = hp;
+        PlayerUnitInfoData.StartHpProperty.Value = hp;
     }
 
 

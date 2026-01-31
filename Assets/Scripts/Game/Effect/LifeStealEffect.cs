@@ -86,16 +86,14 @@ public class LifeStealEffect : Effect
                 // 4. 체력 회복 (총 입힌 데미지만큼)
                 if (TotalDamageDealt > 0)
                 {
-                    InGameStage.PlayerUnit.PlayerUnitInfoData.CurHp += TotalDamageDealt;
+                    GameRoot.Instance.UserData.InGamePlayerData.PlayerUnitInfoData.CurHpProperty.Value += TotalDamageDealt;
 
                     // 최대 체력 넘지 않도록 제한
-                    if (InGameStage.PlayerUnit.PlayerUnitInfoData.CurHp > InGameStage.PlayerUnit.PlayerUnitInfoData.StartHp)
+                    if (GameRoot.Instance.UserData.InGamePlayerData.PlayerUnitInfoData.CurHpProperty.Value > GameRoot.Instance.UserData.InGamePlayerData.PlayerUnitInfoData.StartHpProperty.Value)
                     {
-                        InGameStage.PlayerUnit.PlayerUnitInfoData.CurHp = InGameStage.PlayerUnit.PlayerUnitInfoData.StartHp;
+                        GameRoot.Instance.UserData.InGamePlayerData.PlayerUnitInfoData.CurHpProperty.Value = GameRoot.Instance.UserData.InGamePlayerData.PlayerUnitInfoData.StartHpProperty.Value;
                     }
 
-                    // UI 업데이트
-                    InGameStage.PlayerUnit.SetHpProgress(InGameStage.PlayerUnit.PlayerUnitInfoData.CurHp);
                 }
 
                 // 5. 휴식 상태로 전환

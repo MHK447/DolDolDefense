@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d8b340dea33f4418a1667de1c25f8f2, type: 3}
+  m_Name: SlotRandGradeRatio
+  m_EditorClassIdentifier: 
+  mFirstKey:
+  - 1
+  - 2
+  - 3
+  - 4
+  mSecondKey: []
+  mDataList:
+  - _idx: 1
+    _ratio: 72.5
+  - _idx: 2
+    _ratio: 22
+  - _idx: 3
+    _ratio: 4.5
+  - _idx: 4
+    _ratio: 1.5

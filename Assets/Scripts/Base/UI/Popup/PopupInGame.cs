@@ -23,35 +23,42 @@ public class PopupInGame : CommonUIBase
     [SerializeField]
     private TextMeshProUGUI TimeText;
 
-    [SerializeField]
-    private TextMeshProUGUI SilverCoinText;
-
-    [SerializeField]
-    private Button ReRollBtn;
-
-    public Transform SilverCoinRoot;
-
     private CompositeDisposable disposables = new CompositeDisposable();
+
+    [SerializeField]
+    private InGameSlotGroup InGameSlotGroup;
+
+    [SerializeField]
+    private Slider WaveSlider;
+
+
+    [SerializeField]
+    private TextMeshProUGUI HpText;
+
+    [SerializeField]
+    private Slider HpSlider;
 
 
     protected override void Awake()
     {
         base.Awake();
 
-        PauseBtn.onClick.AddListener(OnClickPause);
-
-        ReRollBtn.onClick.AddListener(OnClickReRoll);
+        //PauseBtn.onClick.AddListener(OnClickPause);
     }
 
 
     public void Init()
     {
+
+        GameRoot.Instance.UserData.Ingamesilvercoin.Value += 2000;
+
         disposables.Clear();
 
         GameRoot.Instance.UserData.InGamePlayerData.WaveTimePorperty.Subscribe(x =>
         {
             var value = 20 - x;
             TimeText.text = $"00:{value}";
+            WaveSlider.value = (float)x / 20;
         }).AddTo(disposables);
 
         GameRoot.Instance.UserData.Waveidx.Subscribe(x =>
@@ -60,12 +67,16 @@ public class PopupInGame : CommonUIBase
         }).AddTo(disposables);
 
 
-        GameRoot.Instance.UserData.InGamePlayerData.InGameMoneyProperty.Subscribe(x =>
-        {
-            SilverCoinText.text = x.ToString();
-        }).AddTo(disposables);
+        GameRoot.Instance.UserData.InGamePlayerData.PlayerUnitInfoData.CurHpProperty.Subscribe(x=> {SetHpText(x);}).AddTo(disposables);
 
 
+        InGameSlotGroup.Init();
+    }
+
+    public void SetHpText(int hp)
+    {
+        HpText.text = $"{hp}/{GameRoot.Instance.UserData.InGamePlayerData.PlayerUnitInfoData.StartHpProperty.Value}";
+        HpSlider.value = (float)hp / (float)GameRoot.Instance.UserData.InGamePlayerData.PlayerUnitInfoData.StartHpProperty.Value;
     }
 
     public void OnClickPause()
@@ -75,21 +86,10 @@ public class PopupInGame : CommonUIBase
 
     public void OnClickReRoll()
     {
-        var rollcount = Random.Range(1, 4);
-        var tier = Random.Range(1, 4);
 
-        if (rollcount == 3)
-        {
-            GameRoot.Instance.UserData.Ingamesilvercoin.Value += 100 * tier;
-        }
-        else
-        {
-            GameRoot.Instance.UISystem.OpenUI<PopupLevelUpReward>(x =>
-            {
-                x.Init((InGameUpgradeCategory)rollcount, (UpgradeTier)tier, true);
-            });
-        }
     }
+
+
 
     void OnDisable()
     {

@@ -11,7 +11,7 @@ public class PlayerSkill_Lifesteal : PlayerSkillBase
 
         GameRoot.Instance.EffectSystem.MultiPlay<LifeStealEffect>(InGameStage.PlayerUnit.transform.position, (x) =>
         {
-            x.Init(InGameStage.PlayerUnit.PlayerUnitInfoData.AttackDamage);
+            x.Init(GameRoot.Instance.UserData.InGamePlayerData.PlayerUnitInfoData.AttackDamage);
         });
     }
 

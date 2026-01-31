@@ -51,12 +51,12 @@ public class HUDTotal : UIBase
             {
                 switch (i)
                 {
-                    case (int)HudBottomBtnType.TRAINING:
-                        {
-                            GameRoot.Instance.UISystem.PreLoadUI(typeof(PageLobbyTraining), ui => { UIList.Add(ui); });
+                    // case (int)HudBottomBtnType.TRAINING:
+                    //     {
+                    //         GameRoot.Instance.UISystem.PreLoadUI(typeof(PageLobbyTraining), ui => { UIList.Add(ui); });
 
-                        }
-                        break;
+                    //     }
+                    //     break;
                     case (int)HudBottomBtnType.CARD:
                         {
                             GameRoot.Instance.UISystem.PreLoadUI(typeof(PageLobbyCard), ui => { UIList.Add(ui); });
@@ -383,12 +383,12 @@ public class HUDTotal : UIBase
                 break;
             case HudBottomBtnType.TRAINING:
                 {
-                    var page = GameRoot.Instance.UISystem.GetUI<PageLobbyTraining>();
-                    if (page != null)
-                    {
-                        page.Init();
-                        page.gameObject.SetActive(true);
-                    }
+                    // var page = GameRoot.Instance.UISystem.GetUI<PageLobbyTraining>();
+                    // if (page != null)
+                    // {
+                    //     page.Init();
+                    //     page.gameObject.SetActive(true);
+                    // }
                 }
                 break;
         }

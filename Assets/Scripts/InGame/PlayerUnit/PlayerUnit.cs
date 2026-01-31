@@ -27,14 +27,8 @@ public class PlayerUnit : MonoBehaviour
 
     public bool IsDead { get { return UnitState == PlayerUnitState.Dead; } }
 
-    [HideInInspector]
-    public PlayerUnitInfoData PlayerUnitInfoData = new PlayerUnitInfoData();
-
     [SerializeField]
     private LineRenderer AttackRangeRenderer;
-
-    private CastleHpProgress CastleHpProgress;
-
     private int PlayerUnitIdx = 0;
 
     private Coroutine AttackCo = null;
@@ -52,51 +46,26 @@ public class PlayerUnit : MonoBehaviour
         var td = Tables.Instance.GetTable<PlayerUnitInfo>().GetData(unitidx);
 
 
-
         if (td != null)
         {
-            PlayerUnitInfoData.StartHp = td.base_hp;
-            PlayerUnitInfoData.CurHp = td.base_hp;
-            PlayerUnitInfoData.AttackRange = 500 * 0.01f;
+            GameRoot.Instance.UserData.InGamePlayerData.PlayerUnitInfoData.StartHpProperty.Value = td.base_hp;
+            GameRoot.Instance.UserData.InGamePlayerData.PlayerUnitInfoData.CurHpProperty.Value = td.base_hp;
+            GameRoot.Instance.UserData.InGamePlayerData.PlayerUnitInfoData.AttackRange = 500 * 0.01f;
 
             GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_BlackBall());
             GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_Lightning());
             GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_DarkGear());
 
             UnitState = PlayerUnitState.Idle;
-
-            SetHpProgress(PlayerUnitInfoData.CurHp);
-
-            //CreateCircle();
         }
     }
-
-    public void SetHpProgress(int hp)
-    {
-        if (CastleHpProgress == null)
-        {
-            GameRoot.Instance.UISystem.LoadFloatingUI<CastleHpProgress>(x =>
-            {
-                CastleHpProgress = x;
-                CastleHpProgress.SetHpText(hp, PlayerUnitInfoData.StartHp);
-                CastleHpProgress.Init(transform);
-            });
-        }
-        else
-        {
-            CastleHpProgress.SetHpText(hp, PlayerUnitInfoData.StartHp);
-        }
-    }
-
-
 
     public void Damage(int damage)
     {
-        PlayerUnitInfoData.CurHp -= damage;
-        CastleHpProgress.SetHpText(PlayerUnitInfoData.CurHp, PlayerUnitInfoData.StartHp);
+        GameRoot.Instance.UserData.InGamePlayerData.PlayerUnitInfoData.CurHpProperty.Value -= damage;
         DamageColorEffect();
 
-        if (PlayerUnitInfoData.CurHp <= 0)
+        if (GameRoot.Instance.UserData.InGamePlayerData.PlayerUnitInfoData.CurHpProperty.Value <= 0)
         {
             UnitState = PlayerUnitState.Dead;
         }
@@ -139,7 +108,7 @@ public class PlayerUnit : MonoBehaviour
 
         var finddata = PlayerBulletList.Find(x => x.GetBulletIdx == skillidx && !x.gameObject.activeSelf);
 
-        var findenemy = GameRoot.Instance.InGameSystem.GetInGame<InGameBase>().Stage.EnemyUnitGroup.FindEnemyTarget(transform.position, PlayerUnitInfoData.AttackRange);
+        var findenemy = GameRoot.Instance.InGameSystem.GetInGame<InGameBase>().Stage.EnemyUnitGroup.FindEnemyTarget(transform.position, GameRoot.Instance.UserData.InGamePlayerData.PlayerUnitInfoData.AttackRange);
 
         // 적이 없으면 공격 실패 (false 반환하여 쿨타임 리셋 안 함)
         if (findenemy == null && isenemylive)
@@ -231,8 +200,8 @@ public class PlayerUnit : MonoBehaviour
 
         for (int i = 0; i < segments + 1; i++)
         {
-            float x = Mathf.Sin(Mathf.Deg2Rad * angle) * PlayerUnitInfoData.AttackRange;
-            float y = Mathf.Cos(Mathf.Deg2Rad * angle) * PlayerUnitInfoData.AttackRange;
+            float x = Mathf.Sin(Mathf.Deg2Rad * angle) * GameRoot.Instance.UserData.InGamePlayerData.PlayerUnitInfoData.AttackRange;
+            float y = Mathf.Cos(Mathf.Deg2Rad * angle) * GameRoot.Instance.UserData.InGamePlayerData.PlayerUnitInfoData.AttackRange;
 
             // 로컬 좌표계로 설정 (유닛 중심 기준)
             AttackRangeRenderer.SetPosition(i, new Vector3(x, y, 0f));

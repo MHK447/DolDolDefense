@@ -274,7 +274,6 @@ public class GameRoot : Singleton<GameRoot>
 			//OnDeepLinkActivated(Application.absoluteURL);
 		}
 	}
-
 	private IEnumerator LoadGameData()
 	{
 
@@ -287,22 +286,29 @@ public class GameRoot : Singleton<GameRoot>
 		loadcount = 0;
 		InitUILoading();
 
-		yield return new WaitUntil(() => loadcount == 1);
-		UserData.Load();
-		InGameSystem.ChangeMode(CurInGameType);
+	yield return new WaitUntil(() => loadcount == 1);
+	UserData.Load();
+	InGameSystem.ChangeMode(CurInGameType);
 
-		LoadComplete = true;
+	// 아틀라스 로딩을 먼저 시작하고 완료를 기다림
+	InitRequestAtlas();
+	yield return new WaitUntil(() => AtlasManager.Instance.IsLoadComplete());
 
-		InitSystem();
+	LoadComplete = true;
 
-		GameNotification.Create();
-		ShopSystem.Create();
-		LobbyBoxSystem.Create();
-		CardSystem.Create();
-		PlayerStatSystem.Create();
-		GameRoot.instance.InAppPurchaseManager.InitializePurchasing();
+	InitSystem();
 
-		InitRequestAtlas();
+	GameNotification.Create();
+	ShopSystem.Create();
+	LobbyBoxSystem.Create();
+	CardSystem.Create();
+	GameRoot.instance.InAppPurchaseManager.InitializePurchasing();
+
+
+
+		List<TpParameter> parameters = new List<TpParameter>();
+		parameters.Add(new TpParameter("stage", GameRoot.Instance.UserData.Stageidx.Value));
+		PluginSystem.AnalyticsProp.AllEvent(IngameEventType.None, "launch", parameters);
 
 
 
@@ -313,9 +319,8 @@ public class GameRoot : Singleton<GameRoot>
 			// 로딩 숨김 추가!
 			Loading.Hide(true);
 		});
-
-
 	}
+
 
 	public void BgmOn()
 	{

@@ -19,7 +19,7 @@ public class PlayerBullet_Poison : PlayerBulletBase
             if (enemy != null && !IsDamageOn)
             {
                 IsDamageOn = true;
-                enemy.Damage((int)PlayerUnit.PlayerUnitInfoData.AttackDamage);
+                enemy.Damage((int)GameRoot.Instance.UserData.InGamePlayerData.PlayerUnitInfoData.AttackDamage);
 
                 GameRoot.Instance.AlimentSystem.AddAliment(AlimentType.Poison, 1f, enemy, 0, 1f,1 );
             }
