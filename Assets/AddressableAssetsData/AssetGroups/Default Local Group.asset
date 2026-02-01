@@ -320,11 +320,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 8de91a3a77f4648608740120a3755481
-    m_Address: Effect/HitEffect_02
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8ec3896daa0ff4f5b99e86a9afd5a6e2
     m_Address: Effect/AbilityUpEffect
     m_ReadOnly: 0
@@ -425,11 +420,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ca539427454194cf3b741dd3baf027a0
-    m_Address: Effect/RewardThrowEffect
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ccd88de42cb674f5f95bcc26ada3cf32
     m_Address: Bullet_FireBall
     m_ReadOnly: 0
@@ -457,11 +447,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d91cab8688aea4470b84dda49246f2be
     m_Address: UI/InGame/EnemySpawnerHpProgress
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d9e5c231a9bf64c7db0a9e294846bebd
-    m_Address: Effect/SpriteThrowEffect
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

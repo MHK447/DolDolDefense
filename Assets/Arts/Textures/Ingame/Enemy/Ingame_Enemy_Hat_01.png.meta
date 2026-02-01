@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: da870e177cc720b44847fd7748e0f127
+guid: 5dca8e388cb07e34989bb2e98d0cdbd3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5788497559855726164
-    second: Common_Icon_Crown_0
+      213: -166021351078335698
+    second: Ingame_Enemy_Hat_01_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Common_Icon_Crown_0
+      name: Ingame_Enemy_Hat_01_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 40
-        height: 36
+        width: 87
+        height: 98
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 45e7a66acdfd45050800000000000000
-      internalID: 5788497559855726164
+      spriteID: e2b68d7f57c22bdf0800000000000000
+      internalID: -166021351078335698
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Common_Icon_Crown_0: 5788497559855726164
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 39a73708244c35547ac18bbfa5c1c06b
+guid: fd339b292d65f784995b54dd4afe5467
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3122958440926928528
-    second: Common_Tower_0
-  - first:
-      213: -7995472884811823750
-    second: Common_Tower_1
-  - first:
-      213: -4790920629258914448
-    second: Common_Tower_2
+      213: -1955448553306655712
+    second: Background_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -132,57 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Common_Tower_0
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 193
-        width: 23
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 09ed1c7e72af65b20800000000000000
-      internalID: 3122958440926928528
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Common_Tower_1
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 186
-        width: 19
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a750689e5cf5a0190800000000000000
-      internalID: -7995472884811823750
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Common_Tower_2
+      name: Background_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 119
-        height: 173
+        width: 768
+        height: 1392
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0757ee1321b338db0800000000000000
-      internalID: -4790920629258914448
+      spriteID: 024fa93b6e9dcd4e0800000000000000
+      internalID: -1955448553306655712
       vertices: []
       indices: 
       edges: []
@@ -210,10 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Common_Tower_0: 3122958440926928528
-      Common_Tower_1: -7995472884811823750
-      Common_Tower_2: -4790920629258914448
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
