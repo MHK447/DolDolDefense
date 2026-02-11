@@ -93,6 +93,14 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6837763811971400682, guid: 0d88476a6ed744a5498736352ba6fe70, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 2.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6837763811971400682, guid: 0d88476a6ed744a5498736352ba6fe70, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6837763811971400682, guid: 0d88476a6ed744a5498736352ba6fe70, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 0.29
       objectReference: {fileID: 0}
@@ -129,9 +137,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8096216015281289322, guid: 0d88476a6ed744a5498736352ba6fe70, type: 3}
+      propertyPath: m_Size.x
+      value: 2.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8096216015281289322, guid: 0d88476a6ed744a5498736352ba6fe70, type: 3}
+      propertyPath: m_Size.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8096216015281289322, guid: 0d88476a6ed744a5498736352ba6fe70, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 03bdc4c15e9994ba48b6fa2a4a959cf5, type: 3}
+    - target: {fileID: 8096216015281289322, guid: 0d88476a6ed744a5498736352ba6fe70, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8109014750024022587, guid: 0d88476a6ed744a5498736352ba6fe70, type: 3}
       propertyPath: m_Name
       value: Bullet_Normal
@@ -216,4 +236,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ColAction: {fileID: 8591008546634727535}
-  MoveSpeed: 10
+  MoveSpeed: 8
+  ArcHeight: 4

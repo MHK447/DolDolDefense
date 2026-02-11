@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using Unity.Services.Core;
 using BanpoFri;
 using UniRx;
 using UniRx.Async;
@@ -76,9 +77,6 @@ public class GameRoot : Singleton<GameRoot>
 
 	public CardSystem CardSystem { get; private set; } = new CardSystem();
 
-	public PlayerSkillSystem PlayerSkillSystem { get; private set; } = new PlayerSkillSystem();
-
-	public PlayerStatSystem PlayerStatSystem { get; private set; } = new PlayerStatSystem();
 
 	public UnityMainThreadDispatcher MainThreadDispatcher;
 
@@ -109,10 +107,10 @@ public class GameRoot : Singleton<GameRoot>
 	{
 		InitTry = true;
 		Addressables.InstantiateAsync("GameRoot").Completed += (handle) =>
-		{
-			instance = handle.Result.GetComponent<GameRoot>();
-			instance.name = "GameRoot";
-		};
+			{
+				instance = handle.Result.GetComponent<GameRoot>();
+				instance.name = "GameRoot";
+			};
 	}
 
 	public void AddTouchAction(System.Action cb)
@@ -157,9 +155,15 @@ public class GameRoot : Singleton<GameRoot>
 		if (!LoadComplete)
 			return;
 
+		// Keep platform SDKs (e.g., Apple Sign-In) updated each frame
+		PluginSystem.Update();
+
 		UserData.Update();
 		PlayTimeSystem.Update();
-		//AlimentSystem.Update();
+		AlimentSystem.Update();
+
+
+		logStageTime += Time.deltaTime;
 
 		if (deltaTime >= 1f) // one seconds updates;
 		{
@@ -255,9 +259,6 @@ public class GameRoot : Singleton<GameRoot>
 		//TouchStartActions.Clear();
 		Screen.sleepTimeout = SleepTimeout.NeverSleep;
 		PluginSystem.Init();
-		InAppPurchaseManager = GetComponent<InAppPurchaseManager>();
-		if (InAppPurchaseManager != null)
-			InAppPurchaseManager.Init();
 		//SnapshotCam = SnapshotCamera.MakeSnapshotCamera("SnapShot");
 		//SnapshotCam.transform.SetParent(this.transform);
 		//SnapshotCam.transform.position = new Vector3(0f, 0f, -1f);
@@ -274,6 +275,7 @@ public class GameRoot : Singleton<GameRoot>
 			//OnDeepLinkActivated(Application.absoluteURL);
 		}
 	}
+
 	private IEnumerator LoadGameData()
 	{
 
@@ -286,29 +288,31 @@ public class GameRoot : Singleton<GameRoot>
 		loadcount = 0;
 		InitUILoading();
 
-	yield return new WaitUntil(() => loadcount == 1);
-	UserData.Load();
-	InGameSystem.ChangeMode(CurInGameType);
+		yield return new WaitUntil(() => loadcount == 1);
+		UserData.Load();
+		yield return UnityServices.InitializeAsync().AsUniTask().ToCoroutine();
+		InAppPurchaseManager = GetComponent<InAppPurchaseManager>();
+		InGameSystem.ChangeMode(CurInGameType);
 
-	// 아틀라스 로딩을 먼저 시작하고 완료를 기다림
-	InitRequestAtlas();
-	yield return new WaitUntil(() => AtlasManager.Instance.IsLoadComplete());
+		LoadComplete = true;
 
-	LoadComplete = true;
+		InitSystem();
 
-	InitSystem();
+		GameNotification.Create();
+		ShopSystem.Create();
+		LobbyBoxSystem.Create();
+		CardSystem.Create();
+		InitRequestAtlas();
+		// 아틀라스 로드가 끝난 뒤 로비를 띄워야 GetSprite/atlas 스프라이트가 하얗게 안 나옴
+		yield return new WaitUntil(() => AtlasManager.Instance.IsLoadComplete());
 
-	GameNotification.Create();
-	ShopSystem.Create();
-	LobbyBoxSystem.Create();
-	CardSystem.Create();
-	GameRoot.instance.InAppPurchaseManager.InitializePurchasing();
-
-
+		PluginSystem.LoginProp.InitPlatformLogin();
 
 		List<TpParameter> parameters = new List<TpParameter>();
 		parameters.Add(new TpParameter("stage", GameRoot.Instance.UserData.Stageidx.Value));
+		parameters.Add(new TpParameter("noads", GameRoot.Instance.ShopSystem.NoInterstitialAds.Value ? "1" : "0"));
 		PluginSystem.AnalyticsProp.AllEvent(IngameEventType.None, "launch", parameters);
+		InAppPurchaseManager.Init();
 
 
 
@@ -319,8 +323,9 @@ public class GameRoot : Singleton<GameRoot>
 			// 로딩 숨김 추가!
 			Loading.Hide(true);
 		});
-	}
 
+
+	}
 
 	public void BgmOn()
 	{
@@ -339,7 +344,9 @@ public class GameRoot : Singleton<GameRoot>
 
 	void InitRequestAtlas()
 	{
-		AtlasManager.Instance.ReLoad(false);
+		// 초기 로드 시에는 ReleaseAll 호출 금지 - 이미 로드된 아틀라스를 해제하면
+		// 해당 스프라이트를 사용 중인 UI가 하얀색으로 표시됨 (텍스처 unload)
+		AtlasManager.Instance.LoadAllAtlasWithoutRelease();
 	}
 
 	public void ChangeIngameType(GameType type, bool changeData = false)
@@ -409,13 +416,46 @@ public class GameRoot : Singleton<GameRoot>
 		UnitSystem.Create();
 		TrainingSystem.Create();
 		DamageTextSystem.Create();
-		InGameUpgradeSystem.Create();
 
 	}
 
 	private void SetNativeLanguage()
 	{
+		var LocaleCode = BanpoFriNative.getLocaleCode();
+		if (System.Enum.IsDefined(typeof(Language), LocaleCode))
+		{
+			if (!System.Enum.TryParse<Language>(LocaleCode, out UserData.Language))
+			{
+				if (LocaleCode.Equals("pt-BR"))
+					UserData.Language = Language.ptbr;
+				else if (LocaleCode.Equals("zh-TW"))
+					UserData.Language = Language.tw;
+				else if (LocaleCode.EndsWith("zh-Cn"))
+					UserData.Language = Language.cn;
+				else
+					UserData.Language = Language.en;
+			}
+		}
+		else
+		{
+			if (LocaleCode.Equals("pt-BR"))
+				UserData.Language = Language.ptbr;
+			else if (LocaleCode.Equals("zh-TW"))
+				UserData.Language = Language.tw;
+			else if (LocaleCode.EndsWith("zh-Cn"))
+				UserData.Language = Language.cn;
+			else
+				UserData.Language = Language.en;
+		}
+
+		//UserData.Language = Config.Language.en;
+		//Config.Instance.UpdateFallbackOrder(UserData.Language);
+
+		var list = GameRoot.Instance.UISystem.RefreshComponentList;
+		foreach (var ls in list)
+			ls.RefreshText();
 	}
+
 
 	public void SetCheatWindow(bool value)
 	{
@@ -471,6 +511,9 @@ public class GameRoot : Singleton<GameRoot>
 	}
 
 
+	private float logStageTime = 0f;
+	private float logEventTime = 0f;
+
 	private void OnApplicationPause(bool pause)
 	{
 		if (!LoadComplete)
@@ -481,6 +524,18 @@ public class GameRoot : Singleton<GameRoot>
 			PluginSystem.OnApplicationPause(true);
 
 			GameRoot.Instance.UserData.mainData.LastLoginTime = TimeSystem.GetCurTime();
+
+			if (logStageTime + logEventTime >= 10f)
+			{
+				var count = UserData.HeartBeatCount++;
+
+				//TpLog.LogError(time.ToString());
+				List<TpParameter> parameters = new List<TpParameter>();
+				parameters.Add(new TpParameter("stage", UserData.Stageidx.Value));
+				parameters.Add(new TpParameter("time", (int)logStageTime));
+				parameters.Add(new TpParameter("noads", GameRoot.Instance.ShopSystem.NoInterstitialAds.Value ? "1" : "0"));
+				GameRoot.Instance.PluginSystem.AnalyticsProp.AllEvent(IngameEventType.None, "heart_beat", parameters);
+			}
 		}
 		else
 		{

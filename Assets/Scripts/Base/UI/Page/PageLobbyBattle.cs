@@ -31,8 +31,6 @@ public class PageLobbyBattle : CommonUIBase
     [SerializeField]
     private LobbyStageRewardGroup RewardGroup;
 
-    [SerializeField]
-    private ChapterMapComponent MapComponent;
 
     [SerializeField]
     private GameObject BossStageImg;
@@ -77,11 +75,6 @@ public class PageLobbyBattle : CommonUIBase
         RewardGroup.Init();
 
         SetStage();
-
-        MapComponent.transform.localScale = Vector3.zero;
-        MapComponent.transform.DOScale(Vector3.one, 0.3f).SetEase(Ease.OutBack);
-
-        MapComponent.Set(stageidx);
 
         ProjectUtility.SetActiveCheck(RewardGroup.gameObject,
          GameRoot.Instance.ContentsOpenSystem.ContentsOpenCheck(ContentsOpenSystem.ContentsOpenType.LobbyReward));

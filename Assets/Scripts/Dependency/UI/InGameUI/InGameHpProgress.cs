@@ -16,9 +16,6 @@ public class InGameHpProgress : InGameFloatingUI
     [SerializeField]
     private Slider DelayHealthBar;
 
-    [SerializeField]
-    private TextMeshProUGUI HpText;
-
     public float updatespeed = 1f;
 
 
@@ -56,18 +53,13 @@ public class InGameHpProgress : InGameFloatingUI
 
         // Col = GameRoot.Instance.StartCoroutine(UpdateDelayedHealthBar(curhpvalue));
 
-        HpText.text = curhp.ToString();
+        //HpText.text = curhp.ToString();
     }
 
     private void OnDisable()
     {
         if (Col != null)
             GameRoot.Instance.StopCoroutine(Col);
-    }
-
-    public void SetHpText(double hp)
-    {
-        HpText.text = hp.ToString();
     }
 
 

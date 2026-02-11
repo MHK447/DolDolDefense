@@ -45,7 +45,7 @@ public class InGamePlayerComponent : MonoBehaviour
 
         var td = Tables.Instance.GetTable<UnitInfo>().GetData(unitidx);
 
-        UnitImg.sprite = AtlasManager.Instance.GetSprite(Atlas.Atlas_UI_Upgrade, $"Upgrade_icon_{unitidx}");
+        //UnitImg.sprite = AtlasManager.Instance.GetSprite(Atlas.Atlas_UI_Upgrade, $"Upgrade_icon_{unitidx}");
 
         var findunitdata = GameRoot.Instance.UserData.Unitgroupdata.FindUnit(unitidx);
 

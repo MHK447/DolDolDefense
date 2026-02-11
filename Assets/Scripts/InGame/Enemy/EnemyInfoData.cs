@@ -13,7 +13,12 @@ public class EnemyInfoData
 
     public float MoveSpped = 0f;
 
-    
+    public float AttackSpeed = 1f;
+
+
+    public float AttackDelTime = 0f;
+
+    public int AttackDamage = 1;
 
 
 }

@@ -17,9 +17,11 @@ public class EnemyUnit : MonoBehaviour
 {
     public enum EnemyState
     {
+        Idle,
         Dead,
         Move,
         Sturn,
+        Attack,
     }
 
     protected InGameHpProgress InGameHpProgress;
@@ -29,9 +31,12 @@ public class EnemyUnit : MonoBehaviour
     public EnemyInfoData EnemyInfoData = new EnemyInfoData();
 
     [SerializeField]
-    private SpriteRenderer UnitImg;
+    private List<SpriteRenderer> UnitImgList = new List<SpriteRenderer>();
 
-    public SpriteRenderer GetUnitImg { get { return UnitImg; } }
+    public SpriteRenderer GetUnitImg { get { return UnitImgList[0]; } }
+
+    [SerializeField]
+    private Animator Anim;
 
 
     private int EnemyIdx = 0;
@@ -54,12 +59,11 @@ public class EnemyUnit : MonoBehaviour
         EnemyInfoData.StartHp = hp;
         EnemyInfoData.CurHp = hp;
         EnemyInfoData.MoveSpped = 0.5f;
+        EnemyInfoData.AttackSpeed = 1f;
+        EnemyInfoData.AttackDelTime = 0f;
+        EnemyInfoData.AttackDamage = 1;
 
         BaseStage = GameRoot.Instance.InGameSystem.GetInGame<InGameBase>().Stage;
-
-
-        SetState(EnemyState.Move);
-
 
         SetHpprogress(hp);
 
@@ -67,8 +71,12 @@ public class EnemyUnit : MonoBehaviour
         this.transform.localScale = UnityEngine.Vector3.zero;
         this.transform.DOScale(UnityEngine.Vector3.one, 0.3f).SetEase(Ease.OutBack);
 
-        UnitImg.DisableHitEffect();
+        foreach (var img in UnitImgList)
+        {
+            img.DisableHitEffect();
+        }
 
+        SetState(EnemyState.Move);
 
         PlayerUnit = BaseStage.PlayerUnit;
     }
@@ -104,7 +112,27 @@ public class EnemyUnit : MonoBehaviour
 
     void Update()
     {
-        Move();
+        if (CurState == EnemyState.Move)
+        {
+            Move();
+        }
+        else if (CurState == EnemyState.Idle)
+        {
+            AttackRoutine();
+        }
+    }
+
+
+
+    public void AttackRoutine()
+    {
+        EnemyInfoData.AttackDelTime += Time.deltaTime;
+
+        if (EnemyInfoData.AttackDelTime >= EnemyInfoData.AttackSpeed)
+        {
+            EnemyInfoData.AttackDelTime = 0f;
+            SetState(EnemyState.Attack);
+        }
     }
 
 
@@ -134,19 +162,14 @@ public class EnemyUnit : MonoBehaviour
 
         this.transform.localScale = UnityEngine.Vector3.one;
 
-        GameRoot.Instance.EffectSystem.MultiPlay<TextEffectMoney>(transform.position, (x) =>
-        {
-            GameRoot.Instance.UserData.InGamePlayerData.InGameMoneyProperty.Value += 1;
-            x.SetText(1);
-        });
 
-        this.transform.DOScale(UnityEngine.Vector3.zero, 0.3f).SetEase(Ease.InBack).OnComplete(() =>
-        {
-            BaseStage.EnemyUnitGroup.DeadUnits.Add(this);
-            ProjectUtility.SetActiveCheck(this.gameObject, false);
-        });
     }
 
+    public void AfterDead()
+    {
+        BaseStage.EnemyUnitGroup.DeadUnits.Add(this);
+        ProjectUtility.SetActiveCheck(this.gameObject, false);
+    }
 
 
     public virtual void SetState(EnemyState state)
@@ -154,7 +177,29 @@ public class EnemyUnit : MonoBehaviour
         if (CurState == state) return;
 
         CurState = state;
+
+        switch (CurState)
+        {
+            case EnemyState.Dead:
+                Anim.Play("Death", 0, 0f);
+                break;
+            case EnemyState.Move:
+                Anim.Play("Walk", 0, 0f);
+                break;
+            case EnemyState.Attack:
+                Anim.Play("Attack", 0, 0f);
+                break;
+            case EnemyState.Idle:
+                Anim.Play("Idle", 0, 0f);
+                break;
+        }
     }
+
+    public void Attack()
+    {
+        BaseStage.PlayerUnit.Damage(EnemyInfoData.AttackDamage);
+    }
+
 
     public void Move()
     {
@@ -170,12 +215,13 @@ public class EnemyUnit : MonoBehaviour
     }
 
 
+
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            BaseStage.PlayerUnit.Damage((int)EnemyInfoData.CurHp);
-            Dead();
+            SetState(EnemyState.Attack);
         }
     }
 
@@ -187,7 +233,10 @@ public class EnemyUnit : MonoBehaviour
         {
             IsDamageDirect = true;
 
-            UnitImg.EnableHitEffect();
+            foreach (var img in UnitImgList)
+            {
+                img.EnableHitEffect();
+            }
 
             // 피격 효과 적용
 
@@ -197,7 +246,10 @@ public class EnemyUnit : MonoBehaviour
                 if (this != null)
                 {
                     // 효과 종료 후 원래 머티리얼로 복귀
-                    UnitImg.DisableHitEffect();
+                    foreach (var img in UnitImgList)
+                    {
+                        img.DisableHitEffect();
+                    }
 
                     IsDamageDirect = false;
                 }
@@ -206,7 +258,7 @@ public class EnemyUnit : MonoBehaviour
     }
 
 
-    public void KnockBack(KnocBackDirection direction , float power = 5f)
+    public void KnockBack(KnocBackDirection direction, float power = 5f)
     {
         if (PlayerUnit == null) return;
 

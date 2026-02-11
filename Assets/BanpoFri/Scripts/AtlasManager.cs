@@ -17,20 +17,24 @@ public class AtlasManager : Singleton<AtlasManager>
     {
         if (spriteCache.TryGetValue(atlasType, out var dict))
         {
-            if (!dict.ContainsKey(key))
-                dict.Add(key, atlasDict[atlasType].GetSprite(key));
+            if (dict.TryGetValue(key, out var cached))
+                return cached;
 
-            return dict[key];
+            if (!atlasDict.TryGetValue(atlasType, out SpriteAtlas atlasAsset))
+                return null;
+
+            var sprite = atlasAsset.GetSprite(key);
+            if (sprite != null)
+                dict.Add(key, sprite);
+            return sprite;
         }
 
-        if (!atlasDict.TryGetValue(atlasType, out SpriteAtlas atlas))
+        if (!atlasDict.TryGetValue(atlasType, out SpriteAtlas fallbackAtlas))
         {
             return null;
         }
 
-        // 아틀라스에서 직접 스프라이트 가져오기
-        
-        return atlas.GetSprite(key);
+        return fallbackAtlas.GetSprite(key);
     }
 
 
@@ -41,13 +45,11 @@ public class AtlasManager : Singleton<AtlasManager>
 
         if (!spriteCache.ContainsKey(Atlas.Atlas_UI_Common))
             spriteCache.Add(Atlas.Atlas_UI_Common, new Dictionary<string, Sprite>());
-        if (!spriteCache.ContainsKey(Atlas.Atlas_UI_Upgrade))
-            spriteCache.Add(Atlas.Atlas_UI_Upgrade, new Dictionary<string, Sprite>());
         if (!spriteCache.ContainsKey(Atlas.Atlas_UI_InGame))
             spriteCache.Add(Atlas.Atlas_UI_InGame, new Dictionary<string, Sprite>());
     }
 
-    // 전체 로드
+    // 전체 로드 (기존 아틀라스 해제 후 로드 - 리로드 용도)
     public void LoadAllAtlas()
     {
         // 기존 데이터 정리
@@ -60,7 +62,28 @@ public class AtlasManager : Singleton<AtlasManager>
         spriteCache.Clear();
         atlasDict.Clear();
         loadingRequests.Clear();
+        EnsureSpriteCacheInitialized();
 
+        StartLoadAllAtlas();
+    }
+
+    // Release 없이 아틀라스만 로드 (초기 로드용 - 이미 사용 중인 UI가 있으면 해제하지 않음)
+    public void LoadAllAtlasWithoutRelease()
+    {
+        EnsureSpriteCacheInitialized();
+        StartLoadAllAtlas();
+    }
+
+    void EnsureSpriteCacheInitialized()
+    {
+        if (!spriteCache.ContainsKey(Atlas.Atlas_UI_Common))
+            spriteCache.Add(Atlas.Atlas_UI_Common, new Dictionary<string, Sprite>());
+        if (!spriteCache.ContainsKey(Atlas.Atlas_UI_InGame))
+            spriteCache.Add(Atlas.Atlas_UI_InGame, new Dictionary<string, Sprite>());
+    }
+
+    void StartLoadAllAtlas()
+    {
         // 모든 Atlas enum 값에 대해 로드
         System.Array atlasValues = System.Enum.GetValues(typeof(Atlas));
         loadCount = atlasValues.Length - ignoreAtlas.Count;
@@ -72,7 +95,15 @@ public class AtlasManager : Singleton<AtlasManager>
 
             if (loadingRequests.ContainsKey(atlasType))
             {
-                // 이미 로드 중인 경우 콜백 추가
+                // 이미 로드 중인 경우 스킵 (loadCount 보정)
+                --loadCount;
+                continue;
+            }
+
+            // 이미 로드된 아틀라스는 스킵 (loadCount 보정)
+            if (atlasDict.TryGetValue(atlasType, out _))
+            {
+                --loadCount;
                 continue;
             }
 
@@ -117,9 +148,15 @@ public class AtlasManager : Singleton<AtlasManager>
     // 내부 아틀라스 로드 함수
     private void InternalLoadAtlas(Atlas atlasType, System.Action<SpriteAtlas> callback = null)
     {
-        string addressableName = atlasType.ToString();
+        // 이미 같은 아틀라스 로드 중이면 콜백만 체인에 추가 (덮어쓰면 먼저 요청한 UI가 아틀라스를 못 받아 하얗게 보임)
+        if (loadingRequests.TryGetValue(atlasType, out var existing))
+        {
+            if (callback != null)
+                loadingRequests[atlasType] = existing + callback;
+            return;
+        }
 
-        // 콜백 등록
+        string addressableName = atlasType.ToString();
         loadingRequests[atlasType] = callback;
 
         Addressables.LoadAssetAsync<SpriteAtlas>(addressableName).Completed += (result) =>
@@ -195,7 +232,7 @@ public class AtlasManager : Singleton<AtlasManager>
 
     #endregion
 
-    // 리소스 해제
+    // 리소스 해제 (언어/리소스 리로드 시에만 사용 - UI가 아틀라스 스프라이트를 사용 중이면 하얀색 표시됨)
     public void ReleaseAll()
     {
         foreach (var atlas in atlasDict.Values)
@@ -225,12 +262,9 @@ public enum Atlas
     // stage atlas
 
     Atlas_UI_Common,
-    Atlas_UI_Upgrade,
     Atlas_UI_InGame,
-    Atlas_UI_CommonWeapon,
-        Atlas_Stage,
-        Atlas_UI_Map,
-        Atlas_UI_LevelUp,
+    Atlas_Stage,
+    Atlas_UI_LevelUp,
     // @ add here
 
 }

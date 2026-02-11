@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.AddressableAssets;
-
+using DG.Tweening;
 public class PlayerUnit : MonoBehaviour
 {
     public enum PlayerUnitState
@@ -20,10 +20,13 @@ public class PlayerUnit : MonoBehaviour
     private SpriteRenderer PlayerUnitImg;
 
     [SerializeField]
-    private SpriteRenderer PlayerWeaponImg;
+    private Transform BulletSpawnTr;
 
+    [SerializeField]
+    private Transform EyesTr;
 
     private PlayerUnitState UnitState = PlayerUnitState.Idle;
+
 
     public bool IsDead { get { return UnitState == PlayerUnitState.Dead; } }
 
@@ -52,11 +55,9 @@ public class PlayerUnit : MonoBehaviour
             GameRoot.Instance.UserData.InGamePlayerData.PlayerUnitInfoData.CurHpProperty.Value = td.base_hp;
             GameRoot.Instance.UserData.InGamePlayerData.PlayerUnitInfoData.AttackRange = 500 * 0.01f;
 
-            GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_BlackBall());
-            GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_Lightning());
-            GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_DarkGear());
-
             UnitState = PlayerUnitState.Idle;
+
+            GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_BlackBall());
         }
     }
 
@@ -119,19 +120,21 @@ public class PlayerUnit : MonoBehaviour
 
         var enemypos = findenemy == null ? Vector3.zero : findenemy.transform.position;
 
+        EnemyAttack();
+
 
         if (finddata != null)
         {
             ProjectUtility.SetActiveCheck(finddata.gameObject, true);
 
-            finddata.transform.position = transform.position;
+            finddata.transform.position = BulletSpawnTr.position;
             finddata.Set(skillidx, this, enemypos, BulletColisionAction);
         }
         else
         {
             var bullet = Addressables.InstantiateAsync(prefab, transform).WaitForCompletion().GetComponent<PlayerBulletBase>();
             bullet.Set(skillidx, this, enemypos, BulletColisionAction);
-
+            bullet.transform.position = BulletSpawnTr.position;
             ProjectUtility.SetActiveCheck(bullet.gameObject, true);
 
 
@@ -139,6 +142,19 @@ public class PlayerUnit : MonoBehaviour
         }
 
         return true; // 공격 성공
+    }
+
+    public void EnemyAttack()
+    {
+        if (EyesTr == null) return;
+        EyesTr.DOKill();
+        EyesTr.DOScale(Vector3.one * 1.2f, 0.1f)
+            .SetEase(Ease.OutQuad)
+            .OnComplete(() =>
+            {
+                if (EyesTr != null)
+                    EyesTr.DOScale(Vector3.one, 0.12f).SetEase(Ease.InOutQuad);
+            });
     }
 
 

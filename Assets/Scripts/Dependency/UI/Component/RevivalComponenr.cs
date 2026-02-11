@@ -34,7 +34,7 @@ public class RevivalComponent : MonoBehaviour
 
         var td = Tables.Instance.GetTable<UnitInfo>().GetData(weaponidx);
 
-        WeaponImg.sprite = AtlasManager.Instance.GetSprite(Atlas.Atlas_UI_Upgrade, $"Upgrade_icon_{weaponidx}");
+        //WeaponImg.sprite = AtlasManager.Instance.GetSprite(Atlas.Atlas_UI_Upgrade, $"Upgrade_icon_{weaponidx}");
         //WeaponNameText.text = Tables.Instance.GetTable<Localize>().GetString(td.name);
     }
     

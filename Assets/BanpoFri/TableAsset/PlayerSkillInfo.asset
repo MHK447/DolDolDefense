@@ -32,7 +32,7 @@ MonoBehaviour:
     _base_atk: 1
     _base_atk_count: 1
     _base_atk_range: 500
-    _base_atk_speed: 100
+    _base_atk_speed: 200
     _bullet_prefab: Base_Bullet
   - _skill_idx: 2
     _base_atk: 1

@@ -134,11 +134,11 @@ public class RewardThrowEffect : Effect
                 {
                     InGameUpgradeCategory type = gettype == (int)InGameUpgradeCategory.AddSKill ? InGameUpgradeCategory.AddSKill : InGameUpgradeCategory.AddStat;
 
-                    GameRoot.Instance.UISystem.OpenUI<PopupLevelUpReward>(popup => popup.Init(type, UpgradeTier.Rare, true), () =>
-                    {
-                        EndCallBack?.Invoke();
-                        EndCallBack = null;
-                    });
+                    // GameRoot.Instance.UISystem.OpenUI<PopupLevelUpReward>(popup => popup.Init(type, UpgradeTier.Rare, true), () =>
+                    // {
+                    //     EndCallBack?.Invoke();
+                    //     EndCallBack = null;
+                    // });
                 }
                 break;
             case (int)InGameUpgradeCategory.AddCoin:

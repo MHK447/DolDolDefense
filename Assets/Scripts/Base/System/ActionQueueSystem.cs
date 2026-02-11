@@ -200,20 +200,20 @@ public class ActionQueueSystem
 
     public void NewChapterCheck()
     {
-        var stageidx = GameRoot.Instance.UserData.Stageidx.Value;
+        // var stageidx = GameRoot.Instance.UserData.Stageidx.Value;
 
-        var recordcount = GameRoot.Instance.UserData.GetRecordCount(Config.RecordCountKeys.NewChapter, stageidx);
+        // var recordcount = GameRoot.Instance.UserData.GetRecordCount(Config.RecordCountKeys.NewChapter, stageidx);
 
-        if (stageidx % 7 == 0 && recordcount == 0)
-        {
-            var stagetd = Tables.Instance.GetTable<StageInfo>().GetData(stageidx);
-            GameRoot.Instance.UserData.AddRecordCount(Config.RecordCountKeys.NewChapter, 1, stageidx);
-            Append(() =>
-             {
-                 GameRoot.Instance.UISystem.OpenUI<PopupNewChapter>(x => x.Set(stagetd.ingame_map_idx), NextAction);
-             });
+        // if (stageidx % 7 == 0 && recordcount == 0)
+        // {
+        //     var stagetd = Tables.Instance.GetTable<StageInfo>().GetData(stageidx);
+        //     GameRoot.Instance.UserData.AddRecordCount(Config.RecordCountKeys.NewChapter, 1, stageidx);
+        //     Append(() =>
+        //      {
+        //          GameRoot.Instance.UISystem.OpenUI<PopupNewChapter>(x => x.Set(stagetd.ingame_map_idx), NextAction);
+        //      });
 
-        }
+        // }
     }
 
 
