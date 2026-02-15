@@ -277,7 +277,7 @@ GameObject:
   - component: {fileID: 7342199345293037928}
   - component: {fileID: 4394262811937393875}
   m_Layer: 0
-  m_Name: Fx_UniqueMax
+  m_Name: Fx_Unique
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5285,8 +5285,8 @@ RectTransform:
   m_Children:
   - {fileID: 8401427532480561154}
   - {fileID: 4085837992103490292}
-  - {fileID: 3869793912436337900}
   - {fileID: 879139592095307464}
+  - {fileID: 3869793912436337900}
   - {fileID: 47109528554171791}
   m_Father: {fileID: 3209170338369999452}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16753,7 +16753,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1889923339734150884, guid: 5eb9523b0264dee499a351a461fb0f13, type: 3}
       propertyPath: m_SortingLayer
-      value: 0
+      value: 32711
       objectReference: {fileID: 0}
     - target: {fileID: 2346475425957467879, guid: 5eb9523b0264dee499a351a461fb0f13, type: 3}
       propertyPath: m_Enabled
@@ -16761,7 +16761,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2346475425957467879, guid: 5eb9523b0264dee499a351a461fb0f13, type: 3}
       propertyPath: m_SortingLayer
-      value: 0
+      value: 32711
       objectReference: {fileID: 0}
     - target: {fileID: 2964175111288881206, guid: 5eb9523b0264dee499a351a461fb0f13, type: 3}
       propertyPath: m_Pivot.x
@@ -17033,7 +17033,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1889923339734150884, guid: 5eb9523b0264dee499a351a461fb0f13, type: 3}
       propertyPath: m_SortingLayer
-      value: 0
+      value: 32711
       objectReference: {fileID: 0}
     - target: {fileID: 2346475425957467879, guid: 5eb9523b0264dee499a351a461fb0f13, type: 3}
       propertyPath: m_Enabled
@@ -17987,7 +17987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1889923339734150884, guid: 5eb9523b0264dee499a351a461fb0f13, type: 3}
       propertyPath: m_SortingLayer
-      value: 0
+      value: 32711
       objectReference: {fileID: 0}
     - target: {fileID: 2346475425957467879, guid: 5eb9523b0264dee499a351a461fb0f13, type: 3}
       propertyPath: m_Enabled
@@ -17995,7 +17995,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2346475425957467879, guid: 5eb9523b0264dee499a351a461fb0f13, type: 3}
       propertyPath: m_SortingLayer
-      value: 0
+      value: 32711
       objectReference: {fileID: 0}
     - target: {fileID: 2964175111288881206, guid: 5eb9523b0264dee499a351a461fb0f13, type: 3}
       propertyPath: m_Pivot.x
