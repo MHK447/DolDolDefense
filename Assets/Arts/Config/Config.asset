@@ -161,37 +161,21 @@ MonoBehaviour:
   - key_string: slot_grade_4
     color: {r: 1, g: 0.92926645, b: 0, a: 1}
   - key_string: Levelup_Normal_1
-    color: {r: 0.0627451, g: 0.20392157, b: 0.4392157, a: 1}
+    color: {r: 0.39215687, g: 0.38431373, b: 0.4745098, a: 1}
   - key_string: Levelup_Normal_2
-    color: {r: 1, g: 0.92926645, b: 0, a: 1}
-  - key_string: Levelup_Normal_3
-    color: {r: 1, g: 0.92926645, b: 0, a: 1}
-  - key_string: Levelup_Normal_4
-    color: {r: 1, g: 0.92926645, b: 0, a: 1}
+    color: {r: 0.6509804, g: 0.6431373, b: 0.7529412, a: 1}
   - key_string: Levelup_Rare_1
     color: {r: 0.0627451, g: 0.20392157, b: 0.4392157, a: 1}
   - key_string: Levelup_Rare_2
     color: {r: 0.28627452, g: 0.7019608, b: 0.95686275, a: 1}
-  - key_string: Levelup_Rare_3
-    color: {r: 0, g: 0.62352943, b: 1, a: 1}
-  - key_string: Levelup_Rare_4
-    color: {r: 0, g: 0.70980394, b: 1, a: 1}
   - key_string: Levelup_Unique_1
-    color: {r: 1, g: 0.92926645, b: 0, a: 1}
+    color: {r: 0.3372549, g: 0.11764706, b: 0.39215687, a: 1}
   - key_string: Levelup_Unique_2
-    color: {r: 1, g: 0.92926645, b: 0, a: 1}
-  - key_string: Levelup_Unique_3
-    color: {r: 1, g: 0.92926645, b: 0, a: 1}
-  - key_string: Levelup_Unique_4
-    color: {r: 1, g: 0.92926645, b: 0, a: 1}
+    color: {r: 0.6627451, g: 0.45882353, b: 1, a: 1}
   - key_string: Levelup_Legendary_1
-    color: {r: 1, g: 0.92926645, b: 0, a: 1}
+    color: {r: 0.46666667, g: 0.39215687, b: 0.11764706, a: 1}
   - key_string: Levelup_Legendary_2
-    color: {r: 1, g: 0.92926645, b: 0, a: 1}
-  - key_string: Levelup_Legendary_3
-    color: {r: 1, g: 0.92926645, b: 0, a: 1}
-  - key_string: Levelup_Legendary_4
-    color: {r: 1, g: 0.92926645, b: 0, a: 1}
+    color: {r: 1, g: 0.7764706, b: 0.3529412, a: 1}
   _eventImgaeColorDefines: []
   SkeletonGraphicMat: {fileID: 0}
   DisableSpriteMat: {fileID: 0}
