@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: d53c086f821494ae7a76f1a9b8a756cd
+guid: b232af3e75833ad47a7865f8947ccbb4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8890237335655958548
-    second: Common_Icon_Revive_0
-  - first:
-      213: 5072311848913818123
-    second: Common_Icon_Revive_1
+      213: 8574178314262002899
+    second: Common_Frame_Levelup_Rare_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -55,7 +52,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 0, y: 282, z: 0, w: 125}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -129,45 +126,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Common_Icon_Revive_0
+      name: Common_Frame_Levelup_Rare_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 926
-        height: 1203
+        width: 222
+        height: 418
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 41840b811c7706b70800000000000000
-      internalID: 8890237335655958548
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Common_Icon_Revive_1
-      rect:
-        serializedVersion: 2
-        x: 442
-        y: 1158
-        width: 24
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b02538890c8746640800000000000000
-      internalID: 5072311848913818123
+      spriteID: 3dcb176bfb99df670800000000000000
+      internalID: 8574178314262002899
       vertices: []
       indices: 
       edges: []
@@ -177,7 +152,7 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
@@ -186,8 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Common_Icon_Revive_0: 8890237335655958548
-      Common_Icon_Revive_1: 5072311848913818123
+      Common_Frame_Levelup_Rare_0: 8574178314262002899
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
