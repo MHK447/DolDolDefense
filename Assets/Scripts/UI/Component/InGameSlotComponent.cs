@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using BanpoFri;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,7 +39,9 @@ public class InGameSlotComponent : MonoBehaviour
 
         if(td != null)
         {
-            SelectChoiceImg.sprite = AtlasManager.Instance.GetSprite(Atlas.Atlas_UI_Common, td.icon);
+            var sprite = AtlasManager.Instance.GetSprite(Atlas.Atlas_UI_Common, td.icon);
+            if (sprite != null)
+                SelectChoiceImg.sprite = sprite;
             BgImg.color = Config.Instance.GetImageColor($"slot_grade_{grade}");
 
 

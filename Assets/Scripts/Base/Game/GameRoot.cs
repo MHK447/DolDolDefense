@@ -45,6 +45,8 @@ public class GameRoot : Singleton<GameRoot>
 	public BoostSystem BoostSystem { get; private set; } = new BoostSystem();
 	public EffectSystem EffectSystem { get; private set; } = new EffectSystem();
 
+	public PlayerSkillSystem PlayerSkillSystem { get; private set; } = new PlayerSkillSystem();
+
 	public PlayerSystem PlayerSystem { get; private set; } = new PlayerSystem();
 
 	public GameNotificationSystem GameNotification { get; private set; } = new GameNotificationSystem();
@@ -76,8 +78,6 @@ public class GameRoot : Singleton<GameRoot>
 	public TileSystem TileSystem { get; private set; } = new TileSystem();
 
 	public CardSystem CardSystem { get; private set; } = new CardSystem();
-
-
 	public UnityMainThreadDispatcher MainThreadDispatcher;
 
 	private Queue<System.Action> PauseActions = new Queue<System.Action>();
@@ -292,6 +292,10 @@ public class GameRoot : Singleton<GameRoot>
 		UserData.Load();
 		yield return UnityServices.InitializeAsync().AsUniTask().ToCoroutine();
 		InAppPurchaseManager = GetComponent<InAppPurchaseManager>();
+
+		InitRequestAtlas();
+		yield return new WaitUntil(() => AtlasManager.Instance.IsLoadComplete());
+
 		InGameSystem.ChangeMode(CurInGameType);
 
 		LoadComplete = true;
@@ -302,9 +306,6 @@ public class GameRoot : Singleton<GameRoot>
 		ShopSystem.Create();
 		LobbyBoxSystem.Create();
 		CardSystem.Create();
-		InitRequestAtlas();
-		// 아틀라스 로드가 끝난 뒤 로비를 띄워야 GetSprite/atlas 스프라이트가 하얗게 안 나옴
-		yield return new WaitUntil(() => AtlasManager.Instance.IsLoadComplete());
 
 		PluginSystem.LoginProp.InitPlatformLogin();
 
@@ -314,15 +315,14 @@ public class GameRoot : Singleton<GameRoot>
 		PluginSystem.AnalyticsProp.AllEvent(IngameEventType.None, "launch", parameters);
 		InAppPurchaseManager.Init();
 
-
-
-		GameRoot.instance.WaitTimeAndCallback(1f, () =>
+		yield return new WaitUntil(() =>
 		{
-			//JoyStick.Init();
-			BgmOn();
-			// 로딩 숨김 추가!
-			Loading.Hide(true);
+			var page = UISystem.GetUI<PageLobbyBattle>();
+			return page != null && page.gameObject.activeSelf;
 		});
+
+		Loading.Hide(true);
+		BgmOn();
 
 
 	}
@@ -344,9 +344,7 @@ public class GameRoot : Singleton<GameRoot>
 
 	void InitRequestAtlas()
 	{
-		// 초기 로드 시에는 ReleaseAll 호출 금지 - 이미 로드된 아틀라스를 해제하면
-		// 해당 스프라이트를 사용 중인 UI가 하얀색으로 표시됨 (텍스처 unload)
-		AtlasManager.Instance.LoadAllAtlasWithoutRelease();
+		AtlasManager.Instance.ReLoad(false);
 	}
 
 	public void ChangeIngameType(GameType type, bool changeData = false)
@@ -380,8 +378,8 @@ public class GameRoot : Singleton<GameRoot>
 
 	void InitSystem()
 	{
-		QualitySettings.vSyncCount = 0;  // VSync 비활성화
-		Application.targetFrameRate = 60;  // (제한 없음)
+		QualitySettings.vSyncCount = 0;
+		Application.targetFrameRate = 60;
 
 		var count = GameRoot.instance.UserData.GetRecordCount(Config.RecordCountKeys.Init);
 
@@ -410,9 +408,7 @@ public class GameRoot : Singleton<GameRoot>
 
 		GameSpeedSystem.Create();
 		GameNotification.Create();
-		GameNotification.Create();
 		ContentsOpenSystem.Create();
-		GameSpeedSystem.Create();
 		UnitSystem.Create();
 		TrainingSystem.Create();
 		DamageTextSystem.Create();
@@ -570,6 +566,17 @@ public class GameRoot : Singleton<GameRoot>
 
 	}
 
+
+	private void OnDestroy()
+	{
+		StopAllCoroutines();
+		TouchStartActions.Clear();
+		TitleCloseActions.Clear();
+		PauseActions.Clear();
+
+		if (Loading != null)
+			Addressables.ReleaseInstance(Loading.gameObject);
+	}
 
 #if UNITY_EDITOR
 	private void OnApplicationQuit()

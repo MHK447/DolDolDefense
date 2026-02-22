@@ -17,6 +17,8 @@ public class PlayerBulletBase : MonoBehaviour
     [Tooltip("포물선 궤적의 최대 높이 (위로 올라갔다 떨어지는 정도)")]
     private float ArcHeight = 12f;
 
+    public TrailComponent TrailComponent;
+
     private int BulletIdx = 0;
 
     public int GetBulletIdx { get { return BulletIdx; } }
@@ -30,6 +32,14 @@ public class PlayerBulletBase : MonoBehaviour
     private float ElapsedTime;
 
     protected bool IsDamageOn = false;
+
+    public virtual void Awake()
+    {
+        if (TrailComponent != null)
+        {
+            TrailComponent.InitTrail();
+        }
+    }
 
     public virtual void OnTriggerEnter2D(Collider2D collision)
     {

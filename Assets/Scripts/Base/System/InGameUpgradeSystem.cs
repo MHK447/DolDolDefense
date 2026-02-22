@@ -28,7 +28,7 @@ public class InGameUpgradeSystem
 
     public void Create()
     {
-        var tdlist = Tables.Instance.GetTable<InGameUpgradeChoice>().DataList.FindAll(x=> x.category == 2).ToList();
+        var tdlist = Tables.Instance.GetTable<InGameUpgradeChoice>().DataList.FindAll(x => x.category == 2).ToList();
 
         foreach (var td in tdlist)
         {
@@ -127,6 +127,32 @@ public class InGameUpgradeSystem
             return StatNaturalChoices(StatAllUpgrades, tierToApply);
         }
     }
+
+
+    // private List<InGameUpgrade> ForceSkillChoices(List<InGameUpgrade> allUpgrades, WayChoicesSelectInfoData data, UpgradeTier tier)
+    // {
+    //     List<InGameUpgrade> selected = allUpgrades.Where(x =>
+    //     {
+    //         // null 체크
+    //         if (x == null || x.UpgradeChoiceData == null) return false;
+
+    //         //set tier
+    //         bool upgradeReturnValue = x.SetTierAndCheckSpawn(tier);
+
+    //         //if data choice contains x
+    //         int index = data.choices_idx.IndexOf(x.UpgradeChoiceData.idx);
+    //         if (index < 0) return false;
+
+    //         //filter block index
+    //         if (data.recommend_order != 0 && (index + 1 == data.recommend_order)) x.SetRecommend(true);
+
+    //         return true;
+    //     }).Take(3).OrderBy(x => data.choices_idx.IndexOf(x.UpgradeChoiceData.idx)).ToList();
+
+
+
+    //     return selected;
+    // }
 
     public List<InGameUpgrade> StatNaturalChoices(List<InGameUpgrade> upgrades, UpgradeTier tier)
     {

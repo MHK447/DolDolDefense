@@ -7,9 +7,11 @@ using UnityEngine.UI;
 public class TrailComponent : MonoBehaviour
 {
     private TrailRenderer trail;
+
+    public Color TrailColor = Color.white;
     
 
-    public void InitTrail(Color trailColor, float bulletSpeed = 12f)
+    public void InitTrail(float bulletSpeed = 12f)
     {
         if (trail == null)
         {
@@ -51,8 +53,8 @@ public class TrailComponent : MonoBehaviour
         var colorGradient = new Gradient();
         colorGradient.SetKeys(
             new[] {     
-                new GradientColorKey(trailColor, 0.0f),
-                new GradientColorKey(trailColor, 0.3f),
+                new GradientColorKey(TrailColor, 0.0f),
+                new GradientColorKey(TrailColor, 0.3f),
                 new GradientColorKey(Color.clear, 1.0f) 
             },
             new[] { 

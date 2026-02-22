@@ -4,6 +4,21 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.UI;
 
+
+
+public enum UpgradeType
+{
+    SkillUnlock = 1,
+    SkillCount = 2,
+    SkillSize = 3,
+    SkillDamage = 4,
+    SkillDuration = 5,
+    AttackPower = 101,
+    Health = 102,
+    CooldownReduction = 103,
+    CriticalDamage = 104,
+}
+
 public class PlayerSkillSystem 
 {
     public enum PlayerSkillType
@@ -22,9 +37,14 @@ public class PlayerSkillSystem
         LogThrow = 12,
         BlueSoul = 13,
     }
-
-
     
+
+
+    public SkillCardData FindPlayerSkillValueData(int SkillCardIdx)
+    {
+        var finddata = GameRoot.Instance.UserData.Skillcarddatas.Find(x => x.Skillidx == SkillCardIdx);
+        return finddata;
+    }
     
 
 

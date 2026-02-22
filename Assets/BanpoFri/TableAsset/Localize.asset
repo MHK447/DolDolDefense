@@ -13,140 +13,10 @@ MonoBehaviour:
   m_Name: Localize
   m_EditorClassIdentifier: 
   mFirstKey:
-  - str_scale_desc
-  - str_upgradechoice_desc
-  - str_upgradechoice_desc_101
-  - str_upgradechoice_desc_102
-  - str_upgradechoice_desc_103
-  - str_upgradechoice_desc_104
-  - str_upgradechoice_desc_105
-  - str_upgradechoice_desc_106
-  - str_upgradechoice_desc_107
-  - total_dmg_desc
-  - str_level_desc
-  - str_training_level
   - str_time_day
   - str_time_hour
   - str_time_minute
   - str_time_second
-  - unlock_stage_desc
-  - str_upgrade_level
-  - str_stage_name_1
-  - str_stage_name_2
-  - str_stage_name_3
-  - str_stage_name_4
-  - str_stage_name_5
-  - str_stage_name_6
-  - str_stage_name_7
-  - str_stage_name_8
-  - str_stage_name_9
-  - str_stage_name_10
-  - str_stage_name_11
-  - str_stage_name_12
-  - str_stage_name_13
-  - str_stage_name_14
-  - str_stage_name_15
-  - str_stage_name_16
-  - str_stage_name_17
-  - str_stage_name_18
-  - str_stage_name_19
-  - str_stage_name_20
-  - str_stage_name_21
-  - str_stage_name_22
-  - str_stage_name_23
-  - str_stage_name_24
-  - str_stage_name_25
-  - str_stage_name_26
-  - str_stage_name_27
-  - str_stage_name_28
-  - str_stage_name_29
-  - str_stage_name_30
-  - str_stage_name_31
-  - str_stage_name_32
-  - str_stage_name_33
-  - str_stage_name_34
-  - str_stage_name_35
-  - str_stage_name_36
-  - str_stage_name_37
-  - str_stage_name_38
-  - str_stage_name_39
-  - str_stage_name_40
-  - str_stage_name_41
-  - str_stage_name_42
-  - reward_box_name_01
-  - reward_box_name_02
-  - reward_box_name_03
-  - reward_box_name_04
-  - str_box_danger
-  - str_revival_desc
-  - str_desc_giveup
-  - str_main_stage_desc
-  - str_unittype_desc_1
-  - str_unittype_desc_2
-  - str_unittype_desc_3
-  - str_unittype_desc_4
-  - str_get
-  - str_free
-  - str_taptoclose
-  - str_attack_desc
-  - str_health_desc
-  - str_coinrate_desc
-  - str_levelup_desc
-  - unit_downlevel_desc
-  - reward_box_time
-  - str_start_desc
-  - last_chance_desc
-  - str_unlock_start
-  - str_unlock_duration
-  - str_open_now
-  - str_other_work_box
-  - str_desc_speedup
-  - tap_to_hide_desc
-  - str_desc_view
-  - strt_desc_equip
-  - str_reroll_desc
-  - str_x2get_desc
-  - str_reroll_explain_desc
-  - str_hp_desc
-  - str_desc_option
-  - str_desc_sfx
-  - str_desc_bgm
-  - str_desc_vibrate
-  - str_desc_on
-  - str_desc_off
-  - str_review_desc
-  - str_cp_desc
-  - str_wave_desc
-  - str_helper_desc
-  - str_desc_choices
-  - str_hud_card_desc
-  - str_hud_training_desc
-  - Training_Desc_101
-  - Training_Desc_102
-  - Training_Desc_103
-  - Training_Desc_104
-  - str_item_info_desc
-  - str_buy_slot_desc
-  - str_card_puchase_1
-  - str_card_new
-  - str_desc_card_get
-  - str_confirm
-  - str_upgrade_name
-  - str_card_name
-  - str_ad_reroll
-  - str_card_desc_1
-  - str_card_desc_2
-  - str_card_desc_3
-  - str_desc_equip
-  - str_doubleshot
-  - str_doublespawn
-  - str_giveup_losewin
-  - str_popup_pause_title
-  - str_insufficient_desc
-  - str_insufficient_ads_desc
-  - str_tripleget
-  - str_nothanks
-  - str_title_reward
   - str_popup_pause_quit
   - str_popup_pause_resume
   - str_popup_option_vibrate
@@ -217,815 +87,755 @@ MonoBehaviour:
   - str_upgrade_choice_type_104
   mSecondKey: []
   mDataList:
-  - _idx: str_scale_desc
-    _ko: 'Scale: {0}'
-    _en: 'Scale: {0}'
-    _ja: 
-  - _idx: str_upgradechoice_desc
-    _ko: '{0} Unit +1'
-    _en: '{0} Unit +1'
-    _ja: 
-  - _idx: str_upgradechoice_desc_101
-    _ko: Heal {0}%
-    _en: Heal {0}%
-    _ja: 
-  - _idx: str_upgradechoice_desc_102
-    _ko: All Unit Spin{0}%
-    _en: All Unit Spin{0}%
-    _ja: 
-  - _idx: str_upgradechoice_desc_103
-    _ko: Random Revival +1
-    _en: Random Revival +1
-    _ja: 
-  - _idx: str_upgradechoice_desc_104
-    _ko: Critical Chance {0}%
-    _en: Critical Chance {0}%
-    _ja: 
-  - _idx: str_upgradechoice_desc_105
-    _ko: Cirtical Dmg{0}%
-    _en: Cirtical Dmg{0}%
-    _ja: 
-  - _idx: str_upgradechoice_desc_106
-    _ko: Damage {0}%
-    _en: Damage {0}%
-    _ja: 
-  - _idx: str_upgradechoice_desc_107
-    _ko: Health Heal+{0}
-    _en: Health Heal+{0}
-    _ja: 
-  - _idx: total_dmg_desc
-    _ko: TOTAL DMG\n{0}
-    _en: TOTAL DMG\n{0}
-    _ja: 
-  - _idx: str_level_desc
-    _ko: Lv. {0}
-    _en: Lv. {0}
-    _ja: 
-  - _idx: str_training_level
-    _ko: Lv. {0}
-    _en: Lv. {0}
-    _ja: 
   - _idx: str_time_day
     _ko: "\uC77C"
     _en: D
-    _ja: 
+    _ja: "\u65E5"
+    _de: Tag
+    _tw: "\u5929"
+    _ru: "\u0414\u0435\u043D\u044C"
+    _fr: Jour
+    _es: "D\xEDa"
+    _vi: "Ng\xE0y"
   - _idx: str_time_hour
     _ko: "\uC2DC\uAC04"
     _en: H
-    _ja: 
+    _ja: "\u6642\u9593"
+    _de: Stunde
+    _tw: "\u5C0F\u6642"
+    _ru: "\u0427\u0430\u0441"
+    _fr: Heure
+    _es: Hora
+    _vi: "Gi\u1EDD"
   - _idx: str_time_minute
     _ko: "\uBD84"
     _en: M
-    _ja: 
+    _ja: "\u5206"
+    _de: Minute
+    _tw: "\u5206\u9418"
+    _ru: "\u041C\u0438\u043D\u0443\u0442\u0430"
+    _fr: Minute
+    _es: Minuto
+    _vi: "Ph\xFAt"
   - _idx: str_time_second
     _ko: "\uCD08"
     _en: S
-    _ja: 
-  - _idx: unlock_stage_desc
-    _ko: STAGE {0}
-    _en: STAGE {0}
-    _ja: 
-  - _idx: str_upgrade_level
-    _ko: Levle {0}
-    _en: Levle {0}
-    _ja: 
-  - _idx: str_stage_name_1
-    _ko: Deep Goblin Camp
-    _en: Deep Goblin Camp
-    _ja: 
-  - _idx: str_stage_name_2
-    _ko: Desolate Goblin Plains
-    _en: Desolate Goblin Plains
-    _ja: 
-  - _idx: str_stage_name_3
-    _ko: Windy Goblin Fields
-    _en: Windy Goblin Fields
-    _ja: 
-  - _idx: str_stage_name_4
-    _ko: Hidden Goblin Camp
-    _en: Hidden Goblin Camp
-    _ja: 
-  - _idx: str_stage_name_5
-    _ko: Roaming Grassland Goblins
-    _en: Roaming Grassland Goblins
-    _ja: 
-  - _idx: str_stage_name_6
-    _ko: "Orc Lord\u2019s Grassland"
-    _en: "Orc Lord\u2019s Grassland"
-    _ja: 
-  - _idx: str_stage_name_7
-    _ko: Sleepy Undead Yard
-    _en: Sleepy Undead Yard
-    _ja: 
-  - _idx: str_stage_name_8
-    _ko: Dozing Dead Grounds
-    _en: Dozing Dead Grounds
-    _ja: 
-  - _idx: str_stage_name_9
-    _ko: Whispering Deadyard
-    _en: Whispering Deadyard
-    _ja: 
-  - _idx: str_stage_name_10
-    _ko: Gloomy Rest Garden
-    _en: Gloomy Rest Garden
-    _ja: 
-  - _idx: str_stage_name_11
-    _ko: Shadowed Dead Grounds
-    _en: Shadowed Dead Grounds
-    _ja: 
-  - _idx: str_stage_name_12
-    _ko: Demonic Flame
-    _en: Demonic Flame
-    _ja: 
-  - _idx: str_stage_name_13
-    _ko: Sleeping Mummy Desert
-    _en: Sleeping Mummy Desert
-    _ja: 
-  - _idx: str_stage_name_14
-    _ko: Bandage Dune
-    _en: Bandage Dune
-    _ja: 
-  - _idx: str_stage_name_15
-    _ko: Ancient Mummy Oasis
-    _en: Ancient Mummy Oasis
-    _ja: 
-  - _idx: str_stage_name_16
-    _ko: Sandy Mummy Ruins
-    _en: Sandy Mummy Ruins
-    _ja: 
-  - _idx: str_stage_name_17
-    _ko: Twilight Mummy Desert
-    _en: Twilight Mummy Desert
-    _ja: 
-  - _idx: str_stage_name_18
-    _ko: Whispering Sand Tomb
-    _en: Whispering Sand Tomb
-    _ja: 
-  - _idx: str_stage_name_19
-    _ko: Frozen Kobold Nest
-    _en: Frozen Kobold Nest
-    _ja: 
-  - _idx: str_stage_name_20
-    _ko: Glacial Kobold Cave
-    _en: Glacial Kobold Cave
-    _ja: 
-  - _idx: str_stage_name_21
-    _ko: Blizzard Kobold Valley
-    _en: Blizzard Kobold Valley
-    _ja: 
-  - _idx: str_stage_name_22
-    _ko: Icefang Kobold Peaks
-    _en: Icefang Kobold Peaks
-    _ja: 
-  - _idx: str_stage_name_23
-    _ko: Coldscale Snowfield
-    _en: Coldscale Snowfield
-    _ja: 
-  - _idx: str_stage_name_24
-    _ko: Bluefrost Kobold Path
-    _en: Bluefrost Kobold Path
-    _ja: 
-  - _idx: str_stage_name_25
-    _ko: "Captain\u2019s Sea Breeze Shore"
-    _en: "Captain\u2019s Sea Breeze Shore"
-    _ja: 
-  - _idx: str_stage_name_26
-    _ko: Old Anchor Coast
-    _en: Old Anchor Coast
-    _ja: 
-  - _idx: str_stage_name_27
-    _ko: "Captains\u2019 Rest Bay"
-    _en: "Captains\u2019 Rest Bay"
-    _ja: 
-  - _idx: str_stage_name_28
-    _ko: Wavebound Captain Harbor
-    _en: Wavebound Captain Harbor
-    _ja: 
-  - _idx: str_stage_name_29
-    _ko: Stormwatch Beach
-    _en: Stormwatch Beach
-    _ja: 
-  - _idx: str_stage_name_30
-    _ko: Skullflag Coast Path
-    _en: Skullflag Coast Path
-    _ja: 
-  - _idx: str_stage_name_31
-    _ko: Green Hill
-    _en: Green Hill
-    _ja: 
-  - _idx: str_stage_name_32
-    _ko: Calm Field
-    _en: Calm Field
-    _ja: 
-  - _idx: str_stage_name_33
-    _ko: Windy Path
-    _en: Windy Path
-    _ja: 
-  - _idx: str_stage_name_34
-    _ko: Sunny Meadow
-    _en: Sunny Meadow
-    _ja: 
-  - _idx: str_stage_name_35
-    _ko: Little Forest Trail
-    _en: Little Forest Trail
-    _ja: 
-  - _idx: str_stage_name_36
-    _ko: Silent Valley
-    _en: Silent Valley
-    _ja: 
-  - _idx: str_stage_name_37
-    _ko: Cloudy Hill
-    _en: Cloudy Hill
-    _ja: 
-  - _idx: str_stage_name_38
-    _ko: Stonebridge Plain
-    _en: Stonebridge Plain
-    _ja: 
-  - _idx: str_stage_name_39
-    _ko: Lazy Garden
-    _en: Lazy Garden
-    _ja: 
-  - _idx: str_stage_name_40
-    _ko: Morninglight Hill
-    _en: Morninglight Hill
-    _ja: 
-  - _idx: str_stage_name_41
-    _ko: Quiet Lakeside
-    _en: Quiet Lakeside
-    _ja: 
-  - _idx: str_stage_name_42
-    _ko: "Traveler\u2019s Road"
-    _en: "Traveler\u2019s Road"
-    _ja: 
-  - _idx: reward_box_name_01
-    _ko: "\uC77C\uBC18 \uC0C1\uC790"
-    _en: Normal Chest
-    _ja: 
-  - _idx: reward_box_name_02
-    _ko: "\uB808\uC5B4 \uC0C1\uC790"
-    _en: 'Rare Chest '
-    _ja: 
-  - _idx: reward_box_name_03
-    _ko: "\uC5D0\uD53D \uC0C1\uC790"
-    _en: Epic Chest
-    _ja: 
-  - _idx: reward_box_name_04
-    _ko: "\uB808\uC804\uB354\uB9AC \uC0C1\uC790"
-    _en: Legendary Chest
-    _ja: 
-  - _idx: str_box_danger
-    _ko: "\uC0C1\uC790 \uBCF4\uAD00\uD568\uC774 \uAC00\uB4DD \uCC3C\uC2B5\uB2C8\uB2E4.\\n\uB0AE\uC740
-      \uB4F1\uAE09\uC758 \uC0C1\uC790\uB294 \uC790\uB3D9\uC73C\uB85C \uD3D0\uAE30\uB429\uB2C8\uB2E4."
-    _en: Your chest storage is full.\nLower-tier chests will be automatically discarded.
-    _ja: 
-  - _idx: str_revival_desc
-    _ko: "\uBD80\uD65C"
-    _en: REVIVAL
-    _ja: 
-  - _idx: str_desc_giveup
-    _ko: "\uD3EC\uAE30\uD558\uC2DC\uACA0\uC2B5\uB2C8\uAE4C?"
-    _en: Are you sure you want to give up?
-    _ja: 
-  - _idx: str_main_stage_desc
-    _ko: WAVE:<color=#FFFF00>{0}/{1}</color>
-    _en: 'STAGE: <color=#FFFF00>{0}</color>'
-    _ja: 
-  - _idx: str_unittype_desc_1
-    _ko: "\uADFC\uAC70\uB9AC"
-    _en: Melee
-    _ja: 
-  - _idx: str_unittype_desc_2
-    _ko: "\uBC29\uC5B4"
-    _en: Defense
-    _ja: 
-  - _idx: str_unittype_desc_3
-    _ko: "\uD2B9\uC218"
-    _en: Special
-    _ja: 
-  - _idx: str_unittype_desc_4
-    _ko: " \uC6D0\uAC70\uB9AC"
-    _en: Ranged
-    _ja: 
-  - _idx: str_get
-    _ko: "\uD68D\uB4DD"
-    _en: GET
-    _ja: 
-  - _idx: str_free
-    _ko: "\uBB34\uB8CC"
-    _en: FREE
-    _ja: 
-  - _idx: str_taptoclose
-    _ko: "\uBE48 \uACF3\uC744 \uB20C\uB7EC \uD654\uBA74 \uB2EB\uAE30"
-    _en: Tap to close
-    _ja: 
-  - _idx: str_attack_desc
-    _ko: "\uACF5\uACA9\uB825"
-    _en: ATK
-    _ja: 
-  - _idx: str_health_desc
-    _ko: "\uCCB4\uB825"
-    _en: Health
-    _ja: 
-  - _idx: str_coinrate_desc
-    _ko: "\uCF54\uC778 \uBC30\uC218"
-    _en: Coin Rate
-    _ja: 
-  - _idx: str_levelup_desc
-    _ko: "\uB808\uBCA8 \uC5C5!"
-    _en: Level Up!
-    _ja: 
-  - _idx: unit_downlevel_desc
-    _ko: DOWNGRADE
-    _en: DOWNGRADE
-    _ja: 
-  - _idx: reward_box_time
-    _ko: "\uC18C\uC694 \uC2DC\uAC04: {0}"
-    _en: 'Duration: {0}'
-    _ja: 
-  - _idx: str_start_desc
-    _ko: START
-    _en: START
-    _ja: 
-  - _idx: last_chance_desc
-    _ko: LAST CHANCE!
-    _en: LAST CHANCE!
-    _ja: 
-  - _idx: str_unlock_start
-    _ko: "\uC7A0\uAE08 \uD574\uCCB4 \uC2DC\uC791 "
-    _en: Unlock Start
-    _ja: 
-  - _idx: str_unlock_duration
-    _ko: "\uC7A0\uAE08\uD574\uCCB4 \uAE30\uAC04:"
-    _en: 'Unlock Duration:'
-    _ja: 
-  - _idx: str_open_now
-    _ko: "\uC9C0\uAE08 \uAC1C\uBD09"
-    _en: Open Now
-    _ja: 
-  - _idx: str_other_work_box
-    _ko: "\uD604\uC7AC \uB2E4\uB978 \uC0C1\uC790\uC758 \uC7A0\uAE08 \uD574\uCCB4\uAC00
-      \uC9C4\uD589 \uC911\uC785\uB2C8\uB2E4! "
-    _en: Another chest is currently being unlocked!
-    _ja: 
-  - _idx: str_desc_speedup
-    _ko: "\uC2A4\uD53C\uB4DC \uC5C5"
-    _en: Speed Up
-    _ja: 
-  - _idx: tap_to_hide_desc
-    _ko: Tap to hide
-    _en: Tap to hide
-    _ja: 
-  - _idx: str_desc_view
-    _ko: View
-    _en: View
-    _ja: 
-  - _idx: strt_desc_equip
-    _ko: Equip
-    _en: Equip
-    _ja: 
-  - _idx: str_reroll_desc
-    _ko: Reroll
-    _en: Reroll
-    _ja: 
-  - _idx: str_x2get_desc
-    _ko: X2 GET
-    _en: X2 GET
-    _ja: 
-  - _idx: str_reroll_explain_desc
-    _ko: "\uB9AC\uB864 \uD560 \uC2DC \uB354 \uB192\uC740 \uB4F1\uAE09\uC774 \uB739\uB2C8\uB2E4"
-    _en: Rerolling gives you a chance to get a higher tier.
-    _ja: 
-  - _idx: str_hp_desc
-    _ko: 'HP: {0}'
-    _en: 'HP: {0}'
-    _ja: 
-  - _idx: str_desc_option
-    _ko: Option
-    _en: Option
-    _ja: 
-  - _idx: str_desc_sfx
-    _ko: SFX
-    _en: SFX
-    _ja: 
-  - _idx: str_desc_bgm
-    _ko: BGM
-    _en: BGM
-    _ja: 
-  - _idx: str_desc_vibrate
-    _ko: VIBRATE
-    _en: VIBRATE
-    _ja: 
-  - _idx: str_desc_on
-    _ko: On
-    _en: On
-    _ja: 
-  - _idx: str_desc_off
-    _ko: Off
-    _en: Off
-    _ja: 
-  - _idx: str_review_desc
-    _ko: Congratulations
-    _en: Congratulations
-    _ja: 
-  - _idx: str_cp_desc
-    _ko: CP:{0}
-    _en: CP:{0}
-    _ja: 
-  - _idx: str_wave_desc
-    _ko: WAVE:{0}/{1}
-    _en: WAVE:{0}/{1}
-    _ja: 
-  - _idx: str_helper_desc
-    _ko: HELPER
-    _en: HELPER
-    _ja: 
-  - _idx: str_desc_choices
-    _ko: LUCKY CHANCE!
-    _en: LUCKY CHANCE!
-    _ja: 
-  - _idx: str_hud_card_desc
-    _ko: CARD
-    _en: CARD
-    _ja: 
-  - _idx: str_hud_training_desc
-    _ko: TRAINING
-    _en: TRAINING
-    _ja: 
-  - _idx: Training_Desc_101
-    _ko: "\uD3EC\uD0D1 \uACF5\uACA9\uB825\uC774 <color=#C5FF62>+{0}</color> \uC99D\uAC00"
-    _en: Tower Damage <color=#C5FF62>+{0}</color>
-    _ja: 
-  - _idx: Training_Desc_102
-    _ko: "\uC720\uB2DB \uACF5\uACA9\uB825\uC774 <color=#C5FF62>+{0}</color> \uC99D\uAC00"
-    _en: Unit Damage <color=#C5FF62>+{0}</color>
-    _ja: 
-  - _idx: Training_Desc_103
-    _ko: "\uC720\uB2DB \uCCB4\uB825\uC774 <color=#C5FF62>{0}</color> \uC99D\uAC00"
-    _en: Unit Health <color=#C5FF62>+{0}</color>
-    _ja: 
-  - _idx: Training_Desc_104
-    _ko: "\uC131 \uCCB4\uB825\uC774 <color=#C5FF62>{0}</color> \uC99D\uAC00"
-    _en: Castle Health <color=#C5FF62>+{0}</color>
-    _ja: 
-  - _idx: str_item_info_desc
-    _ko: Item Info
-    _en: Item Info
-    _ja: 
-  - _idx: str_buy_slot_desc
-    _ko: Buy Slots({0})
-    _en: Buy Slots({0})
-    _ja: 
-  - _idx: str_card_puchase_1
-    _ko: Buy {0}
-    _en: Buy {0}
-    _ja: 
-  - _idx: str_card_new
-    _ko: "\uB2A5\uB825 \uBC1C\uACAC!"
-    _en: Received a Card!
-    _ja: 
-  - _idx: str_desc_card_get
-    _ko: "\uB2A5\uB825\uC744 \uD68D\uB4DD\uD588\uC2B5\uB2C8\uB2E4!"
-    _en: Ability Acquired!
-    _ja: 
-  - _idx: str_confirm
-    _ko: "\uD655\uC778"
-    _en: OK
-    _ja: 
-  - _idx: str_upgrade_name
-    _ko: UPGRADE
-    _en: UPGRADE
-    _ja: 
-  - _idx: str_card_name
-    _ko: CARD
-    _en: CARD
-    _ja: 
-  - _idx: str_ad_reroll
-    _ko: REROLL
-    _en: REROLL
-    _ja: 
-  - _idx: str_card_desc_1
-    _ko: Spawns a warrior from the tower
-    _en: Spawns a warrior from the tower
-    _ja: 
-  - _idx: str_card_desc_2
-    _ko: Spawns an archer from the tower
-    _en: Spawns an archer from the tower
-    _ja: 
-  - _idx: str_card_desc_3
-    _ko: Spawns a golem from the tower
-    _en: Spawns a golem from the tower
-    _ja: 
-  - _idx: str_desc_equip
-    _ko: CARD INFO
-    _en: CARD INFO
-    _ja: 
-  - _idx: str_doubleshot
-    _ko: DOUBLE SHOT
-    _en: DOUBLE SHOT
-    _ja: 
-  - _idx: str_doublespawn
-    _ko: DOUBLE SPAWN
-    _en: DOUBLE SPAWN
-    _ja: 
-  - _idx: str_giveup_losewin
-    _ko: You will lose all your rewards and win streaks!
-    _en: You will lose all your rewards and win streaks!
-    _ja: 
-  - _idx: str_popup_pause_title
-    _ko: Give Up?
-    _en: Give Up?
-    _ja: 
-  - _idx: str_insufficient_desc
-    _ko: NOT ENOUGHT
-    _en: NOT ENOUGHT
-    _ja: 
-  - _idx: str_insufficient_ads_desc
-    _ko: Watch an ad to get rewards
-    _en: Watch an ad to get rewards
-    _ja: 
-  - _idx: str_tripleget
-    _ko: GET
-    _en: GET
-    _ja: 
-  - _idx: str_nothanks
-    _ko: Little
-    _en: Little
-    _ja: 
-  - _idx: str_title_reward
-    _ko: REWARDS
-    _en: REWARDS
-    _ja: 
+    _ja: "\u79D2"
+    _de: Sekunde
+    _tw: "\u79D2"
+    _ru: "\u0421\u0435\u043A\u0443\u043D\u0434\u0430"
+    _fr: Seconde
+    _es: Segundo
+    _vi: "Gi\xE2y"
   - _idx: str_popup_pause_quit
     _ko: CONTINUE
     _en: CONTINUE
-    _ja: 
+    _ja: "\u7D9A\u3051\u308B"
+    _de: Fortfahren
+    _tw: "\u7E7C\u7E8C"
+    _ru: "\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C"
+    _fr: Continuer
+    _es: Continuar
+    _vi: "Ti\u1EBFp t\u1EE5c"
   - _idx: str_popup_pause_resume
     _ko: GIVEUP
-    _en: GIVEUP
-    _ja: 
+    _en: GIVE UP
+    _ja: "\u3042\u304D\u3089\u3081\u308B"
+    _de: Aufgeben
+    _tw: "\u653E\u68C4"
+    _ru: "\u0421\u0434\u0430\u0442\u044C\u0441\u044F"
+    _fr: Abandonner
+    _es: Rendirse
+    _vi: "T\u1EEB b\u1ECF"
   - _idx: str_popup_option_vibrate
     _ko: Vibration
     _en: Vibration
-    _ja: 
+    _ja: "\u30D0\u30A4\u30D6\u30EC\u30FC\u30B7\u30E7\u30F3"
+    _de: Vibration
+    _tw: "\u9707\u52D5"
+    _ru: "\u0412\u0438\u0431\u0440\u0430\u0446\u0438\u044F"
+    _fr: Vibration
+    _es: "Vibraci\xF3n"
+    _vi: Rung
   - _idx: str_popup_option_bgm
     _ko: BGM
     _en: BGM
-    _ja: 
+    _ja: BGM
+    _de: BGM
+    _tw: "\u80CC\u666F\u97F3\u6A02"
+    _ru: "\u041C\u0443\u0437\u044B\u043A\u0430"
+    _fr: Musique de fond
+    _es: "M\xFAsica de fondo"
+    _vi: "Nh\u1EA1c n\u1EC1n"
   - _idx: str_popup_option_sfx
     _ko: SFX
     _en: SFX
-    _ja: 
+    _ja: "\u52B9\u679C\u97F3"
+    _de: Soundeffekte
+    _tw: "\u97F3\u6548"
+    _ru: "\u0417\u0432\u0443\u043A\u043E\u0432\u044B\u0435 \u044D\u0444\u0444\u0435\u043A\u0442\u044B"
+    _fr: Effets sonores
+    _es: Efectos de sonido
+    _vi: "Hi\u1EC7u \u1EE9ng \xE2m thanh"
   - _idx: str_popup_option_title
     _ko: Options
     _en: Options
-    _ja: 
+    _ja: "\u30AA\u30D7\u30B7\u30E7\u30F3"
+    _de: Optionen
+    _tw: "\u8A2D\u5B9A"
+    _ru: "\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438"
+    _fr: Options
+    _es: Opciones
+    _vi: "T\xF9y ch\u1ECDn"
   - _idx: str_popup_option_on
     _ko: On
     _en: On
-    _ja: 
+    _ja: "\u30AA\u30F3"
+    _de: Ein
+    _tw: "\u958B"
+    _ru: "\u0412\u043A\u043B"
+    _fr: "Activ\xE9"
+    _es: Activado
+    _vi: "B\u1EADt"
   - _idx: str_popup_option_off
     _ko: Off
     _en: Off
-    _ja: 
+    _ja: "\u30AA\u30D5"
+    _de: Aus
+    _tw: "\u95DC"
+    _ru: "\u0412\u044B\u043A\u043B"
+    _fr: "D\xE9sactiv\xE9"
+    _es: Desactivado
+    _vi: "T\u1EAFt"
   - _idx: str_popup_option_language_en
     _ko: English
     _en: English
-    _ja: 
+    _ja: English
+    _de: Englisch
+    _tw: "\u82F1\u6587"
+    _ru: "\u0410\u043D\u0433\u043B\u0438\u0439\u0441\u043A\u0438\u0439"
+    _fr: Anglais
+    _es: "Ingl\xE9s"
+    _vi: "Ti\u1EBFng Anh"
   - _idx: str_popup_option_language_ko
     _ko: "\uD55C\uAD6D\uC5B4"
     _en: "\uD55C\uAD6D\uC5B4"
-    _ja: 
+    _ja: "\u97D3\u56FD\u8A9E"
+    _de: Koreanisch
+    _tw: "\u97D3\u6587"
+    _ru: "\u041A\u043E\u0440\u0435\u0439\u0441\u043A\u0438\u0439"
+    _fr: "Cor\xE9en"
+    _es: Coreano
+    _vi: "Ti\u1EBFng H\xE0n"
   - _idx: str_popup_option_language_ja
     _ko: "\u65E5\u672C\u8A9E"
     _en: "\u65E5\u672C\u8A9E"
-    _ja: 
+    _ja: "\u65E5\u672C\u8A9E"
+    _de: Japanisch
+    _tw: "\u65E5\u6587"
+    _ru: "\u042F\u043F\u043E\u043D\u0441\u043A\u0438\u0439"
+    _fr: Japonais
+    _es: "Japon\xE9s"
+    _vi: "Ti\u1EBFng Nh\u1EADt"
   - _idx: str_popup_option_language_ru
     _ko: "\u0420\u0443\u0441\u0441\u043A\u0438\u0439"
     _en: "\u0420\u0443\u0441\u0441\u043A\u0438\u0439"
-    _ja: 
+    _ja: "\u30ED\u30B7\u30A2\u8A9E"
+    _de: Russisch
+    _tw: "\u4FC4\u6587"
+    _ru: "\u0420\u0443\u0441\u0441\u043A\u0438\u0439"
+    _fr: Russe
+    _es: Ruso
+    _vi: "Ti\u1EBFng Nga"
   - _idx: str_popup_option_language_de
     _ko: Deutsch
     _en: Deutsch
-    _ja: 
+    _ja: "\u30C9\u30A4\u30C4\u8A9E"
+    _de: Deutsch
+    _tw: "\u5FB7\u6587"
+    _ru: "\u041D\u0435\u043C\u0435\u0446\u043A\u0438\u0439"
+    _fr: Allemand
+    _es: "Alem\xE1n"
+    _vi: "Ti\u1EBFng \u0110\u1EE9c"
   - _idx: str_popup_option_language_tw
     _ko: "\u4E2D\u6587(\u7E41\u9AD4)"
     _en: "\u4E2D\u6587(\u7E41\u9AD4)"
-    _ja: 
+    _ja: "\u7E41\u4F53\u5B57\u4E2D\u56FD\u8A9E"
+    _de: Traditionelles Chinesisch
+    _tw: "\u7E41\u9AD4\u4E2D\u6587"
+    _ru: "\u0422\u0440\u0430\u0434\u0438\u0446\u0438\u043E\u043D\u043D\u044B\u0439
+      \u043A\u0438\u0442\u0430\u0439\u0441\u043A\u0438\u0439"
+    _fr: Chinois traditionnel
+    _es: Chino tradicional
+    _vi: "Ti\u1EBFng Trung (Ph\u1ED3n th\u1EC3)"
   - _idx: str_popup_option_language_es
     _ko: "Espa\xF1ol"
     _en: "Espa\xF1ol"
-    _ja: 
+    _ja: "\u30B9\u30DA\u30A4\u30F3\u8A9E"
+    _de: Spanisch
+    _tw: "\u897F\u73ED\u7259\u6587"
+    _ru: "\u0418\u0441\u043F\u0430\u043D\u0441\u043A\u0438\u0439"
+    _fr: Espagnol
+    _es: "Espa\xF1ol"
+    _vi: "Ti\u1EBFng T\xE2y Ban Nha"
   - _idx: str_popup_option_language_ptbr
     _ko: "Portugu\xEAs"
     _en: "Portugu\xEAs"
-    _ja: 
+    _ja: "\u30DD\u30EB\u30C8\u30AC\u30EB\u8A9E"
+    _de: Portugiesisch
+    _tw: "\u8461\u8404\u7259\u6587"
+    _ru: "\u041F\u043E\u0440\u0442\u0443\u0433\u0430\u043B\u044C\u0441\u043A\u0438\u0439"
+    _fr: Portugais
+    _es: "Portugu\xE9s"
+    _vi: "Ti\u1EBFng B\u1ED3 \u0110\xE0o Nha"
   - _idx: str_popup_option_language_fr
     _ko: "fran\xE7ais"
     _en: "fran\xE7ais"
-    _ja: 
+    _ja: "\u30D5\u30E9\u30F3\u30B9\u8A9E"
+    _de: "Franz\xF6sisch"
+    _tw: "\u6CD5\u6587"
+    _ru: "\u0424\u0440\u0430\u043D\u0446\u0443\u0437\u0441\u043A\u0438\u0439"
+    _fr: "Fran\xE7ais"
+    _es: "Franc\xE9s"
+    _vi: "Ti\u1EBFng Ph\xE1p"
   - _idx: str_language
     _ko: Language
     _en: Language
-    _ja: 
+    _ja: "\u8A00\u8A9E"
+    _de: Sprache
+    _tw: "\u8A9E\u8A00"
+    _ru: "\u042F\u0437\u044B\u043A"
+    _fr: Langue
+    _es: Idioma
+    _vi: "Ng\xF4n ng\u1EEF"
   - _idx: str_setting_save_load_title
     _ko: Save & Load
     _en: Save & Load
-    _ja: 
+    _ja: "\u30BB\u30FC\u30D6\uFF06\u30ED\u30FC\u30C9"
+    _de: Speichern & Laden
+    _tw: "\u5132\u5B58\u8207\u8B80\u53D6"
+    _ru: "\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C \u0438 \u0437\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044C"
+    _fr: Sauvegarder & Charger
+    _es: Guardar y cargar
+    _vi: "L\u01B0u & T\u1EA3i"
   - _idx: str_setting_save_title
     _ko: Save
     _en: Save
-    _ja: 
+    _ja: "\u30BB\u30FC\u30D6"
+    _de: Speichern
+    _tw: "\u5132\u5B58"
+    _ru: "\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C"
+    _fr: Sauvegarder
+    _es: Guardar
+    _vi: "L\u01B0u"
   - _idx: str_setting_load_title
     _ko: Load
     _en: Load
-    _ja: 
+    _ja: "\u30ED\u30FC\u30C9"
+    _de: Laden
+    _tw: "\u8B80\u53D6"
+    _ru: "\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044C"
+    _fr: Charger
+    _es: Cargar
+    _vi: "T\u1EA3i"
   - _idx: str_setting_save_load_desc_1
     _ko: Press the button below to protect your progress
     _en: Press the button below to protect your progress
-    _ja: 
+    _ja: "\u4E0B\u306E\u30DC\u30BF\u30F3\u3092\u62BC\u3057\u3066\u9032\u884C\u72B6\u6CC1\u3092\u4FDD\u8B77\u3057\u3066\u304F\u3060\u3055\u3044"
+    _de: "Dr\xFCcke die Taste unten, um deinen Fortschritt zu sichern"
+    _tw: "\u6309\u4E0B\u4E0B\u65B9\u6309\u9215\u4EE5\u4FDD\u8B77\u9032\u5EA6"
+    _ru: "\u041D\u0430\u0436\u043C\u0438\u0442\u0435 \u043A\u043D\u043E\u043F\u043A\u0443
+      \u043D\u0438\u0436\u0435, \u0447\u0442\u043E\u0431\u044B \u0441\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C
+      \u043F\u0440\u043E\u0433\u0440\u0435\u0441\u0441"
+    _fr: "Appuyez sur le bouton ci-dessous pour prot\xE9ger votre progression"
+    _es: "Presiona el bot\xF3n abajo para proteger tu progreso"
+    _vi: "Nh\u1EA5n n\xFAt b\xEAn d\u01B0\u1EDBi \u0111\u1EC3 b\u1EA3o v\u1EC7 ti\u1EBFn
+      tr\xECnh c\u1EE7a b\u1EA1n"
   - _idx: str_setting_save_load_desc_2
     _ko: Load progress saved on the server
     _en: Load progress saved on the server
-    _ja: 
+    _ja: "\u30B5\u30FC\u30D0\u30FC\u306B\u4FDD\u5B58\u3055\u308C\u305F\u9032\u884C\u72B6\u6CC1\u3092\u8AAD\u307F\u8FBC\u307F\u307E\u3059"
+    _de: Vom Server gespeicherten Fortschritt laden
+    _tw: "\u8B80\u53D6\u4F3A\u670D\u5668\u5132\u5B58\u7684\u9032\u5EA6"
+    _ru: "\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044C \u043F\u0440\u043E\u0433\u0440\u0435\u0441\u0441
+      \u0441 \u0441\u0435\u0440\u0432\u0435\u0440\u0430"
+    _fr: "Charger la progression sauvegard\xE9e sur le serveur"
+    _es: Cargar progreso guardado en el servidor
+    _vi: "T\u1EA3i ti\u1EBFn tr\xECnh \u0111\xE3 l\u01B0u tr\xEAn m\xE1y ch\u1EE7"
   - _idx: str_setting_logout
     _ko: Log Out
     _en: Log Out
-    _ja: 
+    _ja: "\u30ED\u30B0\u30A2\u30A6\u30C8"
+    _de: Abmelden
+    _tw: "\u767B\u51FA"
+    _ru: "\u0412\u044B\u0439\u0442\u0438"
+    _fr: "D\xE9connexion"
+    _es: "Cerrar sesi\xF3n"
+    _vi: "\u0110\u0103ng xu\u1EA5t"
   - _idx: str_account_popup_desc
     _ko: Link your account to protect your progress
     _en: Link your account to protect your progress
-    _ja: 
+    _ja: "\u30A2\u30AB\u30A6\u30F3\u30C8\u3092\u9023\u643A\u3057\u3066\u9032\u884C\u72B6\u6CC1\u3092\u4FDD\u8B77\u3057\u307E\u3059"
+    _de: "Verkn\xFCpfe dein Konto, um deinen Fortschritt zu sch\xFCtzen"
+    _tw: "\u9023\u7D50\u5E33\u865F\u4EE5\u4FDD\u8B77\u9032\u5EA6"
+    _ru: "\u041F\u0440\u0438\u0432\u044F\u0436\u0438\u0442\u0435 \u0430\u043A\u043A\u0430\u0443\u043D\u0442
+      \u0434\u043B\u044F \u0437\u0430\u0449\u0438\u0442\u044B \u043F\u0440\u043E\u0433\u0440\u0435\u0441\u0441\u0430"
+    _fr: "Liez votre compte pour prot\xE9ger votre progression"
+    _es: Vincula tu cuenta para proteger tu progreso
+    _vi: "Li\xEAn k\u1EBFt t\xE0i kho\u1EA3n \u0111\u1EC3 b\u1EA3o v\u1EC7 ti\u1EBFn
+      tr\xECnh"
   - _idx: str_data_load_confirm
     _ko: Data saved at {0} will overwrite current data.\nDo you want to continue?
     _en: Data saved at {0} will overwrite current data.\nDo you want to continue?
-    _ja: 
+    _ja: "{0}\u306B\u4FDD\u5B58\u3055\u308C\u305F\u30C7\u30FC\u30BF\u304C\u73FE\u5728\u306E\u30C7\u30FC\u30BF\u3092\u4E0A\u66F8\u304D\u3057\u307E\u3059\u3002\\n\u7D9A\u884C\u3057\u307E\u3059\u304B\uFF1F"
+    _de: "Bei {0} gespeicherte Daten \xFCberschreiben aktuelle Daten.\\nFortfahren?"
+    _tw: "\u5132\u5B58\u65BC{0}\u7684\u8CC7\u6599\u5C07\u8986\u84CB\u76EE\u524D\u8CC7\u6599\u3002\\n\u662F\u5426\u7E7C\u7E8C\uFF1F"
+    _ru: "\u0414\u0430\u043D\u043D\u044B\u0435, \u0441\u043E\u0445\u0440\u0430\u043D\u0451\u043D\u043D\u044B\u0435
+      \u0432 {0}, \u043F\u0435\u0440\u0435\u0437\u0430\u043F\u0438\u0448\u0443\u0442
+      \u0442\u0435\u043A\u0443\u0449\u0438\u0435 \u0434\u0430\u043D\u043D\u044B\u0435.\\n\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C?"
+    _fr: "Les donn\xE9es sauvegard\xE9es \xE0 {0} \xE9craseront les donn\xE9es actuelles.\\nContinuer
+      ?"
+    _es: "Los datos guardados en {0} sobrescribir\xE1n los actuales.\\n\xBFContinuar?"
+    _vi: "D\u1EEF li\u1EC7u l\u01B0u t\u1EA1i {0} s\u1EBD ghi \u0111\xE8 d\u1EEF
+      li\u1EC7u hi\u1EC7n t\u1EA1i.\\nB\u1EA1n c\xF3 mu\u1ED1n ti\u1EBFp t\u1EE5c
+      kh\xF4ng?"
   - _idx: str_data_load_complete
-    _ko: Data loaded successfully.\nRestarting the game
-    _en: Data loaded successfully.\nRestarting the game
-    _ja: 
+    _ko: Data loaded successfully.Restarting the game
+    _en: Data loaded successfully.Restarting the game
+    _ja: "\u30C7\u30FC\u30BF\u306E\u8AAD\u307F\u8FBC\u307F\u306B\u6210\u529F\u3057\u307E\u3057\u305F\u3002\\n\u30B2\u30FC\u30E0\u3092\u518D\u8D77\u52D5\u3057\u307E\u3059"
+    _de: Daten erfolgreich geladen.\nSpiel wird neu gestartet
+    _tw: "\u8CC7\u6599\u8B80\u53D6\u6210\u529F\u3002\\n\u6B63\u5728\u91CD\u65B0\u555F\u52D5\u904A\u6232"
+    _ru: "\u0414\u0430\u043D\u043D\u044B\u0435 \u0443\u0441\u043F\u0435\u0448\u043D\u043E
+      \u0437\u0430\u0433\u0440\u0443\u0436\u0435\u043D\u044B.\\n\u041F\u0435\u0440\u0435\u0437\u0430\u043F\u0443\u0441\u043A
+      \u0438\u0433\u0440\u044B"
+    _fr: "Donn\xE9es charg\xE9es avec succ\xE8s.\\nRed\xE9marrage du jeu"
+    _es: Datos cargados correctamente.\nReiniciando el juego
+    _vi: "D\u1EEF li\u1EC7u \u0111\xE3 \u0111\u01B0\u1EE3c t\u1EA3i th\xE0nh c\xF4ng.\\n\u0110ang
+      kh\u1EDFi \u0111\u1ED9ng l\u1EA1i tr\xF2 ch\u01A1i"
   - _idx: str_popup_data_title
     _ko: Save Data
     _en: Save Data
-    _ja: 
+    _ja: "\u30C7\u30FC\u30BF\u3092\u4FDD\u5B58"
+    _de: Daten speichern
+    _tw: "\u5132\u5B58\u8CC7\u6599"
+    _ru: "\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C \u0434\u0430\u043D\u043D\u044B\u0435"
+    _fr: "Sauvegarder les donn\xE9es"
+    _es: Guardar datos
+    _vi: "L\u01B0u d\u1EEF li\u1EC7u"
   - _idx: str_confirm
     _ko: OK
     _en: OK
-    _ja: 
+    _ja: OK
+    _de: OK
+    _tw: "\u78BA\u5B9A"
+    _ru: "\u041E\u041A"
+    _fr: OK
+    _es: OK
+    _vi: OK
   - _idx: str_are_you_sure_desc_1
     _ko: You do not have an attack weapon equipped, so you will be defeated for sure.
       Do you still want to proceed?
     _en: You do not have an attack weapon equipped, so you will be defeated for sure.
       Do you still want to proceed?
-    _ja: 
+    _ja: "\u653B\u6483\u6B66\u5668\u3092\u88C5\u5099\u3057\u3066\u3044\u306A\u3044\u305F\u3081\u3001\u78BA\u5B9F\u306B\u6557\u5317\u3057\u307E\u3059\u3002\u305D\u308C\u3067\u3082\u7D9A\u884C\u3057\u307E\u3059\u304B\uFF1F"
+    _de: "Sie haben keine Angriffswaffe ausger\xFCstet, daher werden Sie sicher besiegt.
+      Trotzdem fortfahren?"
+    _tw: "\u672A\u88DD\u5099\u653B\u64CA\u6B66\u5668\uFF0C\u5C07\u5FC5\u5B9A\u5931\u6557\u3002\u662F\u5426\u4ECD\u8981\u7E7C\u7E8C\uFF1F"
+    _ru: "\u0423 \u0432\u0430\u0441 \u043D\u0435 \u044D\u043A\u0438\u043F\u0438\u0440\u043E\u0432\u0430\u043D\u043E
+      \u0430\u0442\u0430\u043A\u0443\u044E\u0449\u0435\u0435 \u043E\u0440\u0443\u0436\u0438\u0435,
+      \u0432\u044B \u0442\u043E\u0447\u043D\u043E \u0431\u0443\u0434\u0435\u0442\u0435
+      \u043F\u043E\u0431\u0435\u0436\u0434\u0435\u043D\u044B. \u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C?"
+    _fr: "Vous n\u2019avez pas d\u2019arme d\u2019attaque \xE9quip\xE9e, vous serez
+      s\xFBrement vaincu. Continuer quand m\xEAme ?"
+    _es: "No tienes un arma equipada, ser\xE1s derrotado con seguridad. \xBFContinuar?"
+    _vi: "B\u1EA1n ch\u01B0a trang b\u1ECB v\u0169 kh\xED t\u1EA5n c\xF4ng, ch\u1EAFc
+      ch\u1EAFn s\u1EBD th\u1EA5t b\u1EA1i. B\u1EA1n v\u1EABn mu\u1ED1n ti\u1EBFp
+      t\u1EE5c kh\xF4ng?"
   - _idx: str_start_desc
     _ko: START
     _en: START
-    _ja: 
+    _ja: "\u30B9\u30BF\u30FC\u30C8"
+    _de: Starten
+    _tw: "\u958B\u59CB"
+    _ru: "\u0421\u0442\u0430\u0440\u0442"
+    _fr: "D\xE9marrer"
+    _es: Iniciar
+    _vi: "B\u1EAFt \u0111\u1EA7u"
   - _idx: str_back_desc
     _ko: BACK
     _en: BACK
-    _ja: 
+    _ja: "\u623B\u308B"
+    _de: "Zur\xFCck"
+    _tw: "\u8FD4\u56DE"
+    _ru: "\u041D\u0430\u0437\u0430\u0434"
+    _fr: Retour
+    _es: "Atr\xE1s"
+    _vi: "Quay l\u1EA1i"
   - _idx: str_desc_start_none
     _ko: START?
     _en: START?
-    _ja: 
+    _ja: "\u958B\u59CB\u3057\u307E\u3059\u304B\uFF1F"
+    _de: Starten?
+    _tw: "\u958B\u59CB\uFF1F"
+    _ru: "\u041D\u0430\u0447\u0430\u0442\u044C?"
+    _fr: Commencer ?
+    _es: "\xBFIniciar?"
+    _vi: "B\u1EAFt \u0111\u1EA7u?"
   - _idx: str_difficultly_stage_0
     _ko: <color=#FFFFFF>NORMAL STAGE</color>
     _en: <color=#FFFFFF>NORMAL STAGE</color>
-    _ja: 
+    _ja: "<color=#FFFFFF>\u30CE\u30FC\u30DE\u30EB\u30B9\u30C6\u30FC\u30B8</color>"
+    _de: <color=#FFFFFF>Normale Stufe</color>
+    _tw: "<color=#FFFFFF>\u666E\u901A\u95DC\u5361</color>"
+    _ru: "<color=#FFFFFF>\u041E\u0431\u044B\u0447\u043D\u044B\u0439 \u044D\u0442\u0430\u043F</color>"
+    _fr: <color=#FFFFFF>Niveau normal</color>
+    _es: <color=#FFFFFF>Etapa normal</color>
+    _vi: "<color=#FFFFFF>M\xE0n th\u01B0\u1EDDng</color>"
   - _idx: str_difficultly_stage_1
     _ko: <color=#FF3B30>HARD STAGE</color>
     _en: <color=#FF3B30>HARD STAGE</color>
-    _ja: 
+    _ja: "<color=#FF3B30>\u30CF\u30FC\u30C9\u30B9\u30C6\u30FC\u30B8</color>"
+    _de: <color=#FF3B30>Schwere Stufe</color>
+    _tw: "<color=#FF3B30>\u56F0\u96E3\u95DC\u5361</color>"
+    _ru: "<color=#FF3B30>\u0421\u043B\u043E\u0436\u043D\u044B\u0439 \u044D\u0442\u0430\u043F</color>"
+    _fr: <color=#FF3B30>Niveau difficile</color>
+    _es: "<color=#FF3B30>Etapa dif\xEDcil</color>"
+    _vi: "<color=#FF3B30>M\xE0n kh\xF3</color>"
   - _idx: str_difficultly_stage_2
     _ko: <color=#AF52DE>BOSS STAGE</color>
     _en: <color=#AF52DE>BOSS STAGE</color>
-    _ja: 
+    _ja: "<color=#AF52DE>\u30DC\u30B9\u30B9\u30C6\u30FC\u30B8</color>"
+    _de: <color=#AF52DE>Boss-Stufe</color>
+    _tw: "<color=#AF52DE>\u9996\u9818\u95DC\u5361</color>"
+    _ru: "<color=#AF52DE>\u042D\u0442\u0430\u043F \u0431\u043E\u0441\u0441\u0430</color>"
+    _fr: <color=#AF52DE>Niveau boss</color>
+    _es: <color=#AF52DE>Etapa jefe</color>
+    _vi: "<color=#AF52DE>M\xE0n Boss</color>"
   - _idx: str_name_revival_1
     _ko: "{0} \uCD08\uAC04 \uBB34\uC801\uC774 \uB429\uB2C8\uB2E4"
     _en: Invincible for {0} seconds
-    _ja: 
+    _ja: "{0}\u79D2\u9593\u7121\u6575"
+    _de: '{0} Sekunden unverwundbar'
+    _tw: "{0} \u79D2\u5167\u7121\u6575"
+    _ru: "\u041D\u0435\u0443\u044F\u0437\u0432\u0438\u043C\u043E\u0441\u0442\u044C
+      \u043D\u0430 {0} \u0441\u0435\u043A."
+    _fr: Invincible pendant {0} secondes
+    _es: Invencible durante {0} segundos
+    _vi: "B\u1EA5t t\u1EED trong {0} gi\xE2y"
   - _idx: str_name_revival_2
     _ko: "\uB9C8\uC9C0\uB9C9 \uAE30\uD68C!"
     _en: Final chance!
-    _ja: 
+    _ja: "\u6700\u5F8C\u306E\u30C1\u30E3\u30F3\u30B9\uFF01"
+    _de: Letzte Chance!
+    _tw: "\u6700\u5F8C\u6A5F\u6703\uFF01"
+    _ru: "\u041F\u043E\u0441\u043B\u0435\u0434\u043D\u0438\u0439 \u0448\u0430\u043D\u0441!"
+    _fr: "Derni\xE8re chance !"
+    _es: "\xA1\xDAltima oportunidad!"
+    _vi: "C\u01A1 h\u1ED9i cu\u1ED1i!"
   - _idx: str_name_revival_3
     _ko: "\uAC70\uC758 \uB2E4 \uC654\uC5B4\uC694!"
     _en: Almost there!
-    _ja: 
+    _ja: "\u3082\u3046\u5C11\u3057\uFF01"
+    _de: Fast geschafft!
+    _tw: "\u5FEB\u5230\u4E86\uFF01"
+    _ru: "\u041F\u043E\u0447\u0442\u0438 \u0433\u043E\u0442\u043E\u0432\u043E!"
+    _fr: "Presque termin\xE9 !"
+    _es: "\xA1Casi listo!"
+    _vi: "S\u1EAFp xong r\u1ED3i!"
   - _idx: str_desc_no_thanks
     _ko: no thanks
-    _en: no thanks
-    _ja: 
+    _en: No thanks
+    _ja: "\u7D50\u69CB\u3067\u3059"
+    _de: Nein, danke
+    _tw: "\u4E0D\u7528\u4E86"
+    _ru: "\u041D\u0435\u0442, \u0441\u043F\u0430\u0441\u0438\u0431\u043E"
+    _fr: Non merci
+    _es: No, gracias
+    _vi: "Kh\xF4ng, c\u1EA3m \u01A1n"
   - _idx: str_claimall
     _ko: ALL GET
     _en: ALL GET
-    _ja: 
+    _ja: "\u3059\u3079\u3066\u7372\u5F97"
+    _de: Alles erhalten
+    _tw: "\u5168\u90E8\u9818\u53D6"
+    _ru: "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u0432\u0441\u0451"
+    _fr: Tout obtenir
+    _es: Obtener todo
+    _vi: "Nh\u1EADn t\u1EA5t c\u1EA3"
   - _idx: str_luckychance
     _ko: LUCKY CHANCE!
     _en: LUCKY CHANCE!
-    _ja: 
+    _ja: "\u30E9\u30C3\u30AD\u30FC\u30C1\u30E3\u30F3\u30B9\uFF01"
+    _de: "Gl\xFCckschance!"
+    _tw: "\u5E78\u904B\u6A5F\u6703\uFF01"
+    _ru: "\u0421\u0447\u0430\u0441\u0442\u043B\u0438\u0432\u044B\u0439 \u0448\u0430\u043D\u0441!"
+    _fr: Chance chanceuse !
+    _es: "\xA1Oportunidad de suerte!"
+    _vi: "C\u01A1 h\u1ED9i may m\u1EAFn!"
   - _idx: str_upgrade_choice_name_1
     _ko: "\uAC80\uC740\uD0C4\uD658"
     _en: "\uAC80\uC740\uD0C4\uD658"
-    _ja: 
+    _ja: Black Bullet
+    _de: "\u9ED2\u3044\u5F3E\u4E38"
+    _tw: Schwarze Kugel
+    _ru: "\u9ED1\u8272\u5B50\u5F48"
+    _fr: "\u0427\u0451\u0440\u043D\u0430\u044F \u043F\u0443\u043B\u044F"
+    _es: Balle noire
+    _vi: Bala negra
   - _idx: str_upgrade_choice_name_2
     _ko: "\uBCBC\uB77D"
     _en: "\uBCBC\uB77D"
-    _ja: 
+    _ja: Lightning
+    _de: "\u96F7"
+    _tw: Blitz
+    _ru: "\u96F7\u96FB"
+    _fr: "\u041C\u043E\u043B\u043D\u0438\u044F"
+    _es: Foudre
+    _vi: Rayo
   - _idx: str_upgrade_choice_name_3
     _ko: "\uC5BC\uC74C \uAD6C\uC2AC"
     _en: "\uC5BC\uC74C \uAD6C\uC2AC"
-    _ja: 
+    _ja: Ice Orb
+    _de: "\u6C37\u306E\u30AA\u30FC\u30D6"
+    _tw: Eiskugel
+    _ru: "\u51B0\u4E4B\u5BF6\u73E0"
+    _fr: "\u041B\u0435\u0434\u044F\u043D\u0430\u044F \u0441\u0444\u0435\u0440\u0430"
+    _es: Orbe de glace
+    _vi: Orbe de hielo
   - _idx: str_upgrade_choice_name_4
     _ko: "\uC5B4\uB460\uC758 \uD1B1\uB2C8 \uBC14\uD034"
     _en: "\uC5B4\uB460\uC758 \uD1B1\uB2C8 \uBC14\uD034"
-    _ja: 
+    _ja: Dark Gear
+    _de: "\u95C7\u306E\u6B6F\u8ECA"
+    _tw: Dunkles Zahnrad
+    _ru: "\u9ED1\u6697\u9F52\u8F2A"
+    _fr: "\u0422\u0451\u043C\u043D\u0430\u044F \u0448\u0435\u0441\u0442\u0435\u0440\u043D\u044F"
+    _es: Engrenage sombre
+    _vi: Engranaje oscuro
   - _idx: str_upgrade_choice_name_5
     _ko: "\uB3C5\uAC00\uC2A4 \uC804\uC5FC"
     _en: "\uB3C5\uAC00\uC2A4 \uC804\uC5FC"
-    _ja: 
+    _ja: Poison Gas Spread
+    _de: "\u6BD2\u30AC\u30B9\u62E1\u6563"
+    _tw: Giftgas-Ausbreitung
+    _ru: "\u6BD2\u6C23\u64F4\u6563"
+    _fr: "\u0420\u0430\u0441\u043F\u0440\u043E\u0441\u0442\u0440\u0430\u043D\u0435\u043D\u0438\u0435
+      \u044F\u0434\u043E\u0432\u0438\u0442\u043E\u0433\u043E \u0433\u0430\u0437\u0430"
+    _es: Diffusion de gaz toxique
+    _vi: "Propagaci\xF3n de gas venenoso"
   - _idx: str_upgrade_choice_name_6
     _ko: "\uD654\uC5FC\uAD6C"
     _en: "\uD654\uC5FC\uAD6C"
-    _ja: 
+    _ja: Fireball
+    _de: "\u30D5\u30A1\u30A4\u30A2\u30DC\u30FC\u30EB"
+    _tw: Feuerball
+    _ru: "\u706B\u7130\u7403"
+    _fr: "\u041E\u0433\u043D\u0435\u043D\u043D\u044B\u0439 \u0448\u0430\u0440"
+    _es: Boule de feu
+    _vi: Bola de fuego
   - _idx: str_upgrade_choice_name_7
     _ko: "\uC544\uB9C8\uAC9F\uB3C8"
     _en: "\uC544\uB9C8\uAC9F\uB3C8"
-    _ja: 
+    _ja: Armageddon
+    _de: "\u30A2\u30EB\u30DE\u30B2\u30C9\u30F3"
+    _tw: Armageddon
+    _ru: "\u672B\u65E5\u5BE9\u5224"
+    _fr: "\u0410\u0440\u043C\u0430\u0433\u0435\u0434\u0434\u043E\u043D"
+    _es: Armageddon
+    _vi: "Armaged\xF3n"
   - _idx: str_upgrade_choice_name_8
     _ko: "\uB808\uC774\uC800 \uB300\uD3EC"
     _en: "\uB808\uC774\uC800 \uB300\uD3EC"
-    _ja: 
+    _ja: Laser Cannon
+    _de: "\u30EC\u30FC\u30B6\u30FC\u30AD\u30E3\u30CE\u30F3"
+    _tw: Laserkanone
+    _ru: "\u96F7\u5C04\u5927\u7832"
+    _fr: "\u041B\u0430\u0437\u0435\u0440\u043D\u0430\u044F \u043F\u0443\u0448\u043A\u0430"
+    _es: Canon laser
+    _vi: "Ca\xF1\xF3n l\xE1ser"
   - _idx: str_upgrade_choice_name_9
     _ko: "\uADF8\uB9BC\uC790 \uD68C\uC804\uCE7C"
     _en: "\uADF8\uB9BC\uC790 \uD68C\uC804\uCE7C"
-    _ja: 
+    _ja: Shadow Spinning Blade
+    _de: "\u5F71\u306E\u56DE\u8EE2\u5203"
+    _tw: Schatten-Rotationsklinge
+    _ru: "\u6697\u5F71\u65CB\u8F49\u5200"
+    _fr: "\u0422\u0435\u043D\u0435\u0432\u043E\u0439 \u0432\u0440\u0430\u0449\u0430\u044E\u0449\u0438\u0439\u0441\u044F
+      \u043A\u043B\u0438\u043D\u043E\u043A"
+    _es: "Lame tournoyante d\u2019ombre"
+    _vi: "Cuchilla giratoria sombr\xEDa"
   - _idx: str_upgrade_choice_name_10
     _ko: "\uC0DD\uBA85\uB825 \uD761\uC218 \uACF5"
     _en: "\uC0DD\uBA85\uB825 \uD761\uC218 \uACF5"
-    _ja: 
+    _ja: Life Drain Orb
+    _de: "\u751F\u547D\u5438\u53CE\u306E\u7403"
+    _tw: Lebensraub-Kugel
+    _ru: "\u751F\u547D\u5438\u6536\u7403"
+    _fr: "\u0421\u0444\u0435\u0440\u0430 \u043F\u043E\u0433\u043B\u043E\u0449\u0435\u043D\u0438\u044F
+      \u0436\u0438\u0437\u043D\u0438"
+    _es: Orbe de vol de vie
+    _vi: Orbe de robo de vida
   - _idx: str_upgrade_choice_name_11
     _ko: "\uD3ED\uBC1C \uB109\uBC31"
     _en: "\uD3ED\uBC1C \uB109\uBC31"
-    _ja: 
+    _ja: Explosive Knockback
+    _de: "\u7206\u767A\u30CE\u30C3\u30AF\u30D0\u30C3\u30AF"
+    _tw: "Explosiver R\xFCcksto\xDF"
+    _ru: "\u7206\u70B8\u64CA\u9000"
+    _fr: "\u0412\u0437\u0440\u044B\u0432\u043D\u043E\u0435 \u043E\u0442\u0431\u0440\u0430\u0441\u044B\u0432\u0430\u043D\u0438\u0435"
+    _es: Recul explosif
+    _vi: Retroceso explosivo
   - _idx: str_upgrade_choice_name_12
     _ko: "\uD1B5\uB098\uBB34 \uB358\uC9C0\uAE30"
     _en: "\uD1B5\uB098\uBB34 \uB358\uC9C0\uAE30"
-    _ja: 
+    _ja: Log Throw
+    _de: "\u4E38\u592A\u6295\u3052"
+    _tw: Stammwurf
+    _ru: "\u6295\u64F2\u539F\u6728"
+    _fr: "\u0411\u0440\u043E\u0441\u043E\u043A \u0431\u0440\u0435\u0432\u043D\u0430"
+    _es: "Lancer de b\xFBche"
+    _vi: Lanzamiento de tronco
   - _idx: str_upgrade_choice_name_13
     _ko: "\uD478\uB978 \uC601\uD63C"
     _en: "\uD478\uB978 \uC601\uD63C"
-    _ja: 
+    _ja: Blue Soul
+    _de: "\u9752\u3044\u9B42"
+    _tw: Blaue Seele
+    _ru: "\u85CD\u8272\u9748\u9B42"
+    _fr: "\u0421\u0438\u043D\u044F\u044F \u0434\u0443\u0448\u0430"
+    _es: "\xC2me bleue"
+    _vi: Alma azul
   - _idx: str_upgrade_choice_name_101
     _ko: "\uACF5\uACA9\uB825"
     _en: "\uACF5\uACA9\uB825"
-    _ja: 
+    _ja: Attack
+    _de: "\u653B\u6483\u529B"
+    _tw: Angriff
+    _ru: "\u653B\u64CA\u529B"
+    _fr: "\u0410\u0442\u0430\u043A\u0430"
+    _es: Attaque
+    _vi: Ataque
   - _idx: str_upgrade_choice_name_102
     _ko: "\uCCB4\uB825"
     _en: "\uCCB4\uB825"
-    _ja: 
+    _ja: Health
+    _de: "\u4F53\u529B"
+    _tw: Lebenspunkte
+    _ru: "\u751F\u547D\u503C"
+    _fr: "\u0417\u0434\u043E\u0440\u043E\u0432\u044C\u0435"
+    _es: "Sant\xE9"
+    _vi: Vida
   - _idx: str_upgrade_choice_name_103
     _ko: "\uCFE8\uD0C0\uC784\uAC10\uC18C"
     _en: "\uCFE8\uD0C0\uC784\uAC10\uC18C"
-    _ja: 
+    _ja: Cooldown Reduction
+    _de: "\u30AF\u30FC\u30EB\u30C0\u30A6\u30F3\u6E1B\u5C11"
+    _tw: Abklingzeit-Reduktion
+    _ru: "\u51B7\u537B\u6642\u9593\u6E1B\u5C11"
+    _fr: "\u0421\u043D\u0438\u0436\u0435\u043D\u0438\u0435 \u043F\u0435\u0440\u0435\u0437\u0430\u0440\u044F\u0434\u043A\u0438"
+    _es: "R\xE9duction du temps de recharge"
+    _vi: "Reducci\xF3n de enfriamiento"
   - _idx: str_upgrade_choice_name_104
     _ko: "\uCE58\uBA85\uD0C0 \uD53C\uD574"
     _en: "\uCE58\uBA85\uD0C0 \uD53C\uD574"
-    _ja: 
+    _ja: Critical Damage
+    _de: "\u30AF\u30EA\u30C6\u30A3\u30AB\u30EB\u30C0\u30E1\u30FC\u30B8"
+    _tw: Kritischer Schaden
+    _ru: "\u66B4\u64CA\u50B7\u5BB3"
+    _fr: "\u041A\u0440\u0438\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0439 \u0443\u0440\u043E\u043D"
+    _es: "D\xE9g\xE2ts critiques"
+    _vi: "Da\xF1o cr\xEDtico"
   - _idx: str_upgrade_choice_type_1
     _ko: "\uC2A4\uD0AC \uC2B5\uB4DD"
     _en: "\uC2A4\uD0AC \uC2B5\uB4DD"
-    _ja: 
+    _ja: Skill Acquired
+    _de: "\u30B9\u30AD\u30EB\u7FD2\u5F97"
+    _tw: "F\xE4higkeit erhalten"
+    _ru: "\u7372\u5F97\u6280\u80FD"
+    _fr: "\u041F\u043E\u043B\u0443\u0447\u0435\u043D \u043D\u0430\u0432\u044B\u043A"
+    _es: "Comp\xE9tence acquise"
+    _vi: Habilidad obtenida
   - _idx: str_upgrade_choice_type_2
     _ko: "\uC2A4\uD0AC \uD69F\uC218 +{0} / \uACF5\uACA9\uB825 \uD558\uB77D -{0}%"
     _en: "\uC2A4\uD0AC \uD69F\uC218 +{0} / \uACF5\uACA9\uB825 \uD558\uB77D -{0}%"
-    _ja: 
+    _ja: Skill Count +{0} / Attack -{0}%
+    _de: "\u30B9\u30AD\u30EB\u56DE\u6570 +{0} / \u653B\u6483\u529B -{0}%"
+    _tw: Skillanzahl +{0} / Angriff -{0}%
+    _ru: "\u6280\u80FD\u6B21\u6578 +{0} / \u653B\u64CA\u529B -{0}%"
+    _fr: "\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u043D\u0430\u0432\u044B\u043A\u043E\u0432
+      +{0} / \u0410\u0442\u0430\u043A\u0430 -{0}%"
+    _es: "Nombre de comp\xE9tences +{0} / Attaque -{0}%"
+    _vi: Cantidad de habilidades +{0} / Ataque -{0}%
   - _idx: str_upgrade_choice_type_3
     _ko: "\uC2A4\uD0AC \uD06C\uAE30 {0}% \uC99D\uAC00"
     _en: "\uC2A4\uD0AC \uD06C\uAE30 {0}% \uC99D\uAC00"
-    _ja: 
+    _ja: Skill Size +{0}%
+    _de: "\u30B9\u30AD\u30EB\u30B5\u30A4\u30BA +{0}%"
+    _tw: "Skillgr\xF6\xDFe +{0}%"
+    _ru: "\u6280\u80FD\u7BC4\u570D +{0}%"
+    _fr: "\u0420\u0430\u0437\u043C\u0435\u0440 \u043D\u0430\u0432\u044B\u043A\u0430
+      +{0}%"
+    _es: "Taille de comp\xE9tence +{0}%"
+    _vi: "Tama\xF1o de habilidad +{0}%"
   - _idx: str_upgrade_choice_type_4
     _ko: "\uC2A4\uD0AC \uACF5\uACA9\uB825 \uC99D\uAC00 {0}%"
     _en: "\uC2A4\uD0AC \uACF5\uACA9\uB825 \uC99D\uAC00 {0}%"
-    _ja: 
+    _ja: Skill Damage +{0}%
+    _de: "\u30B9\u30AD\u30EB\u30C0\u30E1\u30FC\u30B8 +{0}%"
+    _tw: Skill-Schaden +{0}%
+    _ru: "\u6280\u80FD\u50B7\u5BB3 +{0}%"
+    _fr: "\u0423\u0440\u043E\u043D \u043D\u0430\u0432\u044B\u043A\u0430 +{0}%"
+    _es: "D\xE9g\xE2ts de comp\xE9tence +{0}%"
+    _vi: "Da\xF1o de habilidad +{0}%"
   - _idx: str_upgrade_choice_type_5
     _ko: "\uC2A4\uD0AC \uC9C0\uC18D \uC2DC\uAC04 \uC99D\uAC00 {0}%"
     _en: "\uC2A4\uD0AC \uC9C0\uC18D \uC2DC\uAC04 \uC99D\uAC00 {0}%"
-    _ja: 
+    _ja: Skill Duration +{0}%
+    _de: "\u30B9\u30AD\u30EB\u6301\u7D9A\u6642\u9593 +{0}%"
+    _tw: Skilldauer +{0}%
+    _ru: "\u6280\u80FD\u6301\u7E8C\u6642\u9593 +{0}%"
+    _fr: "\u0414\u043B\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u044C
+      \u043D\u0430\u0432\u044B\u043A\u0430 +{0}%"
+    _es: "Dur\xE9e de comp\xE9tence +{0}%"
+    _vi: "Duraci\xF3n de habilidad +{0}%"
   - _idx: str_upgrade_choice_type_101
     _ko: "\uACF5\uACA9\uB825 {0}% \uC99D\uAC00"
     _en: "\uACF5\uACA9\uB825 {0}% \uC99D\uAC00"
-    _ja: 
+    _ja: Attack +{0}%
+    _de: "\u653B\u6483\u529B +{0}%"
+    _tw: Angriff +{0}%
+    _ru: "\u653B\u64CA\u529B +{0}%"
+    _fr: "\u0410\u0442\u0430\u043A\u0430 +{0}%"
+    _es: Attaque +{0}%
+    _vi: Ataque +{0}%
   - _idx: str_upgrade_choice_type_102
     _ko: "\uCCB4\uB825 {0}% \uC99D\uAC00"
     _en: "\uCCB4\uB825 {0}% \uC99D\uAC00"
-    _ja: 
+    _ja: Health +{0}%
+    _de: "\u4F53\u529B +{0}%"
+    _tw: Lebenspunkte +{0}%
+    _ru: "\u751F\u547D\u503C +{0}%"
+    _fr: "\u0417\u0434\u043E\u0440\u043E\u0432\u044C\u0435 +{0}%"
+    _es: "Sant\xE9 +{0}%"
+    _vi: Vida +{0}%
   - _idx: str_upgrade_choice_type_103
     _ko: "\uCFE8\uD0C0\uC784 {0}% \uAC10\uC18C"
     _en: "\uCFE8\uD0C0\uC784 {0}% \uAC10\uC18C"
-    _ja: 
+    _ja: Cooldown -{0}%
+    _de: "\u30AF\u30FC\u30EB\u30C0\u30A6\u30F3 -{0}%"
+    _tw: Abklingzeit -{0}%
+    _ru: "\u51B7\u537B\u6642\u9593 -{0}%"
+    _fr: "\u041F\u0435\u0440\u0435\u0437\u0430\u0440\u044F\u0434\u043A\u0430 -{0}%"
+    _es: Temps de recharge -{0}%
+    _vi: Enfriamiento -{0}%
   - _idx: str_upgrade_choice_type_104
     _ko: "\uCE58\uBA85\uD0C0 \uD53C\uD574{0}% \uC99D\uAC00"
     _en: "\uCE58\uBA85\uD0C0 \uD53C\uD574{0}% \uC99D\uAC00"
-    _ja: 
+    _ja: Critical Damage +{0}%
+    _de: "\u30AF\u30EA\u30C6\u30A3\u30AB\u30EB\u30C0\u30E1\u30FC\u30B8 +{0}%"
+    _tw: Kritischer Schaden +{0}%
+    _ru: "\u66B4\u64CA\u50B7\u5BB3 +{0}%"
+    _fr: "\u041A\u0440\u0438\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0439 \u0443\u0440\u043E\u043D
+      +{0}%"
+    _es: "D\xE9g\xE2ts critiques +{0}%"
+    _vi: "Da\xF1o cr\xEDtico +{0}%"

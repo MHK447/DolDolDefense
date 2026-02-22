@@ -238,3 +238,4 @@ MonoBehaviour:
   ColAction: {fileID: 8591008546634727535}
   MoveSpeed: 8
   ArcHeight: 4
+  TrailComponent: {fileID: 1991564565667346266}

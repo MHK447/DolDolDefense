@@ -29,7 +29,7 @@ public class InGameSlotGroup : MonoBehaviour
 
     [SerializeField]
     private List<InGameSlotComponent> SlotComponentList = new List<InGameSlotComponent>();
-    
+
     [SerializeField]
     private DOTweenAnimation TweenAnim;
 
@@ -130,10 +130,35 @@ public class InGameSlotGroup : MonoBehaviour
             SlotComponentList[i].SetChoice(getrandvalue, getrandgradevalue, status);
         }
 
+        GacahaChoice(getrandvalue, getrandgradevalue);
+
         yield return new WaitForSeconds(0.5f);
 
         IsGachaOn = false;
         SetStatusGachaCoin();
+    }
+
+    public void GacahaChoice(int choiceidx, int grade)
+    {
+        switch (choiceidx)
+        {
+            case (int)SlotStatusInfo.Money:
+                {
+
+                }
+                break;
+            case (int)SlotStatusInfo.Stat:
+            case (int)SlotStatusInfo.Ability:
+                {
+                    GameRoot.Instance.UISystem.OpenUI<PopupLevelUpReward>
+                    (popup => popup.Init((InGameUpgradeCategory)choiceidx, (UpgradeTier)grade), () =>
+                    {
+
+                    });
+                }
+                break;
+        }
+
     }
 
     public int GetPrice()

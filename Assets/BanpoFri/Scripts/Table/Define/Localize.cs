@@ -34,6 +34,48 @@ namespace BanpoFri
 			get { return _ja;}
 			set { _ja = value;}
 		}
+		[SerializeField]
+		private string _de;
+		public string de
+		{
+			get { return _de;}
+			set { _de = value;}
+		}
+		[SerializeField]
+		private string _tw;
+		public string tw
+		{
+			get { return _tw;}
+			set { _tw = value;}
+		}
+		[SerializeField]
+		private string _ru;
+		public string ru
+		{
+			get { return _ru;}
+			set { _ru = value;}
+		}
+		[SerializeField]
+		private string _fr;
+		public string fr
+		{
+			get { return _fr;}
+			set { _fr = value;}
+		}
+		[SerializeField]
+		private string _es;
+		public string es
+		{
+			get { return _es;}
+			set { _es = value;}
+		}
+		[SerializeField]
+		private string _vi;
+		public string vi
+		{
+			get { return _vi;}
+			set { _vi = value;}
+		}
 
     }
 
