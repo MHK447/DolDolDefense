@@ -97,7 +97,7 @@ public class LevelUpRewardComponent : MonoBehaviour
 
             SkillBgImg.color = Config.Instance.GetImageColor($"Levelup_Grade_{(int)Tier}_1");
 
-            SkillIcon.sprite = AtlasManager.Instance.GetSprite(Atlas.Atlas_UI_InGame, td.back_img);
+            SkillIcon.sprite = AtlasManager.Instance.GetSprite(Atlas.Atlas_UI_InGame, $"InGameUpgrade_Icon_{Upgrade.UpgradeIdx}");
         }
     }
 

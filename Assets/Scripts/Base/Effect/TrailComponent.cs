@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using BanpoFri;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,10 +6,37 @@ using UnityEngine.UI;
 
 public class TrailComponent : MonoBehaviour
 {
+    private static Material SharedTrailMaterial;
+
     private TrailRenderer trail;
 
     public Color TrailColor = Color.white;
-    
+
+    private static Material GetSharedMaterial()
+    {
+        if (SharedTrailMaterial != null) return SharedTrailMaterial;
+
+        Shader shader = Shader.Find("Universal Render Pipeline/Particles/Unlit");
+        if (shader == null)
+            shader = Shader.Find("Sprites/Default");
+
+        if (shader == null)
+        {
+            Debug.LogError("Trail shader not found!");
+            return null;
+        }
+
+        SharedTrailMaterial = new Material(shader);
+        SharedTrailMaterial.SetFloat("_Surface", 1);
+        SharedTrailMaterial.EnableKeyword("_SURFACE_TYPE_TRANSPARENT");
+        SharedTrailMaterial.SetFloat("_Blend", 0);
+        SharedTrailMaterial.SetColor("_BaseColor", Color.white);
+        SharedTrailMaterial.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
+        SharedTrailMaterial.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+        SharedTrailMaterial.SetInt("_ZWrite", 0);
+        SharedTrailMaterial.renderQueue = 3000;
+        return SharedTrailMaterial;
+    }
 
     public void InitTrail(float bulletSpeed = 12f)
     {
@@ -18,38 +45,22 @@ public class TrailComponent : MonoBehaviour
             trail = gameObject.AddComponent<TrailRenderer>();
         }
 
-        // 속도에 반비례하게 trail time 조정 (느린 발사체는 더 긴 시간)
-        // 기준: speed 12 = 0.25초
-        float targetTrailLength = 3f; // 원하는 트레일 길이 (유닛 단위)
-        trail.time = targetTrailLength / Mathf.Max(bulletSpeed, 1f);  // 속도가 낮을수록 time이 길어짐
+        float targetTrailLength = 3f;
+        trail.time = targetTrailLength / Mathf.Max(bulletSpeed, 1f);
         
-        trail.startWidth = 0.15f;  // 더 얇은 시작 너비
-        trail.endWidth = 0.05f;  // 완전히 0이 아닌 아주 얇은 끝부분
+        trail.startWidth = 0.15f;
+        trail.endWidth = 0.05f;
         trail.sortingOrder = 50;
-        trail.numCornerVertices = 3;  // 코너를 부드럽게
-        trail.numCapVertices = 3;  // 끝부분을 부드럽게
-        trail.minVertexDistance = 0.05f;  // 더 자연스러운 곡선
-        
-        
-        // URP 호환 셰이더로 변경
-        Shader shader = Shader.Find("Universal Render Pipeline/Particles/Unlit");
-        if (shader == null)
-            shader = Shader.Find("Sprites/Default"); // 폴백
-        
-        if (shader != null)
+        trail.numCornerVertices = 3;
+        trail.numCapVertices = 3;
+        trail.minVertexDistance = 0.05f;
+
+        var mat = GetSharedMaterial();
+        if (mat != null)
         {
-            trail.material = new Material(shader);
-            trail.material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
-            trail.material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.One); // Additive
-            trail.material.SetInt("_ZWrite", 0);
-            trail.material.renderQueue = 3000;
-        }
-        else
-        {
-            Debug.LogError("Trail shader not found! Please check if URP shaders are available.");
+            trail.sharedMaterial = mat;
         }
 
-        // 더 부드러운 페이드 아웃 그라디언트
         var colorGradient = new Gradient();
         colorGradient.SetKeys(
             new[] {     
