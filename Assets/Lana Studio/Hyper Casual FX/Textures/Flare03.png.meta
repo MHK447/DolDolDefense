@@ -1,26 +1,14 @@
 fileFormatVersion: 2
-guid: b27bcf37600cca24196520251965a496
+guid: 9a4522a1719ed6e4099dd535d78cbd14
 AssetOrigin:
   serializedVersion: 1
   productId: 200333
   packageName: Hyper Casual FX
   packageVersion: 1.0.1
-  assetPath: Assets/Lana Studio/Hyper Casual FX/Textures/Circle02.png
+  assetPath: Assets/Lana Studio/Hyper Casual FX/Textures/Flare03.png
   uploadId: 475766
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 21300000
-    second: Circle02_0
-  - first:
-      213: 21300002
-    second: Circle02_1
-  - first:
-      213: 21300004
-    second: Circle02_2
-  - first:
-      213: 21300006
-    second: Circle02_3
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -64,7 +52,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -140,100 +128,12 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Circle02_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 128
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ace110a763af3264789bc8ecaa97d8ac
-      internalID: 21300000
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Circle02_1
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 128
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e906ebcdfa906c14aac788624f590297
-      internalID: 21300002
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Circle02_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7603d6c517373db4b8191aedc23305fd
-      internalID: 21300004
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Circle02_3
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 01f2253c6a4012e48b5762904ad12315
-      internalID: 21300006
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3a38dff1a4966b3429be5e9ec09630be
+    spriteID: 169f5711389419543a3d3822c6ab29a7
     internalID: 0
     vertices: []
     indices: 
@@ -242,11 +142,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Circle02_0: 21300000
-      Circle02_1: 21300002
-      Circle02_2: 21300004
-      Circle02_3: 21300006
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -94,11 +94,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6837763811971400682, guid: 0d88476a6ed744a5498736352ba6fe70, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.29
+      value: 0.69
       objectReference: {fileID: 0}
     - target: {fileID: 6837763811971400682, guid: 0d88476a6ed744a5498736352ba6fe70, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.29
+      value: 0.69
       objectReference: {fileID: 0}
     - target: {fileID: 7309826529429327934, guid: 0d88476a6ed744a5498736352ba6fe70, type: 3}
       propertyPath: m_LocalPosition.x
@@ -131,10 +131,14 @@ PrefabInstance:
     - target: {fileID: 8096216015281289322, guid: 0d88476a6ed744a5498736352ba6fe70, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 03bdc4c15e9994ba48b6fa2a4a959cf5, type: 3}
+      objectReference: {fileID: 21300000, guid: 702ff8ea1be6ce8408c92bb21f70aee2, type: 3}
+    - target: {fileID: 8096216015281289322, guid: 0d88476a6ed744a5498736352ba6fe70, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8109014750024022587, guid: 0d88476a6ed744a5498736352ba6fe70, type: 3}
       propertyPath: m_Name
-      value: Bullet_Normal
+      value: Bullet_DarkWheel
       objectReference: {fileID: 0}
     - target: {fileID: 8866957999704456151, guid: 0d88476a6ed744a5498736352ba6fe70, type: 3}
       propertyPath: m_IsTrigger
@@ -198,6 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fad0338d75214ec18c1e7fa6298a04c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TrailColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &7891692189477045659 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8109014750024022587, guid: 0d88476a6ed744a5498736352ba6fe70, type: 3}
@@ -217,3 +222,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ColAction: {fileID: 8591008546634727535}
   MoveSpeed: 10
+  ArcHeight: 12
+  TrailComponent: {fileID: 0}
