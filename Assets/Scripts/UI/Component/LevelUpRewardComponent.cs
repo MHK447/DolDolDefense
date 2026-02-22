@@ -37,6 +37,9 @@ public class LevelUpRewardComponent : MonoBehaviour
     private TextMeshProUGUI SkillValueText;
 
     [SerializeField]
+    private Transform SkillValueRoot;
+
+    [SerializeField]
     private GameObject NewObj;
 
     private InGameUpgrade Upgrade = null;
@@ -69,10 +72,10 @@ public class LevelUpRewardComponent : MonoBehaviour
 
         var td = Tables.Instance.GetTable<InGameUpgradeChoice>().GetData(Upgrade.UpgradeIdx);
 
-        var finddata = GameRoot.Instance.PlayerSkillSystem.FindPlayerSkillValueData(Upgrade.UpgradeIdx);
+        var finddata = GameRoot.Instance.InGameUpgradeSystem.FindPlayerSkillValueData(Upgrade.UpgradeIdx);
 
         ProjectUtility.SetActiveCheck(NewObj, finddata == null);
-        ProjectUtility.SetActiveCheck(SkillValueText.transform.parent.gameObject, finddata != null);
+        ProjectUtility.SetActiveCheck(SkillValueRoot.gameObject, finddata != null);
 
         if (td != null)
         {
@@ -83,8 +86,8 @@ public class LevelUpRewardComponent : MonoBehaviour
 
             if (finddata != null)
             {
-                BeforeLevelText.text = finddata.Skillevel.ToString();
-                AfterLevelText.text = (finddata.Skillevel + 1).ToString();
+                BeforeLevelText.text = finddata.Level.ToString();
+                AfterLevelText.text = (finddata.Level + 1).ToString();
             }
 
             foreach(var img in SkillBg2ImgList)
@@ -107,16 +110,16 @@ public class LevelUpRewardComponent : MonoBehaviour
         switch (skilltype)
         {
             case (int)UpgradeType.SkillUnlock:
-                SkillValueText.text = Tables.Instance.GetTable<Localize>().GetString($"skill_type_value_desc{skilltype}");
+                SkillValueText.text = Tables.Instance.GetTable<Localize>().GetString($"skill_type_value_desc_{skilltype}");
                 break;
             case (int)UpgradeType.SkillCount:
                 {
-                    SkillValueText.text = Tables.Instance.GetTable<Localize>().GetFormat($"skill_type_value_desc{skilltype}", skillvalue);
+                    SkillValueText.text = Tables.Instance.GetTable<Localize>().GetFormat($"skill_type_value_desc_{skilltype}", skillvalue);
                     DecreaseValueText.text = Tables.Instance.GetTable<Localize>().GetFormat("skill_type_value_decrease", skilldecreasevalue);
                     break;
                 }
             default:
-                SkillValueText.text = Tables.Instance.GetTable<Localize>().GetFormat($"skill_type_value_desc{skilltype}", skillvalue);
+                SkillValueText.text = Tables.Instance.GetTable<Localize>().GetFormat($"skill_type_value_desc_{skilltype}", skillvalue);
                 break;
         }
     }

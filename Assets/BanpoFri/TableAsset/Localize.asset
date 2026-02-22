@@ -85,6 +85,16 @@ MonoBehaviour:
   - str_upgrade_choice_type_102
   - str_upgrade_choice_type_103
   - str_upgrade_choice_type_104
+  - skill_type_value_desc_1
+  - skill_type_value_desc_2
+  - skill_type_value_desc_3
+  - skill_type_value_desc_4
+  - skill_type_value_desc_5
+  - skill_type_value_desc_101
+  - skill_type_value_desc_102
+  - skill_type_value_desc_103
+  - skill_type_value_desc_104
+  - skill_type_value_decrease
   mSecondKey: []
   mDataList:
   - _idx: str_time_day
@@ -839,3 +849,107 @@ MonoBehaviour:
       +{0}%"
     _es: "D\xE9g\xE2ts critiques +{0}%"
     _vi: "Da\xF1o cr\xEDtico +{0}%"
+  - _idx: skill_type_value_desc_1
+    _ko: "\uC2A4\uD0AC \uD574\uAE08"
+    _en: Skill Unlocked
+    _ja: "\u30B9\u30AD\u30EB\u89E3\u653E"
+    _de: "F\xE4higkeit freigeschaltet"
+    _tw: "\u6280\u80FD\u89E3\u9396"
+    _ru: "\u041D\u0430\u0432\u044B\u043A \u0440\u0430\u0437\u0431\u043B\u043E\u043A\u0438\u0440\u043E\u0432\u0430\u043D"
+    _fr: "Comp\xE9tence d\xE9bloqu\xE9e"
+    _es: Habilidad desbloqueada
+    _vi: "M\u1EDF kh\xF3a k\u1EF9 n\u0103ng"
+  - _idx: skill_type_value_desc_2
+    _ko: "\uC2A4\uD0AC \uAC1C\uC218 +{0} \uC99D\uAC00"
+    _en: Skill Count +{0}
+    _ja: "\u30B9\u30AD\u30EB\u6570 +{0}"
+    _de: "F\xE4higkeitsanzahl +{0}"
+    _tw: "\u6280\u80FD\u6578\u91CF +{0}"
+    _ru: "\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u043D\u0430\u0432\u044B\u043A\u043E\u0432
+      +{0}"
+    _fr: "Nombre de comp\xE9tences +{0}"
+    _es: Cantidad de habilidades +{0}
+    _vi: "S\u1ED1 k\u1EF9 n\u0103ng +{0}"
+  - _idx: skill_type_value_desc_3
+    _ko: "\uC2A4\uD0AC \uD06C\uAE30 {0}% \uC99D\uAC00"
+    _en: Skill Size +{0}%
+    _ja: "\u30B9\u30AD\u30EB\u30B5\u30A4\u30BA +{0}%"
+    _de: "Skillgr\xF6\xDFe +{0}%"
+    _tw: "\u6280\u80FD\u7BC4\u570D +{0}%"
+    _ru: "\u0420\u0430\u0437\u043C\u0435\u0440 \u043D\u0430\u0432\u044B\u043A\u0430
+      +{0}%"
+    _fr: "Taille de comp\xE9tence +{0}%"
+    _es: "Tama\xF1o de habilidad +{0}%"
+    _vi: "K\xEDch th\u01B0\u1EDBc k\u1EF9 n\u0103ng +{0}%"
+  - _idx: skill_type_value_desc_4
+    _ko: "\uC2A4\uD0AC \uACF5\uACA9\uB825 {0}% \uC99D\uAC00"
+    _en: Skill Damage +{0}%
+    _ja: "\u30B9\u30AD\u30EB\u30C0\u30E1\u30FC\u30B8 +{0}%"
+    _de: Skill-Schaden +{0}%
+    _tw: "\u6280\u80FD\u50B7\u5BB3 +{0}%"
+    _ru: "\u0423\u0440\u043E\u043D \u043D\u0430\u0432\u044B\u043A\u0430 +{0}%"
+    _fr: "D\xE9g\xE2ts de comp\xE9tence +{0}%"
+    _es: "Da\xF1o de habilidad +{0}%"
+    _vi: "S\xE1t th\u01B0\u01A1ng k\u1EF9 n\u0103ng +{0}%"
+  - _idx: skill_type_value_desc_5
+    _ko: "\uC2A4\uD0AC \uC9C0\uC18D \uC2DC\uAC04 {0}s \uC99D\uAC00"
+    _en: Skill Duration +{0}s
+    _ja: "\u30B9\u30AD\u30EB\u6301\u7D9A\u6642\u9593 +{0}\u79D2"
+    _de: Skilldauer +{0}s
+    _tw: "\u6280\u80FD\u6301\u7E8C\u6642\u9593 +{0}\u79D2"
+    _ru: "\u0414\u043B\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u044C
+      \u043D\u0430\u0432\u044B\u043A\u0430 +{0}\u0441"
+    _fr: "Dur\xE9e de comp\xE9tence +{0}s"
+    _es: "Duraci\xF3n de habilidad +{0}s"
+    _vi: "Th\u1EDDi gian k\u1EF9 n\u0103ng +{0}s"
+  - _idx: skill_type_value_desc_101
+    _ko: "\uACF5\uACA9\uB825 {0}% \uC99D\uAC00"
+    _en: Attack +{0}%
+    _ja: "\u653B\u6483\u529B +{0}%"
+    _de: Angriff +{0}%
+    _tw: "\u653B\u64CA\u529B +{0}%"
+    _ru: "\u0410\u0442\u0430\u043A\u0430 +{0}%"
+    _fr: Attaque +{0}%
+    _es: Ataque +{0}%
+    _vi: "T\u1EA5n c\xF4ng +{0}%"
+  - _idx: skill_type_value_desc_102
+    _ko: "\uCCB4\uB825 {0}% \uC99D\uAC00"
+    _en: Health +{0}%
+    _ja: "\u4F53\u529B +{0}%"
+    _de: Lebenspunkte +{0}%
+    _tw: "\u751F\u547D\u503C +{0}%"
+    _ru: "\u0417\u0434\u043E\u0440\u043E\u0432\u044C\u0435 +{0}%"
+    _fr: "Sant\xE9 +{0}%"
+    _es: Vida +{0}%
+    _vi: "M\xE1u +{0}%"
+  - _idx: skill_type_value_desc_103
+    _ko: "\uCFE8\uD0C0\uC784 {0}% \uAC10\uC18C"
+    _en: Cooldown -{0}%
+    _ja: "\u30AF\u30FC\u30EB\u30C0\u30A6\u30F3 -{0}%"
+    _de: Abklingzeit -{0}%
+    _tw: "\u51B7\u537B\u6642\u9593 -{0}%"
+    _ru: "\u041F\u0435\u0440\u0435\u0437\u0430\u0440\u044F\u0434\u043A\u0430 -{0}%"
+    _fr: Temps de recharge -{0}%
+    _es: Enfriamiento -{0}%
+    _vi: "H\u1ED3i chi\xEAu -{0}%"
+  - _idx: skill_type_value_desc_104
+    _ko: "\uD06C\uB9AC\uD2F0\uCEEC \uB370\uBBF8\uC9C0 {0}% \uC99D\uAC00"
+    _en: Critical Damage +{0}%
+    _ja: "\u30AF\u30EA\u30C6\u30A3\u30AB\u30EB\u30C0\u30E1\u30FC\u30B8 +{0}%"
+    _de: Kritischer Schaden +{0}%
+    _tw: "\u66B4\u64CA\u50B7\u5BB3 +{0}%"
+    _ru: "\u041A\u0440\u0438\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0439 \u0443\u0440\u043E\u043D
+      +{0}%"
+    _fr: "D\xE9g\xE2ts critiques +{0}%"
+    _es: "Da\xF1o cr\xEDtico +{0}%"
+    _vi: "S\xE1t th\u01B0\u01A1ng ch\xED m\u1EA1ng +{0}%"
+  - _idx: skill_type_value_decrease
+    _ko: "\uC2A4\uD0AC \uACF5\uACA9\uB825 {0}% \uAC10\uC18C"
+    _en: Skill Damage -{0}%
+    _ja: "\u30B9\u30AD\u30EB\u30C0\u30E1\u30FC\u30B8 -{0}%"
+    _de: Skill-Schaden -{0}%
+    _tw: "\u6280\u80FD\u50B7\u5BB3 -{0}%"
+    _ru: "\u0423\u0440\u043E\u043D \u043D\u0430\u0432\u044B\u043A\u0430 -{0}%"
+    _fr: "D\xE9g\xE2ts de comp\xE9tence -{0}%"
+    _es: "Da\xF1o de habilidad -{0}%"
+    _vi: "S\xE1t th\u01B0\u01A1ng k\u1EF9 n\u0103ng -{0}%"

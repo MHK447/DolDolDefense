@@ -86,11 +86,9 @@ public class InGameUpgrade
 
             SkillLevelStatType = UpgradeChoiceData.skill_level_stat_type[randvalue];
 
-            int findindex = UpgradeChoiceData.skill_level_stat_type.FindIndex(x => x == randvalue);
+            UpgradeValue1 = UpgradeChoiceData.upgrade_value_1[randvalue] * (int)Tier;
 
-            UpgradeValue1 = UpgradeChoiceData.upgrade_value_1[findindex] * (int)Tier;
-
-            UpgradeValue2 = Tier > UpgradeTier.Epic ? 0 : UpgradeChoiceData.upgrade_value_2[findindex];
+            UpgradeValue2 = Tier > UpgradeTier.Epic ? 0 : UpgradeChoiceData.upgrade_value_2[randvalue];
         }
     }
 
@@ -151,6 +149,8 @@ public class InGameUpgrade
 
     public void AddSkill(int skillidx)
     {
+        GameRoot.Instance.InGameUpgradeSystem.AddInGameupgrade(this);
+
         switch(skillidx)
         {
             case (int)PlayerSkillSystem.PlayerSkillType.BlackBall:

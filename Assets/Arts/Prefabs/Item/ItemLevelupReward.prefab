@@ -15360,6 +15360,7 @@ MonoBehaviour:
   AfterLevelText: {fileID: 5448419267107831098}
   DecreaseValueText: {fileID: 3352785379638545821}
   SkillValueText: {fileID: 4865161392041383680}
+  SkillValueRoot: {fileID: 7517954124055646376}
   NewObj: {fileID: 4504991879013056715}
 --- !u!1 &8617979700742430829
 GameObject:
@@ -15438,6 +15439,10 @@ PrefabInstance:
     - target: {fileID: 3907880745336004107, guid: e5205d9787c28484fa47d4ebd545a15d, type: 3}
       propertyPath: m_Name
       value: Group_Lv
+      objectReference: {fileID: 0}
+    - target: {fileID: 3907880745336004107, guid: e5205d9787c28484fa47d4ebd545a15d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7830188878274899093, guid: e5205d9787c28484fa47d4ebd545a15d, type: 3}
       propertyPath: m_Pivot.x
@@ -15687,6 +15692,10 @@ PrefabInstance:
     - target: {fileID: 5759339168287586825, guid: 0673afac6264c024eb89576093e0335f, type: 3}
       propertyPath: m_Name
       value: Layout_Horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 5759339168287586825, guid: 0673afac6264c024eb89576093e0335f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6640884479744724043, guid: 0673afac6264c024eb89576093e0335f, type: 3}
       propertyPath: m_AnchorMax.y

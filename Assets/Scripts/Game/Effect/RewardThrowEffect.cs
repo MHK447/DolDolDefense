@@ -129,10 +129,10 @@ public class RewardThrowEffect : Effect
 
         switch (gettype)
         {
-            case (int)InGameUpgradeCategory.AddSKill:
-            case (int)InGameUpgradeCategory.AddStat:
+            case (int)SlotStatusInfo.Stat:
+            case (int)SlotStatusInfo.Skill:
                 {
-                    InGameUpgradeCategory type = gettype == (int)InGameUpgradeCategory.AddSKill ? InGameUpgradeCategory.AddSKill : InGameUpgradeCategory.AddStat;
+                    //InGameUpgradeCategory type = gettype == (int)InGameUpgradeCategory.AddSKill ? InGameUpgradeCategory.AddSKill : InGameUpgradeCategory.AddStat;
 
                     // GameRoot.Instance.UISystem.OpenUI<PopupLevelUpReward>(popup => popup.Init(type, UpgradeTier.Rare, true), () =>
                     // {
@@ -141,7 +141,7 @@ public class RewardThrowEffect : Effect
                     // });
                 }
                 break;
-            case (int)InGameUpgradeCategory.AddCoin:
+            case (int)SlotStatusInfo.Money:
                 {
                     GameRoot.Instance.EffectSystem.MultiPlay<RewardEffect>(transform.position, x =>
                      {

@@ -40,15 +40,6 @@ public class PlayerSkillSystem
     
 
 
-    public SkillCardData FindPlayerSkillValueData(int SkillCardIdx)
-    {
-        var finddata = GameRoot.Instance.UserData.Skillcarddatas.Find(x => x.Skillidx == SkillCardIdx);
-        return finddata;
-    }
-    
-
-
-
 
 
 }

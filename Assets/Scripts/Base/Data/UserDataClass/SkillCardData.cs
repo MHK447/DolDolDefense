@@ -6,9 +6,6 @@ using Google.FlatBuffers;
 public partial class UserDataSystem
 {
     public List<SkillCardData> Skillcarddatas { get; private set; } = new List<SkillCardData>();
-
-
-
     private void SaveData_SkillCardData(FlatBufferBuilder builder)
     {
         // 선언된 변수들은 모두 저장되어야함

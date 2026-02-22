@@ -11,7 +11,7 @@ using DG.Tweening;
 public enum SlotStatusInfo
 {
     Money = 1,
-    Ability = 2,
+    Skill = 2,
     Stat = 3,
 }
 
@@ -130,9 +130,10 @@ public class InGameSlotGroup : MonoBehaviour
             SlotComponentList[i].SetChoice(getrandvalue, getrandgradevalue, status);
         }
 
-        GacahaChoice(getrandvalue, getrandgradevalue);
 
         yield return new WaitForSeconds(0.5f);
+        
+        GacahaChoice(getrandvalue, getrandgradevalue);
 
         IsGachaOn = false;
         SetStatusGachaCoin();
@@ -148,10 +149,10 @@ public class InGameSlotGroup : MonoBehaviour
                 }
                 break;
             case (int)SlotStatusInfo.Stat:
-            case (int)SlotStatusInfo.Ability:
+            case (int)SlotStatusInfo.Skill:
                 {
                     GameRoot.Instance.UISystem.OpenUI<PopupLevelUpReward>
-                    (popup => popup.Init((InGameUpgradeCategory)choiceidx, (UpgradeTier)grade), () =>
+                    (popup => popup.Init((SlotStatusInfo)choiceidx, (UpgradeTier)grade), () =>
                     {
 
                     });

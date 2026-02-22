@@ -20,7 +20,7 @@ public class PopupLevelUpReward : UIBase
 
     private bool UpgradeLock = false;
 
-    public void Init(InGameUpgradeCategory category, UpgradeTier tier)
+    public void Init(SlotStatusInfo category, UpgradeTier tier)
     {
         GameRoot.Instance.GameSpeedSystem.StopGameSpeed(true, false);
 
@@ -30,7 +30,7 @@ public class PopupLevelUpReward : UIBase
 
         for (int i = 0; i < getUpgradelist.Count; i++)
         {
-            var findskilldata = GameRoot.Instance.PlayerSkillSystem.FindPlayerSkillValueData(getUpgradelist[i].UpgradeIdx);
+            var findskilldata = GameRoot.Instance.InGameUpgradeSystem.FindPlayerSkillValueData(getUpgradelist[i].UpgradeIdx);
 
             LevelUpRewardComponentList[i].Set(getUpgradelist[i], getUpgradelist[i].Tier, OnSelect);
         }

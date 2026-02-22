@@ -306,6 +306,7 @@ public class GameRoot : Singleton<GameRoot>
 		ShopSystem.Create();
 		LobbyBoxSystem.Create();
 		CardSystem.Create();
+		InGameUpgradeSystem.Create();
 
 		PluginSystem.LoginProp.InitPlatformLogin();
 

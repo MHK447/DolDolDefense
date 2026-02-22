@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6309bfcf5c9882f428b7c4d016af5422
+guid: c1482e78981164d7dbc66111517e16c9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 977652734165066958
-    second: Ingame_IceBall_0
+      213: 8249445509927088694
+    second: InGameUpgrade_Icon_1002_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ingame_IceBall_0
+      name: InGameUpgrade_Icon_1002_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 136
-        height: 141
+        x: 6
+        y: 11
+        width: 87
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ec4299d5bf1519d00800000000000000
-      internalID: 977652734165066958
+      spriteID: 632352ddbfaeb7270800000000000000
+      internalID: 8249445509927088694
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Ingame_IceBall_0: 977652734165066958
+      InGameUpgrade_Icon_1002_0: 8249445509927088694
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

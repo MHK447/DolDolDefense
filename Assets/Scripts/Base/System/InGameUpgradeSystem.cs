@@ -2,14 +2,6 @@ using System.Collections.Generic;
 using System.Linq;
 using BanpoFri;
 using UnityEngine;
-
-public enum InGameUpgradeCategory
-{
-    AddSKill = 1,
-    AddStat = 2,
-    AddCoin = 3,
-}
-
 public enum UpgradeTier
 {
     Rare = 1,
@@ -101,12 +93,12 @@ public class InGameUpgradeSystem
     }
 
 
-    public List<InGameUpgrade> GetUpgrades(InGameUpgradeCategory category, UpgradeTier minimumTier = UpgradeTier.Rare)
+    public List<InGameUpgrade> GetUpgrades(SlotStatusInfo category, UpgradeTier minimumTier = UpgradeTier.Rare)
     {
         //티어설정
         UpgradeTier tierToApply;
 
-        if (category == InGameUpgradeCategory.AddSKill)
+        if (category == SlotStatusInfo.Skill)
         {
             tierToApply = SelectTierByWeight(minimumTier);
 
@@ -126,6 +118,17 @@ public class InGameUpgradeSystem
 
             return StatNaturalChoices(StatAllUpgrades, tierToApply);
         }
+    }
+
+    public InGameUpgrade FindPlayerSkillValueData(int SkillCardIdx)
+    {
+        var finddata = ChoiceInGameUpgrades.Find(x => x.UpgradeIdx == SkillCardIdx);
+        return finddata;
+    }
+    
+    public void AddInGameupgrade(InGameUpgrade upgrade)
+    {
+        ChoiceInGameUpgrades.Add(upgrade);
     }
 
 
