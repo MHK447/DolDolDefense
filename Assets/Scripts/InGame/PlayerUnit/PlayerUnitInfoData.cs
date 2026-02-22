@@ -11,9 +11,11 @@ public class PlayerUnitInfoData
     public IReactiveProperty<int> CurHpProperty { get; private set; } = new ReactiveProperty<int>(0);
 
     public float AttackRange = 0f;
-    public int AttackDamage = 1;
+    public int AttackDamageBuffValue = 1;
 
+    public float AttackCooltimeBuffValue = 0f;
 
+    public int CriticalDamageBuffValue = 0;
 
 
 

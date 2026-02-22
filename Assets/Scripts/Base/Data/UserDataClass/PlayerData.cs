@@ -60,6 +60,11 @@ public class InGamePlayerData
     public ReactiveCollection<PlayerSkillBase> PlayerSkillList = new ReactiveCollection<PlayerSkillBase>();
 
 
+    public PlayerSkillBase FindSkill(int skillidx)
+    {
+        return PlayerSkillList.ToList().Find(x => x.SkillIdx == skillidx);
+    }
+
     public void SetPlayerLevel(int level)
     {
         level = Mathf.Max(level, Playerlevel);
@@ -89,7 +94,7 @@ public class InGamePlayerData
         var finddata = PlayerSkillList.ToList().Find(x => x.SkillIdx == skill.SkillIdx);
         if (finddata != null)
         {
-            finddata.SkillLevel += 1;
+            finddata.SkillLevel.Value += 1;
         }
         else
         {

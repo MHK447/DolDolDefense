@@ -1,7 +1,7 @@
 using UnityEngine;
 using BanpoFri;
 using System.Linq;
-
+using UniRx;
 
 
 public enum SkillLevelStatTypeEnum
@@ -22,7 +22,7 @@ public class InGameUpgrade
 {
     public int UpgradeIdx = 0;
     public UpgradeTier Tier = UpgradeTier.Rare;
-    public int Level = 0;
+    public IReactiveProperty<int> LevelProperty = new ReactiveProperty<int>(0);
     public InGameUpgradeChoiceData UpgradeChoiceData = null;
 
     public bool IsRecommend = false;
@@ -39,11 +39,11 @@ public class InGameUpgrade
     {
         UpgradeIdx = upgradeidx;
         Tier = tier;
-        Level = level;
+        LevelProperty.Value = level;
         UpgradeChoiceData = choiceData;
         IsRecommend = isrecommend;
 
-        var findskilldata = GameRoot.Instance.InGameUpgradeSystem.ChoiceInGameUpgrades.Find(x => x.UpgradeIdx == upgradeidx);
+        var findskilldata = GameRoot.Instance.InGameUpgradeSystem.ChoiceInGameUpgrades.ToList().Find(x => x.UpgradeIdx == upgradeidx);
 
 
         if (findskilldata == null)
@@ -72,7 +72,7 @@ public class InGameUpgrade
 
     public void RandSelectType()
     {
-        var findskilldata = GameRoot.Instance.InGameUpgradeSystem.ChoiceInGameUpgrades.Find(x => x.UpgradeIdx == UpgradeIdx);
+        var findskilldata = GameRoot.Instance.InGameUpgradeSystem.ChoiceInGameUpgrades.ToList().Find(x => x.UpgradeIdx == UpgradeIdx);
 
         var td = Tables.Instance.GetTable<InGameUpgradeChoice>().GetData(UpgradeIdx);
 
@@ -119,6 +119,15 @@ public class InGameUpgrade
     {
         GameRoot.Instance.InGameUpgradeSystem.UpgradeCount++;
 
+
+        var findskilldata = GameRoot.Instance.UserData.InGamePlayerData.FindSkill(UpgradeIdx);
+
+        if (findskilldata != null)
+        {
+            findskilldata.SkillLevel.Value += 1;
+        }
+
+
         switch (SkillLevelStatType)
         {
             case (int)SkillLevelStatTypeEnum.SKillAdd:
@@ -128,46 +137,73 @@ public class InGameUpgrade
                 break;
             case (int)SkillLevelStatTypeEnum.SKillCountAdd:
                 {
+                    if (findskilldata != null)
+                    {
+                        findskilldata.SkillCount += 1;
+                        findskilldata.AttackDamage -= (int)ProjectUtility.PercentCalc(findskilldata.AttackDamage, UpgradeValue2);
+                    }
+
                 }
                 break;
             case (int)SkillLevelStatTypeEnum.SkillUpScale:
                 {
-
+                    if (findskilldata != null)
+                    {
+                        findskilldata.SkillSizeProperty.Value += ProjectUtility.PercentCalc(findskilldata.SkillSizeProperty.Value, UpgradeValue1);
+                    }
                 }
                 break;
             case (int)SkillLevelStatTypeEnum.SKillAttackUp:
                 {
-
+                    findskilldata.AttackDamage += (int)ProjectUtility.PercentCalc(findskilldata.AttackDamage, UpgradeValue2);
                 }
                 break;
             case (int)SkillLevelStatTypeEnum.SkillDurationIncrease:
                 {
-
+                    findskilldata.SkillCoolTime -= ProjectUtility.PercentCalc(findskilldata.SkillCoolTime, UpgradeValue1);
                 }
                 break;
             case (int)SkillLevelStatTypeEnum.StatAttackIncrease:
                 {
-                    //attack increase
+                    GameRoot.Instance.UserData.InGamePlayerData.PlayerUnitInfoData.AttackDamageBuffValue += UpgradeValue1;
+                    TrackStatUpgrade();
                 }
                 break;
             case (int)SkillLevelStatTypeEnum.StatHpIncrease:
                 {
-                    //hp increase
+                    GameRoot.Instance.UserData.InGamePlayerData.PlayerUnitInfoData.CurHpProperty.Value += (int)ProjectUtility.PercentCalc(GameRoot.Instance.UserData.InGamePlayerData.PlayerUnitInfoData.CurHpProperty.Value, UpgradeValue1);
+                    GameRoot.Instance.UserData.InGamePlayerData.PlayerUnitInfoData.StartHpProperty.Value += (int)ProjectUtility.PercentCalc(GameRoot.Instance.UserData.InGamePlayerData.PlayerUnitInfoData.StartHpProperty.Value, UpgradeValue1);
+                    TrackStatUpgrade();
                 }
                 break;
             case (int)SkillLevelStatTypeEnum.StatCoolTimeIncrease:
                 {
-                    //cool time increase
+                    GameRoot.Instance.UserData.InGamePlayerData.PlayerUnitInfoData.AttackCooltimeBuffValue += UpgradeValue1;
+                    TrackStatUpgrade();
                 }
                 break;
             case (int)SkillLevelStatTypeEnum.StatCriticalDamageIncrease:
                 {
-                    //critical damage increase
+                    GameRoot.Instance.UserData.InGamePlayerData.PlayerUnitInfoData.CriticalDamageBuffValue += UpgradeValue1;
+                    TrackStatUpgrade();
                 }
                 break;
         }
     }
 
+
+    private void TrackStatUpgrade()
+    {
+        var existing = GameRoot.Instance.InGameUpgradeSystem.ChoiceInGameUpgrades.ToList().Find(x => x.UpgradeIdx == UpgradeIdx);
+        if (existing == null)
+        {
+            GameRoot.Instance.InGameUpgradeSystem.AddInGameupgrade(this);
+        }
+        else
+        {
+            existing.LevelProperty.Value += 1;
+        }
+    }
 
     public void AddSkill(int skillidx)
     {
@@ -197,22 +233,22 @@ public class InGameUpgrade
                 GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_Amagetdon());
                 break;
             case (int)PlayerSkillSystem.PlayerSkillType.LaserCannon:
-                GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_Poison());
+                GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_Laser());
                 break;
             case (int)PlayerSkillSystem.PlayerSkillType.ShadowKnife:
-                GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_Poison());
+                GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_ShadowKnife());
                 break;
             case (int)PlayerSkillSystem.PlayerSkillType.LifeSteal:
                 GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_Lifesteal());
                 break;
             case (int)PlayerSkillSystem.PlayerSkillType.BombKnockBack:
-                GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_Poison());
+                GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_BombKonckBack());
                 break;
             case (int)PlayerSkillSystem.PlayerSkillType.LogThrow:
-                GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_Poison());
+                GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_LogThrow());
                 break;
             case (int)PlayerSkillSystem.PlayerSkillType.BlueSoul:
-                GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_Poison());
+                GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_BlueSoul());
                 break;
         }
 

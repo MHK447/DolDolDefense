@@ -86,8 +86,8 @@ public class LevelUpRewardComponent : MonoBehaviour
 
             if (finddata != null)
             {
-                BeforeLevelText.text = finddata.Level.ToString();
-                AfterLevelText.text = (finddata.Level + 1).ToString();
+                BeforeLevelText.text = finddata.LevelProperty.Value.ToString();
+                AfterLevelText.text = (finddata.LevelProperty.Value + 1).ToString();
             }
 
             foreach(var img in SkillBg2ImgList)

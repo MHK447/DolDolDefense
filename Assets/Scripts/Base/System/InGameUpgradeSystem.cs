@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using System.Linq;
 using BanpoFri;
 using UnityEngine;
+using UniRx;
+
 public enum UpgradeTier
 {
     Rare = 1,
@@ -11,7 +13,7 @@ public enum UpgradeTier
 
 public class InGameUpgradeSystem
 {
-    public List<InGameUpgrade> ChoiceInGameUpgrades = new();
+    public IReactiveCollection<InGameUpgrade> ChoiceInGameUpgrades = new ReactiveCollection<InGameUpgrade>();
 
     public int UpgradeCount = 0;
 
@@ -122,7 +124,7 @@ public class InGameUpgradeSystem
 
     public InGameUpgrade FindPlayerSkillValueData(int SkillCardIdx)
     {
-        var finddata = ChoiceInGameUpgrades.Find(x => x.UpgradeIdx == SkillCardIdx);
+        var finddata = ChoiceInGameUpgrades.ToList().Find(x => x.UpgradeIdx == SkillCardIdx);
         return finddata;
     }
     

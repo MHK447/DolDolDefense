@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.UI;
 using Unity.VisualScripting;
+using UniRx;
 
 public class PlayerSkillBase
 {
     public int SkillIdx = 0;
 
-    public int SkillLevel = 0;
+    public IReactiveProperty<int> SkillLevel = new ReactiveProperty<int>(1);
 
     public float SkillCoolTime = 0f;
 
@@ -17,7 +18,11 @@ public class PlayerSkillBase
 
     public int SkillCount = 1;
 
+    public IReactiveProperty<float> SkillSizeProperty = new ReactiveProperty<float>(1f);
+
     public float AttackRange = 0;
+
+    public int AttackDamage = 1;
 
     protected InGameBaseStage InGameStage = null;
 
@@ -35,6 +40,7 @@ public class PlayerSkillBase
 
         if(td != null)
         {
+            SkillLevel.Value = 1;
             Skilldeltatime = 0f;
             SkillCoolTime = td.base_atk_speed * 0.01f;
             SkillCount = td.base_atk_count;
