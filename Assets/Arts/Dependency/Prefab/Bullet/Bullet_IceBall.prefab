@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fad0338d75214ec18c1e7fa6298a04c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TrailColor: {r: 0.96981126, g: 0.44464925, b: 0.45752066, a: 1}
+  TrailColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &7891692189477045659 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8109014750024022587, guid: 0d88476a6ed744a5498736352ba6fe70, type: 3}
