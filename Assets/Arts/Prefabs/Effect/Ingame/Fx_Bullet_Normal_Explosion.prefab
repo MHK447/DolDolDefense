@@ -2260,7 +2260,7 @@ GameObject:
   - component: {fileID: 8513779519293079169}
   - component: {fileID: 5704830784990444390}
   m_Layer: 9
-  m_Name: Fx_Default_Explosion_Legendary 1
+  m_Name: Fx_Bullet_Normal_Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
