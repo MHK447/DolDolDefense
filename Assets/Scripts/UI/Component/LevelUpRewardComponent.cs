@@ -74,8 +74,8 @@ public class LevelUpRewardComponent : MonoBehaviour
 
         var finddata = GameRoot.Instance.InGameUpgradeSystem.FindPlayerSkillValueData(Upgrade.UpgradeIdx);
 
-        ProjectUtility.SetActiveCheck(NewObj, finddata == null);
-        ProjectUtility.SetActiveCheck(SkillValueRoot.gameObject, finddata != null);
+        ProjectUtility.SetActiveCheck(NewObj, finddata == null && td.category == 1);
+        ProjectUtility.SetActiveCheck(SkillValueRoot.gameObject, finddata != null && td.category == 1);
 
         if (td != null)
         {

@@ -118,7 +118,7 @@ public class Config : BanpoFri.SingletonScriptableObject<Config>, BanpoFri.ILoad
         Cash = 2,
         Material = 3,
 
-        SilverCoin = 101,
+        InGameGoldCoin = 101,
     }
 
 
@@ -407,7 +407,7 @@ public class Config : BanpoFri.SingletonScriptableObject<Config>, BanpoFri.ILoad
                             return AtlasManager.Instance.GetSprite(Atlas.Atlas_UI_Common, "Common_Currency_Cash");
                         case (int)CurrencyID.Material:
                             return AtlasManager.Instance.GetSprite(Atlas.Atlas_UI_Common, "Common_Currency_Material");
-                        case (int)CurrencyID.SilverCoin:
+                        case (int)CurrencyID.InGameGoldCoin:
                             return AtlasManager.Instance.GetSprite(Atlas.Atlas_UI_Common, "Common_Currency_Silver");
                     }
                 }

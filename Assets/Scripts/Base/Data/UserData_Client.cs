@@ -353,9 +353,9 @@ public partial class UserDataSystem
 
                         case (int)Config.CurrencyID.Cash:
                             {
-                               GameRoot.Instance.UserData.Cash.Value += (int)rewardCnt;
+                                GameRoot.Instance.UserData.Cash.Value += (int)rewardCnt;
                             }
-                            break;  
+                            break;
                         case (int)Config.CurrencyID.Money:
                             {
                                 Money.Value += rewardCnt;
@@ -366,9 +366,12 @@ public partial class UserDataSystem
                                 Material.Value += (int)rewardCnt;
                             }
                             break;
-                        case (int)Config.CurrencyID.SilverCoin:
+                        case (int)Config.CurrencyID.InGameGoldCoin:
                             {
-                                Ingamesilvercoin.Value += (int)rewardCnt;
+                                GameRoot.Instance.UserData.Ingamesilvercoin.Value += (int)rewardCnt;
+
+
+                                GameRoot.Instance.UISystem.GetUI<PopupInGame>()?.GetInGameCoin((int)rewardCnt);
                             }
                             break;
                     }

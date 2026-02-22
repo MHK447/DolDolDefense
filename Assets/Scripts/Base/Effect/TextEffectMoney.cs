@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using BanpoFri;
 using TMPro;    
 
-[EffectPath("Effect/TextEffectMoney", false, true)]
+[EffectPath("Effect/TextEffectMoney", true, false)]
 public class TextEffectMoney : Effect
 {
     [SerializeField]

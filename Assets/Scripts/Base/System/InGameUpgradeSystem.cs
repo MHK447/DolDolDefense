@@ -189,6 +189,7 @@ public class InGameUpgradeSystem
         foreach (var upgrade in shuffled)
         {
             upgrade.RandSelectType();
+            upgrade.Tier = tier;
             choicelist.Add(upgrade);
         }
 

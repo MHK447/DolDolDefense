@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 63c8c46c40d0679458de6407c8e597be, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0ac0969d8ba4b4a4eaf93f7778bb7f1c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -136,7 +136,6 @@ GameObject:
   - component: {fileID: 2414303528717142882}
   - component: {fileID: 1024156537077836178}
   - component: {fileID: 50016720465216129}
-  - component: {fileID: 8691965728328731074}
   - component: {fileID: 6871632844196737123}
   m_Layer: 5
   m_Name: TextEffect_GetMoney
@@ -199,18 +198,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!210 &8691965728328731074
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7477977995340301213}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 100
-  m_SortAtRoot: 0
 --- !u!114 &6871632844196737123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,8 +227,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5257182365439181791, guid: 169dbd8849f643b42ad29fb079497f19, type: 3}
       propertyPath: m_fontSize
-      value: 19.8
+      value: 27.75
       objectReference: {fileID: 0}
+    - target: {fileID: 5257182365439181791, guid: 169dbd8849f643b42ad29fb079497f19, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 98c288a0a35ad47d59cb304cb61f0a15, type: 2}
     - target: {fileID: 5257182365439181791, guid: 169dbd8849f643b42ad29fb079497f19, type: 3}
       propertyPath: m_fontColor.b
       value: 1
@@ -263,12 +254,20 @@ PrefabInstance:
       value: 25.5
       objectReference: {fileID: 0}
     - target: {fileID: 5257182365439181791, guid: 169dbd8849f643b42ad29fb079497f19, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 056e8485c3e7e4563adcad55b08d323c, type: 2}
+    - target: {fileID: 5257182365439181791, guid: 169dbd8849f643b42ad29fb079497f19, type: 3}
       propertyPath: m_enableAutoSizing
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5257182365439181791, guid: 169dbd8849f643b42ad29fb079497f19, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257182365439181791, guid: 169dbd8849f643b42ad29fb079497f19, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7607118684987216968, guid: 169dbd8849f643b42ad29fb079497f19, type: 3}
       propertyPath: m_Name

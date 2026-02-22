@@ -48,14 +48,16 @@ public class InGameUpgrade
 
         if (findskilldata == null)
         {
-            SkillLevelStatType = (int)SkillLevelStatTypeEnum.SKillAdd;
+            var td = Tables.Instance.GetTable<InGameUpgradeChoice>().GetData(upgradeidx);
 
-            UpgradeValue1 = 0;
-            UpgradeValue2 = 0;
+            SkillLevelStatType = td.skill_level_stat_type.First();
+
+            UpgradeValue1 = td.upgrade_value_1.First();
+            UpgradeValue2 = td.upgrade_value_2.First();
         }
         else
         {
-            if(choiceData.category == 1)
+            if (choiceData.category == 1)
             {
                 RandSelectType();
             }
@@ -72,23 +74,43 @@ public class InGameUpgrade
     {
         var findskilldata = GameRoot.Instance.InGameUpgradeSystem.ChoiceInGameUpgrades.Find(x => x.UpgradeIdx == UpgradeIdx);
 
+        var td = Tables.Instance.GetTable<InGameUpgradeChoice>().GetData(UpgradeIdx);
+
+        if (td == null)
+        {
+            BpLog.LogError(" InGameUpgrade RandSelectType Error : UpgradeIdx = " + UpgradeIdx);
+            return;
+        }
+
 
         if (findskilldata == null)
         {
-            SkillLevelStatType = (int)SkillLevelStatTypeEnum.SKillAdd;
+            SkillLevelStatType = td.skill_level_stat_type.First();
 
-            UpgradeValue1 = 0;
-            UpgradeValue2 = 0;
+            UpgradeValue1 = td.upgrade_value_1.First();
+            UpgradeValue2 = td.upgrade_value_2.First();
         }
         else
         {
-            var randvalue = Random.Range(0, UpgradeChoiceData.skill_level_stat_type.Count);
+            if (td.category == 1)
+            {
+                var randvalue = Random.Range(0, td.skill_level_stat_type.Count);
 
-            SkillLevelStatType = UpgradeChoiceData.skill_level_stat_type[randvalue];
+                SkillLevelStatType = td.skill_level_stat_type[randvalue];
 
-            UpgradeValue1 = UpgradeChoiceData.upgrade_value_1[randvalue] * (int)Tier;
+                UpgradeValue1 = td.upgrade_value_1[randvalue] * (int)Tier;
 
-            UpgradeValue2 = Tier > UpgradeTier.Epic ? 0 : UpgradeChoiceData.upgrade_value_2[randvalue];
+                UpgradeValue2 = Tier >= UpgradeTier.Epic ? 0 : td.upgrade_value_2[randvalue];
+            }
+            else
+            {
+
+                SkillLevelStatType = td.skill_level_stat_type[0];
+
+                UpgradeValue1 = td.upgrade_value_1[0] * (int)Tier;
+
+
+            }
         }
     }
 
@@ -105,7 +127,7 @@ public class InGameUpgrade
                 }
                 break;
             case (int)SkillLevelStatTypeEnum.SKillCountAdd:
-                {   
+                {
                 }
                 break;
             case (int)SkillLevelStatTypeEnum.SkillUpScale:
@@ -151,7 +173,7 @@ public class InGameUpgrade
     {
         GameRoot.Instance.InGameUpgradeSystem.AddInGameupgrade(this);
 
-        switch(skillidx)
+        switch (skillidx)
         {
             case (int)PlayerSkillSystem.PlayerSkillType.BlackBall:
                 GameRoot.Instance.UserData.InGamePlayerData.AddPlayerSkill(new PlayerSkill_BlackBall());

@@ -31,6 +31,9 @@ public class PopupInGame : CommonUIBase
     [SerializeField]
     private Slider WaveSlider;
 
+    [SerializeField]
+    private Transform MoneyRootTr;
+
 
     [SerializeField]
     private TextMeshProUGUI HpText;
@@ -87,6 +90,15 @@ public class PopupInGame : CommonUIBase
     public void OnClickReRoll()
     {
 
+    }
+
+
+    public void GetInGameCoin(int coinvalue)
+    {
+        GameRoot.Instance.EffectSystem.Play<TextEffectMoney>(MoneyRootTr.position, x =>
+        {
+            x.SetText(coinvalue);
+        });
     }
 
 

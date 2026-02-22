@@ -21,27 +21,6 @@ namespace BanpoFri
 			set { _choice_name = value;}
 		}
 		[SerializeField]
-		private string _desc_1;
-		public string desc_1
-		{
-			get { return _desc_1;}
-			set { _desc_1 = value;}
-		}
-		[SerializeField]
-		private string _front_img;
-		public string front_img
-		{
-			get { return _front_img;}
-			set { _front_img = value;}
-		}
-		[SerializeField]
-		private string _back_img;
-		public string back_img
-		{
-			get { return _back_img;}
-			set { _back_img = value;}
-		}
-		[SerializeField]
 		private int _category;
 		public int category
 		{

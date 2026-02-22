@@ -132,7 +132,7 @@ public class InGameSlotGroup : MonoBehaviour
 
 
         yield return new WaitForSeconds(0.5f);
-        
+
         GacahaChoice(getrandvalue, getrandgradevalue);
 
         IsGachaOn = false;
@@ -145,7 +145,7 @@ public class InGameSlotGroup : MonoBehaviour
         {
             case (int)SlotStatusInfo.Money:
                 {
-
+                    GameRoot.Instance.UserData.SetReward((int)Config.RewardType.Currency, (int)Config.CurrencyID.InGameGoldCoin, GetInGameGoldCoin(grade));
                 }
                 break;
             case (int)SlotStatusInfo.Stat:
@@ -160,6 +160,11 @@ public class InGameSlotGroup : MonoBehaviour
                 break;
         }
 
+    }
+
+    public int GetInGameGoldCoin(int grade)
+    {
+        return (int)(GetPrice() * 0.8f * grade);
     }
 
     public int GetPrice()
