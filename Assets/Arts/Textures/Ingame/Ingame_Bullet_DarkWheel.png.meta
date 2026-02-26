@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Ingame_Bullet_DarkWheel_0: -7725979613875145601
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
