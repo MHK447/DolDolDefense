@@ -80,7 +80,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2824270283297606460, guid: 24e5719f308f1154fbd9f89905671df3, type: 3}
       propertyPath: m_Intensity
-      value: 21.112127
+      value: 12.071547
       objectReference: {fileID: 0}
     - target: {fileID: 2824270283307612102, guid: 24e5719f308f1154fbd9f89905671df3, type: 3}
       propertyPath: m_Materials.Array.size
